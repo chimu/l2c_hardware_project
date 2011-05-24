@@ -1,0 +1,1264 @@
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 1
+
+
+   1              		.file	"Cstartup_SAM7.c"
+   2              	@ GNU C version 4.2.1 (arm-elf)
+   3              	@	compiled by GNU C version 3.4.5 (mingw special).
+   4              	@ GGC heuristics: --param ggc-min-expand=43 --param ggc-min-heapsize=24509
+   5              	@ options passed:  -I -imultilib -iprefix -MD -MF -MP -MQ
+   6              	@ -D__USES_INITFINI__ -mcpu=arm7tdmi -mthumb-interwork -auxbase-strip
+   7              	@ -gdwarf-2 -O0 -Wall -Wstrict-prototypes -fomit-frame-pointer
+   8              	@ -fverbose-asm
+   9              	@ options enabled:  -falign-loops -fargument-alias -fbranch-count-reg
+  10              	@ -fcommon -fearly-inlining -feliminate-unused-debug-types
+  11              	@ -femit-class-debug-always -ffunction-cse -fgcse-lm -fident
+  12              	@ -finline-functions-called-once -fivopts -fkeep-static-consts
+  13              	@ -fleading-underscore -fmath-errno -fmove-loop-invariants
+  14              	@ -fomit-frame-pointer -fpeephole -freg-struct-return -fsched-interblock
+  15              	@ -fsched-spec -fsched-stalled-insns-dep -fshow-column
+  16              	@ -fsplit-ivs-in-unroller -ftoplevel-reorder -ftrapping-math -ftree-loop-im
+  17              	@ -ftree-loop-ivcanon -ftree-loop-optimize -ftree-vect-loop-version
+  18              	@ -fverbose-asm -fzero-initialized-in-bss -mlittle-endian -msched-prolog
+  19              	@ -mthumb-interwork
+  20              	
+  21              		.section	.debug_abbrev,"",%progbits
+  22              	.Ldebug_abbrev0:
+  23              		.section	.debug_info,"",%progbits
+  24              	.Ldebug_info0:
+  25              		.section	.debug_line,"",%progbits
+  26              	.Ldebug_line0:
+  27 0000 61000000 		.text
+  27      02003700 
+  27      00000201 
+  27      FB0E0D00 
+  27      01010101 
+  28              	.Ltext0:
+  29              	@ Compiler executable checksum: 767205ed58b6ca823b40ecf1ec9af295
+  30              	
+  31              		.align	2
+  32              		.global	AT91F_LowLevelInit
+  33              		.type	AT91F_LowLevelInit, %function
+  34              	AT91F_LowLevelInit:
+  35              	.LFB285:
+  36              		.file 1 "Cstartup_SAM7.c"
+   1:Cstartup_SAM7.c **** //*----------------------------------------------------------------------------
+   2:Cstartup_SAM7.c **** //*         ATMEL Microcontroller Software Support  -  ROUSSET  -
+   3:Cstartup_SAM7.c **** //*----------------------------------------------------------------------------
+   4:Cstartup_SAM7.c **** //* The software is delivered "AS IS" without warranty or condition of any
+   5:Cstartup_SAM7.c **** //* kind, either express, implied or statutory. This includes without
+   6:Cstartup_SAM7.c **** //* limitation any warranty or condition with respect to merchantability or
+   7:Cstartup_SAM7.c **** //* fitness for any particular purpose, or against the infringements of
+   8:Cstartup_SAM7.c **** //* intellectual property rights of others.
+   9:Cstartup_SAM7.c **** //*----------------------------------------------------------------------------
+  10:Cstartup_SAM7.c **** //* File Name           : Cstartup_SAM7.c
+  11:Cstartup_SAM7.c **** //* Object              : Low level initializations written in C for GCC Tools
+  12:Cstartup_SAM7.c **** //* Creation            : 12/Jun/04
+  13:Cstartup_SAM7.c **** //* 1.2   28/Feb/05 JPP : LIB change AT91C_WDTC_WDDIS & PLL
+  14:Cstartup_SAM7.c **** //* 1.3   21/Mar/05 JPP : Change PLL Wait time
+  15:Cstartup_SAM7.c **** //*----------------------------------------------------------------------------
+  16:Cstartup_SAM7.c **** 
+  17:Cstartup_SAM7.c **** // Include the board file description
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 2
+
+
+  18:Cstartup_SAM7.c **** #include "Board.h"
+  19:Cstartup_SAM7.c **** 
+  20:Cstartup_SAM7.c **** // The following functions must be write in ARM mode this function called directly
+  21:Cstartup_SAM7.c **** // by exception vector
+  22:Cstartup_SAM7.c **** extern void AT91F_Spurious_handler(void);
+  23:Cstartup_SAM7.c **** extern void AT91F_Default_IRQ_handler(void);
+  24:Cstartup_SAM7.c **** extern void AT91F_Default_FIQ_handler(void);
+  25:Cstartup_SAM7.c **** 
+  26:Cstartup_SAM7.c **** //*----------------------------------------------------------------------------
+  27:Cstartup_SAM7.c **** //* \fn    AT91F_LowLevelInit
+  28:Cstartup_SAM7.c **** //* \brief This function performs very low level HW initialization
+  29:Cstartup_SAM7.c **** //*        this function can be use a Stack, depending the compilation
+  30:Cstartup_SAM7.c **** //*        optimization mode
+  31:Cstartup_SAM7.c **** //*----------------------------------------------------------------------------
+  32:Cstartup_SAM7.c **** void AT91F_LowLevelInit( void)
+  33:Cstartup_SAM7.c **** {
+  37              	terworking.
+  38              		@ args = 0, pretend = 0, frame = 8
+  39              		@ frame_needed = 0, uses_anonymous_args = 0
+  40              		@ link register save eliminated.
+  41              		sub	sp, sp, #8	@,,
+  42 0000 08D04DE2 	.LCFI0:
+  43              		@ lr needed for prologue	@
+  44              		.loc 1 35 0
+  34:Cstartup_SAM7.c ****  int            i;
+  35:Cstartup_SAM7.c ****  AT91PS_PMC     pPMC = AT91C_BASE_PMC;
+  45              	 #-2147483648	@ tmp126,
+  46 0004 0231A0E3 		mov	r3, r3, asr #21	@ tmp126, tmp126,
+  47 0008 C33AA0E1 		str	r3, [sp, #4]	@ tmp126, pPMC
+  48 000c 04308DE5 		.loc 1 39 0
+  36:Cstartup_SAM7.c ****     //* Set Flash Waite sate
+  37:Cstartup_SAM7.c **** 	//  Single Cycle Access at Up to 30 MHz, or 40
+  38:Cstartup_SAM7.c **** 	//  if MCK = 47923200 I have 50 Cycle for 1 usecond ( flied MC_FMR->FMCN
+  39:Cstartup_SAM7.c **** 	    AT91C_BASE_MC->MC_FMR = ((AT91C_MC_FMCN)&(48 <<16)) | AT91C_MC_FWS_1FWS ;
+  49              		r2, #255	@ D.3627,
+  50 0010 FF20E0E3 		mov	r3, #3145728	@ tmp127,
+  51 0014 0336A0E3 		add	r3, r3, #256	@ tmp127, tmp127,
+  52 0018 013C83E2 		str	r3, [r2, #96]	@ tmp127, <variable>.MC_FMR
+  53 001c 603082E5 		.loc 1 42 0
+  40:Cstartup_SAM7.c **** 
+  41:Cstartup_SAM7.c ****     //* Watchdog Disable
+  42:Cstartup_SAM7.c ****         AT91C_BASE_WDTC->WDTC_WDMR= AT91C_WDTC_WDDIS;
+  54              	r3, #-1476395008	@ D.3628,
+  55 0020 2A33A0E3 		mov	r3, r3, asr #21	@ D.3628, D.3628,
+  56 0024 C33AA0E1 		mov	r2, #32768	@ tmp128,
+  57 0028 0229A0E3 		str	r2, [r3, #4]	@ tmp128, <variable>.WDTC_WDMR
+  58 002c 042083E5 		.loc 1 48 0
+  43:Cstartup_SAM7.c **** 
+  44:Cstartup_SAM7.c **** 	//* Set MCK at 47 923 200
+  45:Cstartup_SAM7.c ****     // 1 Enabling the Main Oscillator:
+  46:Cstartup_SAM7.c ****         // SCK = 1/32768 = 30.51 uSecond
+  47:Cstartup_SAM7.c ****     	// Start up time = 8 * 6 / SCK = 56 * 30.51 = 1,46484375 ms
+  48:Cstartup_SAM7.c ****        pPMC->PMC_MOR = ( (AT91C_CKGR_OSCOUNT) & (0x06 <<8)) | AT91C_CKGR_MOSCEN ;
+  59              	r2, [sp, #4]	@ pPMC, pPMC
+  60 0030 04209DE5 		mov	r3, #1536	@ tmp130,
+  61 0034 063CA0E3 		add	r3, r3, #1	@ tmp130, tmp130,
+  62 0038 013083E2 		str	r3, [r2, #32]	@ tmp130, <variable>.PMC_MOR
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 3
+
+
+  63 003c 203082E5 	.L2:
+  64              		.loc 1 50 0
+  49:Cstartup_SAM7.c ****         // Wait the startup time
+  50:Cstartup_SAM7.c ****         while(!(pPMC->PMC_SR & AT91C_PMC_MOSCS));
+  65              	3, [sp, #4]	@ pPMC, pPMC
+  66 0040 04309DE5 		ldr	r3, [r3, #104]	@ D.3629, <variable>.PMC_SR
+  67 0044 683093E5 		and	r3, r3, #1	@ D.3631, D.3630,
+  68 0048 013003E2 		cmp	r3, #0	@ D.3631,
+  69 004c 000053E3 		beq	.L2	@,
+  70 0050 FAFFFF0A 		.loc 1 59 0
+  51:Cstartup_SAM7.c **** 	// 2 Checking the Main Oscillator Frequency (Optional)
+  52:Cstartup_SAM7.c **** 	// 3 Setting PLL and divider:
+  53:Cstartup_SAM7.c **** 		// - div by 5 Fin = 3,6864 =(18,432 / 5)
+  54:Cstartup_SAM7.c **** 		// - Mul 25+1: Fout =	95,8464 =(3,6864 *26)
+  55:Cstartup_SAM7.c **** 		// for 96 MHz the erroe is 0.16%
+  56:Cstartup_SAM7.c **** 		// Field out NOT USED = 0
+  57:Cstartup_SAM7.c **** 		// PLLCOUNT pll startup time estimate at : 0.844 ms
+  58:Cstartup_SAM7.c **** 		// PLLCOUNT 28 = 0.000844 /(1/32768)
+  59:Cstartup_SAM7.c ****        pPMC->PMC_PLLR = ((AT91C_CKGR_DIV & 0x05) |
+  71              	2, [sp, #4]	@ pPMC, pPMC
+  72 0054 04209DE5 		mov	r3, #1638400	@ tmp133,
+  73 0058 1938A0E3 		add	r3, r3, #7168	@ tmp133, tmp133,
+  74 005c 073B83E2 		add	r3, r3, #5	@ tmp133, tmp133,
+  75 0060 053083E2 		str	r3, [r2, #44]	@ tmp133, <variable>.PMC_PLLR
+  76 0064 2C3082E5 	.L4:
+  77              		.loc 1 64 0
+  60:Cstartup_SAM7.c ****                          (AT91C_CKGR_PLLCOUNT & (28<<8)) |
+  61:Cstartup_SAM7.c ****                          (AT91C_CKGR_MUL & (25<<16)));
+  62:Cstartup_SAM7.c **** 
+  63:Cstartup_SAM7.c ****         // Wait the startup time
+  64:Cstartup_SAM7.c ****         while(!(pPMC->PMC_SR & AT91C_PMC_LOCK));
+  78              	, [sp, #4]	@ pPMC, pPMC
+  79 0068 04309DE5 		ldr	r3, [r3, #104]	@ D.3632, <variable>.PMC_SR
+  80 006c 683093E5 		and	r3, r3, #4	@ D.3633, D.3632,
+  81 0070 043003E2 		cmp	r3, #0	@ D.3633,
+  82 0074 000053E3 		beq	.L4	@,
+  83 0078 FAFFFF0A 	.L5:
+  84              		.loc 1 65 0
+  65:Cstartup_SAM7.c ****         while(!(pPMC->PMC_SR & AT91C_PMC_MCKRDY));
+  85              	, [sp, #4]	@ pPMC, pPMC
+  86 007c 04309DE5 		ldr	r3, [r3, #104]	@ D.3634, <variable>.PMC_SR
+  87 0080 683093E5 		and	r3, r3, #8	@ D.3635, D.3634,
+  88 0084 083003E2 		cmp	r3, #0	@ D.3635,
+  89 0088 000053E3 		beq	.L5	@,
+  90 008c FAFFFF0A 		.loc 1 68 0
+  66:Cstartup_SAM7.c ****  	// 4. Selection of Master Clock and Processor Clock
+  67:Cstartup_SAM7.c ****  	// select the PLL clock divided by 2
+  68:Cstartup_SAM7.c ****  	    pPMC->PMC_MCKR =  AT91C_PMC_PRES_CLK_2 ;
+  91              	2, [sp, #4]	@ pPMC, pPMC
+  92 0090 04209DE5 		mov	r3, #4	@ tmp137,
+  93 0094 0430A0E3 		str	r3, [r2, #48]	@ tmp137, <variable>.PMC_MCKR
+  94 0098 303082E5 	.L7:
+  95              		.loc 1 69 0
+  69:Cstartup_SAM7.c ****  	    while(!(pPMC->PMC_SR & AT91C_PMC_MCKRDY));
+  96              	r3, [sp, #4]	@ pPMC, pPMC
+  97 009c 04309DE5 		ldr	r3, [r3, #104]	@ D.3636, <variable>.PMC_SR
+  98 00a0 683093E5 		and	r3, r3, #8	@ D.3637, D.3636,
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 4
+
+
+  99 00a4 083003E2 		cmp	r3, #0	@ D.3637,
+ 100 00a8 000053E3 		beq	.L7	@,
+ 101 00ac FAFFFF0A 		.loc 1 71 0
+  70:Cstartup_SAM7.c **** 
+  71:Cstartup_SAM7.c ****  	    pPMC->PMC_MCKR |= AT91C_PMC_CSS_PLL_CLK  ;
+ 102              	3, [sp, #4]	@ pPMC, pPMC
+ 103 00b0 04309DE5 		ldr	r3, [r3, #48]	@ D.3638, <variable>.PMC_MCKR
+ 104 00b4 303093E5 		orr	r2, r3, #3	@ D.3639, D.3638,
+ 105 00b8 032083E3 		ldr	r3, [sp, #4]	@ pPMC, pPMC
+ 106 00bc 04309DE5 		str	r2, [r3, #48]	@ D.3639, <variable>.PMC_MCKR
+ 107 00c0 302083E5 	.L9:
+ 108              		.loc 1 72 0
+  72:Cstartup_SAM7.c ****  	    while(!(pPMC->PMC_SR & AT91C_PMC_MCKRDY));
+ 109              	, [sp, #4]	@ pPMC, pPMC
+ 110 00c4 04309DE5 		ldr	r3, [r3, #104]	@ D.3640, <variable>.PMC_SR
+ 111 00c8 683093E5 		and	r3, r3, #8	@ D.3641, D.3640,
+ 112 00cc 083003E2 		cmp	r3, #0	@ D.3641,
+ 113 00d0 000053E3 		beq	.L9	@,
+ 114 00d4 FAFFFF0A 		.loc 1 75 0
+  73:Cstartup_SAM7.c **** 
+  74:Cstartup_SAM7.c **** 	// Set up the default interrupts handler vectors
+  75:Cstartup_SAM7.c **** 	AT91C_BASE_AIC->AIC_SVR[0] = (int) AT91F_Default_FIQ_handler ;
+ 115              	3, #-2147483648	@ D.3642,
+ 116 00d8 0231A0E3 		mov	r3, r3, asr #19	@ D.3642, D.3642,
+ 117 00dc C339A0E1 		ldr	r2, .L15	@ AT91F_Default_FIQ_handler.43,
+ 118 00e0 64209FE5 		str	r2, [r3, #128]	@ AT91F_Default_FIQ_handler.44, <variable>.AIC_SVR
+ 119 00e4 802083E5 		.loc 1 76 0
+  76:Cstartup_SAM7.c **** 	for (i=1;i < 31; i++)
+ 120              	r3, #1	@ tmp142,
+ 121 00e8 0130A0E3 		str	r3, [sp, #0]	@ tmp142, i
+ 122 00ec 00308DE5 		b	.L11	@
+ 123 00f0 0C0000EA 	.L12:
+ 124              		.loc 1 78 0
+  77:Cstartup_SAM7.c **** 	{
+  78:Cstartup_SAM7.c **** 	    AT91C_BASE_AIC->AIC_SVR[i] = (int) AT91F_Default_IRQ_handler ;
+ 125              	r2, #-2147483648	@ D.3645,
+ 126 00f4 0221A0E3 		mov	r2, r2, asr #19	@ D.3645, D.3645,
+ 127 00f8 C229A0E1 		ldr	r0, [sp, #0]	@ i.45, i
+ 128 00fc 00009DE5 		ldr	r3, .L15+4	@ AT91F_Default_IRQ_handler.46,
+ 129 0100 48309FE5 		mov	ip, r3	@ AT91F_Default_IRQ_handler.47, AT91F_Default_IRQ_handler.46
+ 130 0104 03C0A0E1 		mov	r1, #128	@ tmp143,
+ 131 0108 8010A0E3 		mov	r3, r0, asl #2	@ tmp144, i.45,
+ 132 010c 0031A0E1 		add	r3, r3, r2	@ tmp145, tmp144, D.3645
+ 133 0110 023083E0 		add	r3, r3, r1	@ tmp146, tmp145, tmp143
+ 134 0114 013083E0 		str	ip, [r3, #0]	@ AT91F_Default_IRQ_handler.47, <variable>.AIC_SVR
+ 135 0118 00C083E5 		.loc 1 76 0
+ 136              		ldr	r3, [sp, #0]	@ i, i
+ 137 011c 00309DE5 		add	r3, r3, #1	@ tmp148, i,
+ 138 0120 013083E2 		str	r3, [sp, #0]	@ tmp148, i
+ 139 0124 00308DE5 	.L11:
+ 140              		ldr	r3, [sp, #0]	@ i, i
+ 141 0128 00309DE5 		cmp	r3, #30	@ i,
+ 142 012c 1E0053E3 		ble	.L12	@,
+ 143 0130 EFFFFFDA 		.loc 1 80 0
+  79:Cstartup_SAM7.c **** 	}
+  80:Cstartup_SAM7.c **** 	AT91C_BASE_AIC->AIC_SPU  = (int) AT91F_Spurious_handler ;
+ 144              	48	@ D.3649,
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 5
+
+
+ 145 0134 0231A0E3 		mov	r3, r3, asr #19	@ D.3649, D.3649,
+ 146 0138 C339A0E1 		ldr	r2, .L15+8	@ AT91F_Spurious_handler.48,
+ 147 013c 10209FE5 		str	r2, [r3, #308]	@ AT91F_Spurious_handler.49, <variable>.AIC_SPU
+ 148 0140 342183E5 		.loc 1 82 0
+  81:Cstartup_SAM7.c **** 
+  82:Cstartup_SAM7.c **** }
+ 149              	sp, sp, #8	@,,
+ 150 0144 08D08DE2 		bx	lr
+ 151 0148 1EFF2FE1 	.L16:
+ 152              		.align	2
+ 153              	.L15:
+ 154              		.word	AT91F_Default_FIQ_handler
+ 155 014c 00000000 		.word	AT91F_Default_IRQ_handler
+ 156 0150 00000000 		.word	AT91F_Spurious_handler
+ 157 0154 00000000 	.LFE285:
+ 158              		.size	AT91F_LowLevelInit, .-AT91F_LowLevelInit
+ 159              		.section	.debug_frame,"",%progbits
+ 160              	.Lframe0:
+ 161              		.4byte	.LECIE0-.LSCIE0
+ 162 0000 0C000000 	.LSCIE0:
+ 163              		.4byte	0xffffffff
+ 164 0004 FFFFFFFF 		.byte	0x1
+ 165 0008 01       		.ascii	"\000"
+ 166 0009 00       		.uleb128 0x1
+ 167 000a 01       		.sleb128 -4
+ 168 000b 7C       		.byte	0xe
+ 169 000c 0E       		.byte	0xc
+ 170 000d 0C       		.uleb128 0xd
+ 171 000e 0D       		.uleb128 0x0
+ 172 000f 00       		.align	2
+ 173              	.LECIE0:
+ 174              	.LSFDE0:
+ 175              		.4byte	.LEFDE0-.LASFDE0
+ 176 0010 10000000 	.LASFDE0:
+ 177              		.4byte	.Lframe0
+ 178 0014 00000000 		.4byte	.LFB285
+ 179 0018 00000000 		.4byte	.LFE285-.LFB285
+ 180 001c 58010000 		.byte	0x4
+ 181 0020 44       		.4byte	.LCFI0-.LFB285
+ 182              		.byte	0xe
+ 183 0021 0E       		.uleb128 0x8
+ 184 0022 08       		.align	2
+ 185 0023 00       	.LEFDE0:
+ 186              		.text
+ 187              	.Letext0:
+ 188              		.section	.debug_loc,"",%progbits
+ 189              	.Ldebug_loc0:
+ 190              	.LLST0:
+ 191              		.4byte	.LFB285-.Ltext0
+ 192 0000 00000000 		.4byte	.LCFI0-.Ltext0
+ 193 0004 04000000 		.2byte	0x1
+ 194 0008 0100     		.byte	0x5d
+ 195 000a 5D       		.4byte	.LCFI0-.Ltext0
+ 196 000b 04000000 		.4byte	.LFE285-.Ltext0
+ 197 000f 58010000 		.2byte	0x2
+ 198 0013 0200     		.byte	0x7d
+ 199 0015 7D       		.sleb128 8
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 6
+
+
+ 200 0016 08       		.4byte	0x0
+ 201 0017 00000000 		.4byte	0x0
+ 202 001b 00000000 		.file 2 "AT91SAM7S64.h"
+ 203              		.section	.debug_info
+ 204              		.4byte	0x55f
+ 205 0000 5F050000 		.2byte	0x2
+ 206 0004 0200     		.4byte	.Ldebug_abbrev0
+ 207 0006 00000000 		.byte	0x4
+ 208 000a 04       		.uleb128 0x1
+ 209 000b 01       		.ascii	"GNU C 4.2.1\000"
+ 210 000c 474E5520 		.byte	0x1
+ 210      4320342E 
+ 210      322E3100 
+ 211 0018 01       		.ascii	"Cstartup_SAM7.c\000"
+ 212 0019 43737461 		.ascii	"X:\\enel353\000"
+ 212      72747570 
+ 212      5F53414D 
+ 212      372E6300 
+ 213 0029 583A5C65 		.4byte	.Ltext0
+ 213      6E656C33 
+ 213      353300
+ 214 0034 00000000 		.4byte	.Letext0
+ 215 0038 58010000 		.4byte	.Ldebug_line0
+ 216 003c 00000000 		.uleb128 0x2
+ 217 0040 02       		.4byte	0x45
+ 218 0041 45000000 		.uleb128 0x3
+ 219 0045 03       		.byte	0x4
+ 220 0046 04       		.byte	0x7
+ 221 0047 07       		.ascii	"unsigned int\000"
+ 222 0048 756E7369 		.uleb128 0x4
+ 222      676E6564 
+ 222      20696E74 
+ 222      00
+ 223 0055 04       		.4byte	0x45
+ 224 0056 45000000 		.4byte	0x65
+ 225 005a 65000000 		.uleb128 0x5
+ 226 005e 05       		.4byte	0x65
+ 227 005f 65000000 		.byte	0x1f
+ 228 0063 1F       		.byte	0x0
+ 229 0064 00       		.uleb128 0x6
+ 230 0065 06       		.byte	0x4
+ 231 0066 04       		.byte	0x7
+ 232 0067 07       		.uleb128 0x4
+ 233 0068 04       		.4byte	0x45
+ 234 0069 45000000 		.4byte	0x78
+ 235 006d 78000000 		.uleb128 0x5
+ 236 0071 05       		.4byte	0x65
+ 237 0072 65000000 		.byte	0x1
+ 238 0076 01       		.byte	0x0
+ 239 0077 00       		.uleb128 0x4
+ 240 0078 04       		.4byte	0x45
+ 241 0079 45000000 		.4byte	0x88
+ 242 007d 88000000 		.uleb128 0x5
+ 243 0081 05       		.4byte	0x65
+ 244 0082 65000000 		.byte	0x0
+ 245 0086 00       		.byte	0x0
+ 246 0087 00       		.uleb128 0x4
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 7
+
+
+ 247 0088 04       		.4byte	0x45
+ 248 0089 45000000 		.4byte	0x98
+ 249 008d 98000000 		.uleb128 0x5
+ 250 0091 05       		.4byte	0x65
+ 251 0092 65000000 		.byte	0x2
+ 252 0096 02       		.byte	0x0
+ 253 0097 00       		.uleb128 0x4
+ 254 0098 04       		.4byte	0x45
+ 255 0099 45000000 		.4byte	0xa8
+ 256 009d A8000000 		.uleb128 0x5
+ 257 00a1 05       		.4byte	0x65
+ 258 00a2 65000000 		.byte	0x4
+ 259 00a6 04       		.byte	0x0
+ 260 00a7 00       		.uleb128 0x7
+ 261 00a8 07       		.ascii	"_AT91S_AIC\000"
+ 262 00a9 5F415439 		.2byte	0x14c
+ 262      31535F41 
+ 262      494300
+ 263 00b4 4C01     		.byte	0x2
+ 264 00b6 02       		.byte	0xb1
+ 265 00b7 B1       		.4byte	0x23a
+ 266 00b8 3A020000 		.uleb128 0x8
+ 267 00bc 08       		.ascii	"AIC_SMR\000"
+ 268 00bd 4149435F 		.byte	0x2
+ 268      534D5200 
+ 269 00c5 02       		.byte	0xb2
+ 270 00c6 B2       		.4byte	0x23a
+ 271 00c7 3A020000 		.byte	0x2
+ 272 00cb 02       		.byte	0x23
+ 273 00cc 23       		.uleb128 0x0
+ 274 00cd 00       		.uleb128 0x8
+ 275 00ce 08       		.ascii	"AIC_SVR\000"
+ 276 00cf 4149435F 		.byte	0x2
+ 276      53565200 
+ 277 00d7 02       		.byte	0xb3
+ 278 00d8 B3       		.4byte	0x23f
+ 279 00d9 3F020000 		.byte	0x3
+ 280 00dd 03       		.byte	0x23
+ 281 00de 23       		.uleb128 0x80
+ 282 00df 8001     		.uleb128 0x8
+ 283 00e1 08       		.ascii	"AIC_IVR\000"
+ 284 00e2 4149435F 		.byte	0x2
+ 284      49565200 
+ 285 00ea 02       		.byte	0xb4
+ 286 00eb B4       		.4byte	0x40
+ 287 00ec 40000000 		.byte	0x3
+ 288 00f0 03       		.byte	0x23
+ 289 00f1 23       		.uleb128 0x100
+ 290 00f2 8002     		.uleb128 0x8
+ 291 00f4 08       		.ascii	"AIC_FVR\000"
+ 292 00f5 4149435F 		.byte	0x2
+ 292      46565200 
+ 293 00fd 02       		.byte	0xb5
+ 294 00fe B5       		.4byte	0x40
+ 295 00ff 40000000 		.byte	0x3
+ 296 0103 03       		.byte	0x23
+ 297 0104 23       		.uleb128 0x104
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 8
+
+
+ 298 0105 8402     		.uleb128 0x8
+ 299 0107 08       		.ascii	"AIC_ISR\000"
+ 300 0108 4149435F 		.byte	0x2
+ 300      49535200 
+ 301 0110 02       		.byte	0xb6
+ 302 0111 B6       		.4byte	0x40
+ 303 0112 40000000 		.byte	0x3
+ 304 0116 03       		.byte	0x23
+ 305 0117 23       		.uleb128 0x108
+ 306 0118 8802     		.uleb128 0x8
+ 307 011a 08       		.ascii	"AIC_IPR\000"
+ 308 011b 4149435F 		.byte	0x2
+ 308      49505200 
+ 309 0123 02       		.byte	0xb7
+ 310 0124 B7       		.4byte	0x40
+ 311 0125 40000000 		.byte	0x3
+ 312 0129 03       		.byte	0x23
+ 313 012a 23       		.uleb128 0x10c
+ 314 012b 8C02     		.uleb128 0x8
+ 315 012d 08       		.ascii	"AIC_IMR\000"
+ 316 012e 4149435F 		.byte	0x2
+ 316      494D5200 
+ 317 0136 02       		.byte	0xb8
+ 318 0137 B8       		.4byte	0x40
+ 319 0138 40000000 		.byte	0x3
+ 320 013c 03       		.byte	0x23
+ 321 013d 23       		.uleb128 0x110
+ 322 013e 9002     		.uleb128 0x8
+ 323 0140 08       		.ascii	"AIC_CISR\000"
+ 324 0141 4149435F 		.byte	0x2
+ 324      43495352 
+ 324      00
+ 325 014a 02       		.byte	0xb9
+ 326 014b B9       		.4byte	0x40
+ 327 014c 40000000 		.byte	0x3
+ 328 0150 03       		.byte	0x23
+ 329 0151 23       		.uleb128 0x114
+ 330 0152 9402     		.uleb128 0x9
+ 331 0154 09       		.4byte	.LASF0
+ 332 0155 00000000 		.byte	0x2
+ 333 0159 02       		.byte	0xba
+ 334 015a BA       		.4byte	0x244
+ 335 015b 44020000 		.byte	0x3
+ 336 015f 03       		.byte	0x23
+ 337 0160 23       		.uleb128 0x118
+ 338 0161 9802     		.uleb128 0x8
+ 339 0163 08       		.ascii	"AIC_IECR\000"
+ 340 0164 4149435F 		.byte	0x2
+ 340      49454352 
+ 340      00
+ 341 016d 02       		.byte	0xbb
+ 342 016e BB       		.4byte	0x40
+ 343 016f 40000000 		.byte	0x3
+ 344 0173 03       		.byte	0x23
+ 345 0174 23       		.uleb128 0x120
+ 346 0175 A002     		.uleb128 0x8
+ 347 0177 08       		.ascii	"AIC_IDCR\000"
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 9
+
+
+ 348 0178 4149435F 		.byte	0x2
+ 348      49444352 
+ 348      00
+ 349 0181 02       		.byte	0xbc
+ 350 0182 BC       		.4byte	0x40
+ 351 0183 40000000 		.byte	0x3
+ 352 0187 03       		.byte	0x23
+ 353 0188 23       		.uleb128 0x124
+ 354 0189 A402     		.uleb128 0x8
+ 355 018b 08       		.ascii	"AIC_ICCR\000"
+ 356 018c 4149435F 		.byte	0x2
+ 356      49434352 
+ 356      00
+ 357 0195 02       		.byte	0xbd
+ 358 0196 BD       		.4byte	0x40
+ 359 0197 40000000 		.byte	0x3
+ 360 019b 03       		.byte	0x23
+ 361 019c 23       		.uleb128 0x128
+ 362 019d A802     		.uleb128 0x8
+ 363 019f 08       		.ascii	"AIC_ISCR\000"
+ 364 01a0 4149435F 		.byte	0x2
+ 364      49534352 
+ 364      00
+ 365 01a9 02       		.byte	0xbe
+ 366 01aa BE       		.4byte	0x40
+ 367 01ab 40000000 		.byte	0x3
+ 368 01af 03       		.byte	0x23
+ 369 01b0 23       		.uleb128 0x12c
+ 370 01b1 AC02     		.uleb128 0x8
+ 371 01b3 08       		.ascii	"AIC_EOICR\000"
+ 372 01b4 4149435F 		.byte	0x2
+ 372      454F4943 
+ 372      5200
+ 373 01be 02       		.byte	0xbf
+ 374 01bf BF       		.4byte	0x40
+ 375 01c0 40000000 		.byte	0x3
+ 376 01c4 03       		.byte	0x23
+ 377 01c5 23       		.uleb128 0x130
+ 378 01c6 B002     		.uleb128 0x8
+ 379 01c8 08       		.ascii	"AIC_SPU\000"
+ 380 01c9 4149435F 		.byte	0x2
+ 380      53505500 
+ 381 01d1 02       		.byte	0xc0
+ 382 01d2 C0       		.4byte	0x40
+ 383 01d3 40000000 		.byte	0x3
+ 384 01d7 03       		.byte	0x23
+ 385 01d8 23       		.uleb128 0x134
+ 386 01d9 B402     		.uleb128 0x8
+ 387 01db 08       		.ascii	"AIC_DCR\000"
+ 388 01dc 4149435F 		.byte	0x2
+ 388      44435200 
+ 389 01e4 02       		.byte	0xc1
+ 390 01e5 C1       		.4byte	0x40
+ 391 01e6 40000000 		.byte	0x3
+ 392 01ea 03       		.byte	0x23
+ 393 01eb 23       		.uleb128 0x138
+ 394 01ec B802     		.uleb128 0x9
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 10
+
+
+ 395 01ee 09       		.4byte	.LASF1
+ 396 01ef 0A000000 		.byte	0x2
+ 397 01f3 02       		.byte	0xc2
+ 398 01f4 C2       		.4byte	0x249
+ 399 01f5 49020000 		.byte	0x3
+ 400 01f9 03       		.byte	0x23
+ 401 01fa 23       		.uleb128 0x13c
+ 402 01fb BC02     		.uleb128 0x8
+ 403 01fd 08       		.ascii	"AIC_FFER\000"
+ 404 01fe 4149435F 		.byte	0x2
+ 404      46464552 
+ 404      00
+ 405 0207 02       		.byte	0xc3
+ 406 0208 C3       		.4byte	0x40
+ 407 0209 40000000 		.byte	0x3
+ 408 020d 03       		.byte	0x23
+ 409 020e 23       		.uleb128 0x140
+ 410 020f C002     		.uleb128 0x8
+ 411 0211 08       		.ascii	"AIC_FFDR\000"
+ 412 0212 4149435F 		.byte	0x2
+ 412      46464452 
+ 412      00
+ 413 021b 02       		.byte	0xc4
+ 414 021c C4       		.4byte	0x40
+ 415 021d 40000000 		.byte	0x3
+ 416 0221 03       		.byte	0x23
+ 417 0222 23       		.uleb128 0x144
+ 418 0223 C402     		.uleb128 0x8
+ 419 0225 08       		.ascii	"AIC_FFSR\000"
+ 420 0226 4149435F 		.byte	0x2
+ 420      46465352 
+ 420      00
+ 421 022f 02       		.byte	0xc5
+ 422 0230 C5       		.4byte	0x40
+ 423 0231 40000000 		.byte	0x3
+ 424 0235 03       		.byte	0x23
+ 425 0236 23       		.uleb128 0x148
+ 426 0237 C802     		.byte	0x0
+ 427 0239 00       		.uleb128 0x2
+ 428 023a 02       		.4byte	0x55
+ 429 023b 55000000 		.uleb128 0x2
+ 430 023f 02       		.4byte	0x55
+ 431 0240 55000000 		.uleb128 0x2
+ 432 0244 02       		.4byte	0x68
+ 433 0245 68000000 		.uleb128 0x2
+ 434 0249 02       		.4byte	0x78
+ 435 024a 78000000 		.uleb128 0xa
+ 436 024e 0A       		.ascii	"_AT91S_PMC\000"
+ 437 024f 5F415439 		.byte	0x70
+ 437      31535F50 
+ 437      4D4300
+ 438 025a 70       		.byte	0x2
+ 439 025b 02       		.2byte	0x183
+ 440 025c 8301     		.4byte	0x3e6
+ 441 025e E6030000 		.uleb128 0xb
+ 442 0262 0B       		.ascii	"PMC_SCER\000"
+ 443 0263 504D435F 		.byte	0x2
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 11
+
+
+ 443      53434552 
+ 443      00
+ 444 026c 02       		.2byte	0x184
+ 445 026d 8401     		.4byte	0x40
+ 446 026f 40000000 		.byte	0x2
+ 447 0273 02       		.byte	0x23
+ 448 0274 23       		.uleb128 0x0
+ 449 0275 00       		.uleb128 0xb
+ 450 0276 0B       		.ascii	"PMC_SCDR\000"
+ 451 0277 504D435F 		.byte	0x2
+ 451      53434452 
+ 451      00
+ 452 0280 02       		.2byte	0x185
+ 453 0281 8501     		.4byte	0x40
+ 454 0283 40000000 		.byte	0x2
+ 455 0287 02       		.byte	0x23
+ 456 0288 23       		.uleb128 0x4
+ 457 0289 04       		.uleb128 0xb
+ 458 028a 0B       		.ascii	"PMC_SCSR\000"
+ 459 028b 504D435F 		.byte	0x2
+ 459      53435352 
+ 459      00
+ 460 0294 02       		.2byte	0x186
+ 461 0295 8601     		.4byte	0x40
+ 462 0297 40000000 		.byte	0x2
+ 463 029b 02       		.byte	0x23
+ 464 029c 23       		.uleb128 0x8
+ 465 029d 08       		.uleb128 0xc
+ 466 029e 0C       		.4byte	.LASF0
+ 467 029f 00000000 		.byte	0x2
+ 468 02a3 02       		.2byte	0x187
+ 469 02a4 8701     		.4byte	0x3e6
+ 470 02a6 E6030000 		.byte	0x2
+ 471 02aa 02       		.byte	0x23
+ 472 02ab 23       		.uleb128 0xc
+ 473 02ac 0C       		.uleb128 0xb
+ 474 02ad 0B       		.ascii	"PMC_PCER\000"
+ 475 02ae 504D435F 		.byte	0x2
+ 475      50434552 
+ 475      00
+ 476 02b7 02       		.2byte	0x188
+ 477 02b8 8801     		.4byte	0x40
+ 478 02ba 40000000 		.byte	0x2
+ 479 02be 02       		.byte	0x23
+ 480 02bf 23       		.uleb128 0x10
+ 481 02c0 10       		.uleb128 0xb
+ 482 02c1 0B       		.ascii	"PMC_PCDR\000"
+ 483 02c2 504D435F 		.byte	0x2
+ 483      50434452 
+ 483      00
+ 484 02cb 02       		.2byte	0x189
+ 485 02cc 8901     		.4byte	0x40
+ 486 02ce 40000000 		.byte	0x2
+ 487 02d2 02       		.byte	0x23
+ 488 02d3 23       		.uleb128 0x14
+ 489 02d4 14       		.uleb128 0xb
+ 490 02d5 0B       		.ascii	"PMC_PCSR\000"
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 12
+
+
+ 491 02d6 504D435F 		.byte	0x2
+ 491      50435352 
+ 491      00
+ 492 02df 02       		.2byte	0x18a
+ 493 02e0 8A01     		.4byte	0x40
+ 494 02e2 40000000 		.byte	0x2
+ 495 02e6 02       		.byte	0x23
+ 496 02e7 23       		.uleb128 0x18
+ 497 02e8 18       		.uleb128 0xc
+ 498 02e9 0C       		.4byte	.LASF1
+ 499 02ea 0A000000 		.byte	0x2
+ 500 02ee 02       		.2byte	0x18b
+ 501 02ef 8B01     		.4byte	0x3eb
+ 502 02f1 EB030000 		.byte	0x2
+ 503 02f5 02       		.byte	0x23
+ 504 02f6 23       		.uleb128 0x1c
+ 505 02f7 1C       		.uleb128 0xb
+ 506 02f8 0B       		.ascii	"PMC_MOR\000"
+ 507 02f9 504D435F 		.byte	0x2
+ 507      4D4F5200 
+ 508 0301 02       		.2byte	0x18c
+ 509 0302 8C01     		.4byte	0x40
+ 510 0304 40000000 		.byte	0x2
+ 511 0308 02       		.byte	0x23
+ 512 0309 23       		.uleb128 0x20
+ 513 030a 20       		.uleb128 0xb
+ 514 030b 0B       		.ascii	"PMC_MCFR\000"
+ 515 030c 504D435F 		.byte	0x2
+ 515      4D434652 
+ 515      00
+ 516 0315 02       		.2byte	0x18d
+ 517 0316 8D01     		.4byte	0x40
+ 518 0318 40000000 		.byte	0x2
+ 519 031c 02       		.byte	0x23
+ 520 031d 23       		.uleb128 0x24
+ 521 031e 24       		.uleb128 0xb
+ 522 031f 0B       		.ascii	"Reserved2\000"
+ 523 0320 52657365 		.byte	0x2
+ 523      72766564 
+ 523      3200
+ 524 032a 02       		.2byte	0x18e
+ 525 032b 8E01     		.4byte	0x3f0
+ 526 032d F0030000 		.byte	0x2
+ 527 0331 02       		.byte	0x23
+ 528 0332 23       		.uleb128 0x28
+ 529 0333 28       		.uleb128 0xb
+ 530 0334 0B       		.ascii	"PMC_PLLR\000"
+ 531 0335 504D435F 		.byte	0x2
+ 531      504C4C52 
+ 531      00
+ 532 033e 02       		.2byte	0x18f
+ 533 033f 8F01     		.4byte	0x40
+ 534 0341 40000000 		.byte	0x2
+ 535 0345 02       		.byte	0x23
+ 536 0346 23       		.uleb128 0x2c
+ 537 0347 2C       		.uleb128 0xb
+ 538 0348 0B       		.ascii	"PMC_MCKR\000"
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 13
+
+
+ 539 0349 504D435F 		.byte	0x2
+ 539      4D434B52 
+ 539      00
+ 540 0352 02       		.2byte	0x190
+ 541 0353 9001     		.4byte	0x40
+ 542 0355 40000000 		.byte	0x2
+ 543 0359 02       		.byte	0x23
+ 544 035a 23       		.uleb128 0x30
+ 545 035b 30       		.uleb128 0xb
+ 546 035c 0B       		.ascii	"Reserved3\000"
+ 547 035d 52657365 		.byte	0x2
+ 547      72766564 
+ 547      3300
+ 548 0367 02       		.2byte	0x191
+ 549 0368 9101     		.4byte	0x3f5
+ 550 036a F5030000 		.byte	0x2
+ 551 036e 02       		.byte	0x23
+ 552 036f 23       		.uleb128 0x34
+ 553 0370 34       		.uleb128 0xb
+ 554 0371 0B       		.ascii	"PMC_PCKR\000"
+ 555 0372 504D435F 		.byte	0x2
+ 555      50434B52 
+ 555      00
+ 556 037b 02       		.2byte	0x192
+ 557 037c 9201     		.4byte	0x3fa
+ 558 037e FA030000 		.byte	0x2
+ 559 0382 02       		.byte	0x23
+ 560 0383 23       		.uleb128 0x40
+ 561 0384 40       		.uleb128 0xb
+ 562 0385 0B       		.ascii	"Reserved4\000"
+ 563 0386 52657365 		.byte	0x2
+ 563      72766564 
+ 563      3400
+ 564 0390 02       		.2byte	0x193
+ 565 0391 9301     		.4byte	0x3ff
+ 566 0393 FF030000 		.byte	0x2
+ 567 0397 02       		.byte	0x23
+ 568 0398 23       		.uleb128 0x4c
+ 569 0399 4C       		.uleb128 0xb
+ 570 039a 0B       		.ascii	"PMC_IER\000"
+ 571 039b 504D435F 		.byte	0x2
+ 571      49455200 
+ 572 03a3 02       		.2byte	0x194
+ 573 03a4 9401     		.4byte	0x40
+ 574 03a6 40000000 		.byte	0x2
+ 575 03aa 02       		.byte	0x23
+ 576 03ab 23       		.uleb128 0x60
+ 577 03ac 60       		.uleb128 0xb
+ 578 03ad 0B       		.ascii	"PMC_IDR\000"
+ 579 03ae 504D435F 		.byte	0x2
+ 579      49445200 
+ 580 03b6 02       		.2byte	0x195
+ 581 03b7 9501     		.4byte	0x40
+ 582 03b9 40000000 		.byte	0x2
+ 583 03bd 02       		.byte	0x23
+ 584 03be 23       		.uleb128 0x64
+ 585 03bf 64       		.uleb128 0xb
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 14
+
+
+ 586 03c0 0B       		.ascii	"PMC_SR\000"
+ 587 03c1 504D435F 		.byte	0x2
+ 587      535200
+ 588 03c8 02       		.2byte	0x196
+ 589 03c9 9601     		.4byte	0x40
+ 590 03cb 40000000 		.byte	0x2
+ 591 03cf 02       		.byte	0x23
+ 592 03d0 23       		.uleb128 0x68
+ 593 03d1 68       		.uleb128 0xb
+ 594 03d2 0B       		.ascii	"PMC_IMR\000"
+ 595 03d3 504D435F 		.byte	0x2
+ 595      494D5200 
+ 596 03db 02       		.2byte	0x197
+ 597 03dc 9701     		.4byte	0x40
+ 598 03de 40000000 		.byte	0x2
+ 599 03e2 02       		.byte	0x23
+ 600 03e3 23       		.uleb128 0x6c
+ 601 03e4 6C       		.byte	0x0
+ 602 03e5 00       		.uleb128 0x2
+ 603 03e6 02       		.4byte	0x78
+ 604 03e7 78000000 		.uleb128 0x2
+ 605 03eb 02       		.4byte	0x78
+ 606 03ec 78000000 		.uleb128 0x2
+ 607 03f0 02       		.4byte	0x78
+ 608 03f1 78000000 		.uleb128 0x2
+ 609 03f5 02       		.4byte	0x88
+ 610 03f6 88000000 		.uleb128 0x2
+ 611 03fa 02       		.4byte	0x88
+ 612 03fb 88000000 		.uleb128 0x2
+ 613 03ff 02       		.4byte	0x98
+ 614 0400 98000000 		.uleb128 0xd
+ 615 0404 0D       		.ascii	"AT91PS_PMC\000"
+ 616 0405 41543931 		.byte	0x2
+ 616      50535F50 
+ 616      4D4300
+ 617 0410 02       		.2byte	0x198
+ 618 0411 9801     		.4byte	0x417
+ 619 0413 17040000 		.uleb128 0xe
+ 620 0417 0E       		.byte	0x4
+ 621 0418 04       		.4byte	0x24e
+ 622 0419 4E020000 		.uleb128 0xa
+ 623 041d 0A       		.ascii	"_AT91S_WDTC\000"
+ 624 041e 5F415439 		.byte	0xc
+ 624      31535F57 
+ 624      44544300 
+ 625 042a 0C       		.byte	0x2
+ 626 042b 02       		.2byte	0x20d
+ 627 042c 0D02     		.4byte	0x472
+ 628 042e 72040000 		.uleb128 0xb
+ 629 0432 0B       		.ascii	"WDTC_WDCR\000"
+ 630 0433 57445443 		.byte	0x2
+ 630      5F574443 
+ 630      5200
+ 631 043d 02       		.2byte	0x20e
+ 632 043e 0E02     		.4byte	0x40
+ 633 0440 40000000 		.byte	0x2
+ 634 0444 02       		.byte	0x23
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 15
+
+
+ 635 0445 23       		.uleb128 0x0
+ 636 0446 00       		.uleb128 0xb
+ 637 0447 0B       		.ascii	"WDTC_WDMR\000"
+ 638 0448 57445443 		.byte	0x2
+ 638      5F57444D 
+ 638      5200
+ 639 0452 02       		.2byte	0x20f
+ 640 0453 0F02     		.4byte	0x40
+ 641 0455 40000000 		.byte	0x2
+ 642 0459 02       		.byte	0x23
+ 643 045a 23       		.uleb128 0x4
+ 644 045b 04       		.uleb128 0xb
+ 645 045c 0B       		.ascii	"WDTC_WDSR\000"
+ 646 045d 57445443 		.byte	0x2
+ 646      5F574453 
+ 646      5200
+ 647 0467 02       		.2byte	0x210
+ 648 0468 1002     		.4byte	0x40
+ 649 046a 40000000 		.byte	0x2
+ 650 046e 02       		.byte	0x23
+ 651 046f 23       		.uleb128 0x8
+ 652 0470 08       		.byte	0x0
+ 653 0471 00       		.uleb128 0xa
+ 654 0472 0A       		.ascii	"_AT91S_MC\000"
+ 655 0473 5F415439 		.byte	0x6c
+ 655      31535F4D 
+ 655      4300
+ 656 047d 6C       		.byte	0x2
+ 657 047e 02       		.2byte	0x230
+ 658 047f 3002     		.4byte	0x502
+ 659 0481 02050000 		.uleb128 0xb
+ 660 0485 0B       		.ascii	"MC_RCR\000"
+ 661 0486 4D435F52 		.byte	0x2
+ 661      435200
+ 662 048d 02       		.2byte	0x231
+ 663 048e 3102     		.4byte	0x40
+ 664 0490 40000000 		.byte	0x2
+ 665 0494 02       		.byte	0x23
+ 666 0495 23       		.uleb128 0x0
+ 667 0496 00       		.uleb128 0xb
+ 668 0497 0B       		.ascii	"MC_ASR\000"
+ 669 0498 4D435F41 		.byte	0x2
+ 669      535200
+ 670 049f 02       		.2byte	0x232
+ 671 04a0 3202     		.4byte	0x40
+ 672 04a2 40000000 		.byte	0x2
+ 673 04a6 02       		.byte	0x23
+ 674 04a7 23       		.uleb128 0x4
+ 675 04a8 04       		.uleb128 0xb
+ 676 04a9 0B       		.ascii	"MC_AASR\000"
+ 677 04aa 4D435F41 		.byte	0x2
+ 677      41535200 
+ 678 04b2 02       		.2byte	0x233
+ 679 04b3 3302     		.4byte	0x40
+ 680 04b5 40000000 		.byte	0x2
+ 681 04b9 02       		.byte	0x23
+ 682 04ba 23       		.uleb128 0x8
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 16
+
+
+ 683 04bb 08       		.uleb128 0xc
+ 684 04bc 0C       		.4byte	.LASF0
+ 685 04bd 00000000 		.byte	0x2
+ 686 04c1 02       		.2byte	0x234
+ 687 04c2 3402     		.4byte	0x512
+ 688 04c4 12050000 		.byte	0x2
+ 689 04c8 02       		.byte	0x23
+ 690 04c9 23       		.uleb128 0xc
+ 691 04ca 0C       		.uleb128 0xb
+ 692 04cb 0B       		.ascii	"MC_FMR\000"
+ 693 04cc 4D435F46 		.byte	0x2
+ 693      4D5200
+ 694 04d3 02       		.2byte	0x235
+ 695 04d4 3502     		.4byte	0x40
+ 696 04d6 40000000 		.byte	0x2
+ 697 04da 02       		.byte	0x23
+ 698 04db 23       		.uleb128 0x60
+ 699 04dc 60       		.uleb128 0xb
+ 700 04dd 0B       		.ascii	"MC_FCR\000"
+ 701 04de 4D435F46 		.byte	0x2
+ 701      435200
+ 702 04e5 02       		.2byte	0x236
+ 703 04e6 3602     		.4byte	0x40
+ 704 04e8 40000000 		.byte	0x2
+ 705 04ec 02       		.byte	0x23
+ 706 04ed 23       		.uleb128 0x64
+ 707 04ee 64       		.uleb128 0xb
+ 708 04ef 0B       		.ascii	"MC_FSR\000"
+ 709 04f0 4D435F46 		.byte	0x2
+ 709      535200
+ 710 04f7 02       		.2byte	0x237
+ 711 04f8 3702     		.4byte	0x40
+ 712 04fa 40000000 		.byte	0x2
+ 713 04fe 02       		.byte	0x23
+ 714 04ff 23       		.uleb128 0x68
+ 715 0500 68       		.byte	0x0
+ 716 0501 00       		.uleb128 0x4
+ 717 0502 04       		.4byte	0x45
+ 718 0503 45000000 		.4byte	0x512
+ 719 0507 12050000 		.uleb128 0x5
+ 720 050b 05       		.4byte	0x65
+ 721 050c 65000000 		.byte	0x14
+ 722 0510 14       		.byte	0x0
+ 723 0511 00       		.uleb128 0x2
+ 724 0512 02       		.4byte	0x502
+ 725 0513 02050000 		.uleb128 0xf
+ 726 0517 0F       		.byte	0x1
+ 727 0518 01       		.ascii	"AT91F_LowLevelInit\000"
+ 728 0519 41543931 		.byte	0x1
+ 728      465F4C6F 
+ 728      774C6576 
+ 728      656C496E 
+ 728      697400
+ 729 052c 01       		.byte	0x21
+ 730 052d 21       		.byte	0x1
+ 731 052e 01       		.4byte	.LFB285
+ 732 052f 00000000 		.4byte	.LFE285
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 17
+
+
+ 733 0533 58010000 		.4byte	.LLST0
+ 734 0537 00000000 		.4byte	0x55b
+ 735 053b 5B050000 		.uleb128 0x10
+ 736 053f 10       		.ascii	"i\000"
+ 737 0540 6900     		.byte	0x1
+ 738 0542 01       		.byte	0x22
+ 739 0543 22       		.4byte	0x55b
+ 740 0544 5B050000 		.byte	0x2
+ 741 0548 02       		.byte	0x91
+ 742 0549 91       		.sleb128 -8
+ 743 054a 78       		.uleb128 0x10
+ 744 054b 10       		.ascii	"pPMC\000"
+ 745 054c 70504D43 		.byte	0x1
+ 745      00
+ 746 0551 01       		.byte	0x23
+ 747 0552 23       		.4byte	0x404
+ 748 0553 04040000 		.byte	0x2
+ 749 0557 02       		.byte	0x91
+ 750 0558 91       		.sleb128 -4
+ 751 0559 7C       		.byte	0x0
+ 752 055a 00       		.uleb128 0x3
+ 753 055b 03       		.byte	0x4
+ 754 055c 04       		.byte	0x5
+ 755 055d 05       		.ascii	"int\000"
+ 756 055e 696E7400 		.byte	0x0
+ 757 0562 00       		.section	.debug_abbrev
+ 758              		.uleb128 0x1
+ 759 0000 01       		.uleb128 0x11
+ 760 0001 11       		.byte	0x1
+ 761 0002 01       		.uleb128 0x25
+ 762 0003 25       		.uleb128 0x8
+ 763 0004 08       		.uleb128 0x13
+ 764 0005 13       		.uleb128 0xb
+ 765 0006 0B       		.uleb128 0x3
+ 766 0007 03       		.uleb128 0x8
+ 767 0008 08       		.uleb128 0x1b
+ 768 0009 1B       		.uleb128 0x8
+ 769 000a 08       		.uleb128 0x11
+ 770 000b 11       		.uleb128 0x1
+ 771 000c 01       		.uleb128 0x12
+ 772 000d 12       		.uleb128 0x1
+ 773 000e 01       		.uleb128 0x10
+ 774 000f 10       		.uleb128 0x6
+ 775 0010 06       		.byte	0x0
+ 776 0011 00       		.byte	0x0
+ 777 0012 00       		.uleb128 0x2
+ 778 0013 02       		.uleb128 0x35
+ 779 0014 35       		.byte	0x0
+ 780 0015 00       		.uleb128 0x49
+ 781 0016 49       		.uleb128 0x13
+ 782 0017 13       		.byte	0x0
+ 783 0018 00       		.byte	0x0
+ 784 0019 00       		.uleb128 0x3
+ 785 001a 03       		.uleb128 0x24
+ 786 001b 24       		.byte	0x0
+ 787 001c 00       		.uleb128 0xb
+ 788 001d 0B       		.uleb128 0xb
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 18
+
+
+ 789 001e 0B       		.uleb128 0x3e
+ 790 001f 3E       		.uleb128 0xb
+ 791 0020 0B       		.uleb128 0x3
+ 792 0021 03       		.uleb128 0x8
+ 793 0022 08       		.byte	0x0
+ 794 0023 00       		.byte	0x0
+ 795 0024 00       		.uleb128 0x4
+ 796 0025 04       		.uleb128 0x1
+ 797 0026 01       		.byte	0x1
+ 798 0027 01       		.uleb128 0x49
+ 799 0028 49       		.uleb128 0x13
+ 800 0029 13       		.uleb128 0x1
+ 801 002a 01       		.uleb128 0x13
+ 802 002b 13       		.byte	0x0
+ 803 002c 00       		.byte	0x0
+ 804 002d 00       		.uleb128 0x5
+ 805 002e 05       		.uleb128 0x21
+ 806 002f 21       		.byte	0x0
+ 807 0030 00       		.uleb128 0x49
+ 808 0031 49       		.uleb128 0x13
+ 809 0032 13       		.uleb128 0x2f
+ 810 0033 2F       		.uleb128 0xb
+ 811 0034 0B       		.byte	0x0
+ 812 0035 00       		.byte	0x0
+ 813 0036 00       		.uleb128 0x6
+ 814 0037 06       		.uleb128 0x24
+ 815 0038 24       		.byte	0x0
+ 816 0039 00       		.uleb128 0xb
+ 817 003a 0B       		.uleb128 0xb
+ 818 003b 0B       		.uleb128 0x3e
+ 819 003c 3E       		.uleb128 0xb
+ 820 003d 0B       		.byte	0x0
+ 821 003e 00       		.byte	0x0
+ 822 003f 00       		.uleb128 0x7
+ 823 0040 07       		.uleb128 0x13
+ 824 0041 13       		.byte	0x1
+ 825 0042 01       		.uleb128 0x3
+ 826 0043 03       		.uleb128 0x8
+ 827 0044 08       		.uleb128 0xb
+ 828 0045 0B       		.uleb128 0x5
+ 829 0046 05       		.uleb128 0x3a
+ 830 0047 3A       		.uleb128 0xb
+ 831 0048 0B       		.uleb128 0x3b
+ 832 0049 3B       		.uleb128 0xb
+ 833 004a 0B       		.uleb128 0x1
+ 834 004b 01       		.uleb128 0x13
+ 835 004c 13       		.byte	0x0
+ 836 004d 00       		.byte	0x0
+ 837 004e 00       		.uleb128 0x8
+ 838 004f 08       		.uleb128 0xd
+ 839 0050 0D       		.byte	0x0
+ 840 0051 00       		.uleb128 0x3
+ 841 0052 03       		.uleb128 0x8
+ 842 0053 08       		.uleb128 0x3a
+ 843 0054 3A       		.uleb128 0xb
+ 844 0055 0B       		.uleb128 0x3b
+ 845 0056 3B       		.uleb128 0xb
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 19
+
+
+ 846 0057 0B       		.uleb128 0x49
+ 847 0058 49       		.uleb128 0x13
+ 848 0059 13       		.uleb128 0x38
+ 849 005a 38       		.uleb128 0xa
+ 850 005b 0A       		.byte	0x0
+ 851 005c 00       		.byte	0x0
+ 852 005d 00       		.uleb128 0x9
+ 853 005e 09       		.uleb128 0xd
+ 854 005f 0D       		.byte	0x0
+ 855 0060 00       		.uleb128 0x3
+ 856 0061 03       		.uleb128 0xe
+ 857 0062 0E       		.uleb128 0x3a
+ 858 0063 3A       		.uleb128 0xb
+ 859 0064 0B       		.uleb128 0x3b
+ 860 0065 3B       		.uleb128 0xb
+ 861 0066 0B       		.uleb128 0x49
+ 862 0067 49       		.uleb128 0x13
+ 863 0068 13       		.uleb128 0x38
+ 864 0069 38       		.uleb128 0xa
+ 865 006a 0A       		.byte	0x0
+ 866 006b 00       		.byte	0x0
+ 867 006c 00       		.uleb128 0xa
+ 868 006d 0A       		.uleb128 0x13
+ 869 006e 13       		.byte	0x1
+ 870 006f 01       		.uleb128 0x3
+ 871 0070 03       		.uleb128 0x8
+ 872 0071 08       		.uleb128 0xb
+ 873 0072 0B       		.uleb128 0xb
+ 874 0073 0B       		.uleb128 0x3a
+ 875 0074 3A       		.uleb128 0xb
+ 876 0075 0B       		.uleb128 0x3b
+ 877 0076 3B       		.uleb128 0x5
+ 878 0077 05       		.uleb128 0x1
+ 879 0078 01       		.uleb128 0x13
+ 880 0079 13       		.byte	0x0
+ 881 007a 00       		.byte	0x0
+ 882 007b 00       		.uleb128 0xb
+ 883 007c 0B       		.uleb128 0xd
+ 884 007d 0D       		.byte	0x0
+ 885 007e 00       		.uleb128 0x3
+ 886 007f 03       		.uleb128 0x8
+ 887 0080 08       		.uleb128 0x3a
+ 888 0081 3A       		.uleb128 0xb
+ 889 0082 0B       		.uleb128 0x3b
+ 890 0083 3B       		.uleb128 0x5
+ 891 0084 05       		.uleb128 0x49
+ 892 0085 49       		.uleb128 0x13
+ 893 0086 13       		.uleb128 0x38
+ 894 0087 38       		.uleb128 0xa
+ 895 0088 0A       		.byte	0x0
+ 896 0089 00       		.byte	0x0
+ 897 008a 00       		.uleb128 0xc
+ 898 008b 0C       		.uleb128 0xd
+ 899 008c 0D       		.byte	0x0
+ 900 008d 00       		.uleb128 0x3
+ 901 008e 03       		.uleb128 0xe
+ 902 008f 0E       		.uleb128 0x3a
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 20
+
+
+ 903 0090 3A       		.uleb128 0xb
+ 904 0091 0B       		.uleb128 0x3b
+ 905 0092 3B       		.uleb128 0x5
+ 906 0093 05       		.uleb128 0x49
+ 907 0094 49       		.uleb128 0x13
+ 908 0095 13       		.uleb128 0x38
+ 909 0096 38       		.uleb128 0xa
+ 910 0097 0A       		.byte	0x0
+ 911 0098 00       		.byte	0x0
+ 912 0099 00       		.uleb128 0xd
+ 913 009a 0D       		.uleb128 0x16
+ 914 009b 16       		.byte	0x0
+ 915 009c 00       		.uleb128 0x3
+ 916 009d 03       		.uleb128 0x8
+ 917 009e 08       		.uleb128 0x3a
+ 918 009f 3A       		.uleb128 0xb
+ 919 00a0 0B       		.uleb128 0x3b
+ 920 00a1 3B       		.uleb128 0x5
+ 921 00a2 05       		.uleb128 0x49
+ 922 00a3 49       		.uleb128 0x13
+ 923 00a4 13       		.byte	0x0
+ 924 00a5 00       		.byte	0x0
+ 925 00a6 00       		.uleb128 0xe
+ 926 00a7 0E       		.uleb128 0xf
+ 927 00a8 0F       		.byte	0x0
+ 928 00a9 00       		.uleb128 0xb
+ 929 00aa 0B       		.uleb128 0xb
+ 930 00ab 0B       		.uleb128 0x49
+ 931 00ac 49       		.uleb128 0x13
+ 932 00ad 13       		.byte	0x0
+ 933 00ae 00       		.byte	0x0
+ 934 00af 00       		.uleb128 0xf
+ 935 00b0 0F       		.uleb128 0x2e
+ 936 00b1 2E       		.byte	0x1
+ 937 00b2 01       		.uleb128 0x3f
+ 938 00b3 3F       		.uleb128 0xc
+ 939 00b4 0C       		.uleb128 0x3
+ 940 00b5 03       		.uleb128 0x8
+ 941 00b6 08       		.uleb128 0x3a
+ 942 00b7 3A       		.uleb128 0xb
+ 943 00b8 0B       		.uleb128 0x3b
+ 944 00b9 3B       		.uleb128 0xb
+ 945 00ba 0B       		.uleb128 0x27
+ 946 00bb 27       		.uleb128 0xc
+ 947 00bc 0C       		.uleb128 0x11
+ 948 00bd 11       		.uleb128 0x1
+ 949 00be 01       		.uleb128 0x12
+ 950 00bf 12       		.uleb128 0x1
+ 951 00c0 01       		.uleb128 0x40
+ 952 00c1 40       		.uleb128 0x6
+ 953 00c2 06       		.uleb128 0x1
+ 954 00c3 01       		.uleb128 0x13
+ 955 00c4 13       		.byte	0x0
+ 956 00c5 00       		.byte	0x0
+ 957 00c6 00       		.uleb128 0x10
+ 958 00c7 10       		.uleb128 0x34
+ 959 00c8 34       		.byte	0x0
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 21
+
+
+ 960 00c9 00       		.uleb128 0x3
+ 961 00ca 03       		.uleb128 0x8
+ 962 00cb 08       		.uleb128 0x3a
+ 963 00cc 3A       		.uleb128 0xb
+ 964 00cd 0B       		.uleb128 0x3b
+ 965 00ce 3B       		.uleb128 0xb
+ 966 00cf 0B       		.uleb128 0x49
+ 967 00d0 49       		.uleb128 0x13
+ 968 00d1 13       		.uleb128 0x2
+ 969 00d2 02       		.uleb128 0xa
+ 970 00d3 0A       		.byte	0x0
+ 971 00d4 00       		.byte	0x0
+ 972 00d5 00       		.byte	0x0
+ 973 00d6 00       		.section	.debug_pubnames,"",%progbits
+ 974              		.4byte	0x25
+ 975 0000 25000000 		.2byte	0x2
+ 976 0004 0200     		.4byte	.Ldebug_info0
+ 977 0006 00000000 		.4byte	0x563
+ 978 000a 63050000 		.4byte	0x517
+ 979 000e 17050000 		.ascii	"AT91F_LowLevelInit\000"
+ 980 0012 41543931 		.4byte	0x0
+ 980      465F4C6F 
+ 980      774C6576 
+ 980      656C496E 
+ 980      697400
+ 981 0025 00000000 		.section	.debug_aranges,"",%progbits
+ 982              		.4byte	0x1c
+ 983 0000 1C000000 		.2byte	0x2
+ 984 0004 0200     		.4byte	.Ldebug_info0
+ 985 0006 00000000 		.byte	0x4
+ 986 000a 04       		.byte	0x0
+ 987 000b 00       		.2byte	0x0
+ 988 000c 0000     		.2byte	0x0
+ 989 000e 0000     		.4byte	.Ltext0
+ 990 0010 00000000 		.4byte	.Letext0-.Ltext0
+ 991 0014 58010000 		.4byte	0x0
+ 992 0018 00000000 		.4byte	0x0
+ 993 001c 00000000 		.section	.debug_str,"",%progbits
+ 994              	.LASF0:
+ 995              		.ascii	"Reserved0\000"
+ 996 0000 52657365 	.LASF1:
+ 996      72766564 
+ 996      3000
+ 997              		.ascii	"Reserved1\000"
+ 998 000a 52657365 		.ident	"GCC: (GNU) 4.2.1"
+ 998      72766564 
+ 998      3100
+ 999              	...
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s 			page 22
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 Cstartup_SAM7.c
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s:34     .text:00000000 AT91F_LowLevelInit
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s:42     .text:00000000 $a
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cc1hRnMa.s:155    .text:0000014c $d
+
+UNDEFINED SYMBOLS
+AT91F_Default_FIQ_handler
+AT91F_Default_IRQ_handler
+AT91F_Spurious_handler

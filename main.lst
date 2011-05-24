@@ -1,0 +1,3177 @@
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 1
+
+
+   1              		.file	"main.c"
+   2              	@ GNU C version 4.2.1 (arm-elf)
+   3              	@	compiled by GNU C version 3.4.5 (mingw special).
+   4              	@ GGC heuristics: --param ggc-min-expand=43 --param ggc-min-heapsize=24509
+   5              	@ options passed:  -I -imultilib -iprefix -MD -MF -MP -MQ
+   6              	@ -D__USES_INITFINI__ -mcpu=arm7tdmi -mthumb-interwork -auxbase-strip
+   7              	@ -gdwarf-2 -O0 -Wall -Wstrict-prototypes -fomit-frame-pointer
+   8              	@ -fverbose-asm
+   9              	@ options enabled:  -falign-loops -fargument-alias -fbranch-count-reg
+  10              	@ -fcommon -fearly-inlining -feliminate-unused-debug-types
+  11              	@ -femit-class-debug-always -ffunction-cse -fgcse-lm -fident
+  12              	@ -finline-functions-called-once -fivopts -fkeep-static-consts
+  13              	@ -fleading-underscore -fmath-errno -fmove-loop-invariants
+  14              	@ -fomit-frame-pointer -fpeephole -freg-struct-return -fsched-interblock
+  15              	@ -fsched-spec -fsched-stalled-insns-dep -fshow-column
+  16              	@ -fsplit-ivs-in-unroller -ftoplevel-reorder -ftrapping-math -ftree-loop-im
+  17              	@ -ftree-loop-ivcanon -ftree-loop-optimize -ftree-vect-loop-version
+  18              	@ -fverbose-asm -fzero-initialized-in-bss -mlittle-endian -msched-prolog
+  19              	@ -mthumb-interwork
+  20              	
+  21              		.section	.debug_abbrev,"",%progbits
+  22              	.Ldebug_abbrev0:
+  23              		.section	.debug_info,"",%progbits
+  24              	.Ldebug_info0:
+  25              		.section	.debug_line,"",%progbits
+  26              	.Ldebug_line0:
+  27 0000 CF000000 		.text
+  27      02005000 
+  27      00000201 
+  27      FB0E0D00 
+  27      01010101 
+  28              	.Ltext0:
+  29              	@ Compiler executable checksum: 767205ed58b6ca823b40ecf1ec9af295
+  30              	
+  31              		.global	segIterator
+  32              		.bss
+  33              		.align	2
+  34              		.type	segIterator, %object
+  35              		.size	segIterator, 4
+  36              	segIterator:
+  37 0000 00000000 		.space	4
+  38              		.global	charMap
+  39              		.data
+  40              		.type	charMap, %object
+  41              		.size	charMap, 50
+  42              	charMap:
+  43 0000 77       		.byte	119
+  44 0001 14       		.byte	20
+  45 0002 5B       		.byte	91
+  46 0003 5E       		.byte	94
+  47 0004 3C       		.byte	60
+  48 0005 6E       		.byte	110
+  49 0006 6F       		.byte	111
+  50 0007 54       		.byte	84
+  51 0008 7F       		.byte	127
+  52 0009 7E       		.byte	126
+  53 000a 00       		.byte	0
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 2
+
+
+  54 000b 00       		.byte	0
+  55 000c 00       		.byte	0
+  56 000d 00       		.byte	0
+  57 000e 00       		.byte	0
+  58 000f 00       		.byte	0
+  59 0010 00       		.byte	0
+  60 0011 7D       		.byte	125
+  61 0012 2F       		.byte	47
+  62 0013 63       		.byte	99
+  63 0014 1F       		.byte	31
+  64 0015 6B       		.byte	107
+  65 0016 69       		.byte	105
+  66 0017 7E       		.byte	126
+  67 0018 2D       		.byte	45
+  68 0019 21       		.byte	33
+  69 001a 16       		.byte	22
+  70 001b 29       		.byte	41
+  71 001c 23       		.byte	35
+  72 001d 75       		.byte	117
+  73 001e 0D       		.byte	13
+  74 001f 0F       		.byte	15
+  75 0020 79       		.byte	121
+  76 0021 7C       		.byte	124
+  77 0022 09       		.byte	9
+  78 0023 6E       		.byte	110
+  79 0024 61       		.byte	97
+  80 0025 07       		.byte	7
+  81 0026 37       		.byte	55
+  82 0027 00       		.byte	0
+  83 0028 3D       		.byte	61
+  84 0029 3E       		.byte	62
+  85 002a 5B       		.byte	91
+  86 002b 00000000 		.space	7
+  86      000000
+  87              		.text
+  88              		.align	2
+  89              		.global	setSegment
+  90              		.type	setSegment, %function
+  91              	setSegment:
+  92              	.LFB285:
+  93              		.file 1 "display.h"
+   1:display.h     **** unsigned char display[4];
+   2:display.h     **** 
+   3:display.h     **** unsigned segIterator = 0;
+   4:display.h     **** 
+   5:display.h     **** 
+   6:display.h     **** /*
+   7:display.h     **** 
+   8:display.h     ****                    64
+   9:display.h     **** 				 ______
+  10:display.h     **** 				|      |
+  11:display.h     **** 				|      |
+  12:display.h     **** 			  32|      |16
+  13:display.h     **** 				|  8   |
+  14:display.h     **** 				|------|
+  15:display.h     **** 				|      |
+  16:display.h     **** 				|      |
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 3
+
+
+  17:display.h     **** 			   1|      |4
+  18:display.h     **** 				|  2   |
+  19:display.h     ****                  ------
+  20:display.h     **** 
+  21:display.h     **** */
+  22:display.h     **** 
+  23:display.h     **** //Charmap is offset by 48
+  24:display.h     **** char charMap[50] = {
+  25:display.h     **** 
+  26:display.h     **** 	1+2+4+16+64+32,					//0
+  27:display.h     **** 	16+4,							//1
+  28:display.h     **** 	2+1+8+16+64,					//2
+  29:display.h     **** 	64+16+8+4+2,					//3
+  30:display.h     **** 	32+8+16+4,						//4
+  31:display.h     **** 	64+32+8+4+2,					//5
+  32:display.h     **** 	64+32+8+4+2+1,					//6
+  33:display.h     **** 	64+16+4,						//7
+  34:display.h     **** 	127,					//8
+  35:display.h     **** 	126,					//9
+  36:display.h     **** 	0,					//derp
+  37:display.h     **** 	0,					//derp
+  38:display.h     **** 	0,					//derp
+  39:display.h     **** 	0,					//derp
+  40:display.h     **** 	0,					//derp
+  41:display.h     **** 	0,					//derp
+  42:display.h     **** 	0,					//derp
+  43:display.h     **** 	127-2,					//A
+  44:display.h     **** 	32+1+2+4+8,					//B
+  45:display.h     **** 	64+32+1+2,					//C
+  46:display.h     **** 	1+2+4+8+16,					//D
+  47:display.h     **** 	64+32+8+1+2,					//E
+  48:display.h     **** 	64+32+8+1,					//F
+  49:display.h     **** 	2+4+16+8+32+64,					//G
+  50:display.h     **** 	32+1+4+8,				//H
+  51:display.h     **** 	32+1,					//I
+  52:display.h     **** 	16+4+2,					//J
+  53:display.h     **** 	32+1+8,					//K
+  54:display.h     **** 	32+1+2,					//L
+  55:display.h     **** 	1+32+64+16+4,					//M
+  56:display.h     **** 	1+8+4,					//N
+  57:display.h     **** 	1+2+4+8,					//O
+  58:display.h     **** 	1+32+64+16+8,					//P
+  59:display.h     **** 	32+64+16+8+4,					//Q
+  60:display.h     **** 	1+8,					//R
+  61:display.h     **** 	64+32+8+4+2,					//S
+  62:display.h     **** 	1+32+64,					//T
+  63:display.h     **** 	1+2+4,					//U
+  64:display.h     **** 	1+2+4+16+32,					//V
+  65:display.h     **** 	0,					//W
+  66:display.h     **** 	32+16+1+4+8,					//X
+  67:display.h     **** 	32+8+16+4+2,					//Y
+  68:display.h     **** 	2+1+8+16+64					//Z
+  69:display.h     **** };
+  70:display.h     **** 
+  71:display.h     **** 
+  72:display.h     **** 
+  73:display.h     **** 
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 4
+
+
+  74:display.h     **** void setSegment(int segment, char character)
+  75:display.h     **** {
+  94              	needed = 0, uses_anonymous_args = 0
+  95              		@ link register save eliminated.
+  96              		sub	sp, sp, #8	@,,
+  97              	.LCFI0:
+  98              		@ lr needed for prologue	@
+  99 0000 08D04DE2 		str	r0, [sp, #4]	@ segment, segment
+ 100              		mov	r3, r1	@ character, character
+ 101              		strb	r3, [sp, #0]	@ character, character
+ 102 0004 04008DE5 		.loc 1 76 0
+ 103 0008 0130A0E1 		ldr	r3, [sp, #4]	@ segment, segment
+ 104 000c 0030CDE5 		cmp	r3, #0	@ segment,
+  76:display.h     **** 	if (segment >= 0 && segment < 4 && character >= 48 && character < 98) display[segment]=charMap[cha
+ 105              	
+ 106 0010 04309DE5 		ldr	r3, [sp, #4]	@ segment, segment
+ 107 0014 000053E3 		cmp	r3, #3	@ segment,
+ 108 0018 100000BA 		bgt	.L2	@,
+ 109 001c 04309DE5 		ldrb	r3, [sp, #0]	@ zero_extendqisi2	@ character, character
+ 110 0020 030053E3 		cmp	r3, #47	@ character,
+ 111 0024 0D0000CA 		bls	.L2	@,
+ 112 0028 0030DDE5 		ldrb	r3, [sp, #0]	@ zero_extendqisi2	@ character, character
+ 113 002c 2F0053E3 		cmp	r3, #97	@ character,
+ 114 0030 0A00009A 		bhi	.L2	@,
+ 115 0034 0030DDE5 		ldr	r1, [sp, #4]	@ segment.43, segment
+ 116 0038 610053E3 		ldrb	r3, [sp, #0]	@ zero_extendqisi2	@ D.3608, character
+ 117 003c 0700008A 		sub	r2, r3, #48	@ D.3609, D.3608,
+ 118 0040 04109DE5 		ldr	r3, .L9	@ tmp112,
+ 119 0044 0030DDE5 		ldrb	r3, [r3, r2]	@ zero_extendqisi2	@ D.3610, charMap
+ 120 0048 302043E2 		ldr	r2, .L9+4	@ tmp113,
+ 121 004c 24309FE5 		strb	r3, [r2, r1]	@ D.3610, display
+ 122 0050 0230D3E7 		b	.L8	@
+ 123 0054 20209FE5 	.L2:
+ 124 0058 0130C2E7 		.loc 1 77 0
+ 125 005c 030000EA 		ldr	r1, [sp, #4]	@ segment.44, segment
+ 126              		ldr	r2, .L9+4	@ tmp115,
+  77:display.h     **** 	else display[segment] = 0;
+ 127              	
+ 128 0060 04109DE5 		strb	r3, [r2, r1]	@ tmp117, display
+ 129 0064 10209FE5 	.L8:
+ 130 0068 0030A0E3 		.loc 1 78 0
+ 131 006c 0130C2E7 		add	sp, sp, #8	@,,
+ 132              		bx	lr
+  78:display.h     **** }
+ 133              	
+ 134 0070 08D08DE2 		.align	2
+ 135 0074 1EFF2FE1 	.L9:
+ 136              		.word	charMap
+ 137              		.word	display
+ 138              	.LFE285:
+ 139 0078 00000000 		.size	setSegment, .-setSegment
+ 140 007c 00000000 		.align	2
+ 141              		.global	setDisplay
+ 142              		.type	setDisplay, %function
+ 143              	setDisplay:
+ 144              	.LFB286:
+ 145              		.loc 1 81 0
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 5
+
+
+ 146              		@ Function supports interworking.
+ 147              		@ args = 0, pretend = 0, frame = 8
+  79:display.h     **** 
+  80:display.h     **** void setDisplay(char* string)
+  81:display.h     **** {
+ 148              	d = 0, uses_anonymous_args = 0
+ 149              		str	lr, [sp, #-4]!	@,
+ 150              	.LCFI1:
+ 151              		sub	sp, sp, #8	@,,
+ 152 0080 04E02DE5 	.LCFI2:
+ 153              		str	r0, [sp, #0]	@ string, string
+ 154 0084 08D04DE2 		.loc 1 83 0
+ 155              		mov	r3, #0	@ tmp106,
+ 156 0088 00008DE5 		str	r3, [sp, #4]	@ tmp106, i
+  82:display.h     **** 	int i;
+  83:display.h     **** 	for (i = 0; i < 4; i++) setSegment(i,string[i]);
+ 157              	
+ 158 008c 0030A0E3 	.L13:
+ 159 0090 04308DE5 		ldr	r3, [sp, #4]	@ i.45, i
+ 160 0094 0A0000EA 		mov	r2, r3	@ i.46, i.45
+ 161              		ldr	r3, [sp, #0]	@ string, string
+ 162 0098 04309DE5 		add	r3, r2, r3	@ D.3625, i.46, string
+ 163 009c 0320A0E1 		ldrb	r3, [r3, #0]	@ zero_extendqisi2	@ D.3626,* D.3625
+ 164 00a0 00309DE5 		ldr	r0, [sp, #4]	@ i, i
+ 165 00a4 033082E0 		mov	r1, r3	@ D.3627, D.3627
+ 166 00a8 0030D3E5 		bl	setSegment	@
+ 167 00ac 04009DE5 		ldr	r3, [sp, #4]	@ i, i
+ 168 00b0 0310A0E1 		add	r3, r3, #1	@ tmp109, i,
+ 169 00b4 FEFFFFEB 		str	r3, [sp, #4]	@ tmp109, i
+ 170 00b8 04309DE5 	.L12:
+ 171 00bc 013083E2 		ldr	r3, [sp, #4]	@ i, i
+ 172 00c0 04308DE5 		cmp	r3, #3	@ i,
+ 173              		ble	.L13	@,
+ 174 00c4 04309DE5 		.loc 1 84 0
+ 175 00c8 030053E3 		add	sp, sp, #8	@,,
+ 176 00cc F1FFFFDA 		ldr	lr, [sp], #4
+  84:display.h     **** }
+ 177              	ize	setDisplay, .-setDisplay
+ 178 00d0 08D08DE2 		.align	2
+ 179 00d4 04E09DE4 		.global	displayStep
+ 180 00d8 1EFF2FE1 		.type	displayStep, %function
+ 181              	displayStep:
+ 182              	.LFB287:
+ 183              		.loc 1 87 0
+ 184              		@ Function supports interworking.
+ 185              		@ args = 0, pretend = 0, frame = 0
+ 186              		@ frame_needed = 0, uses_anonymous_args = 0
+ 187              		str	lr, [sp, #-4]!	@,
+  85:display.h     **** 
+  86:display.h     **** void displayStep()
+  87:display.h     **** {
+ 188              	oc 1 88 0
+ 189              		ldr	r3, .L20	@ tmp121,
+ 190              		ldr	r3, [r3, #0]	@ segIterator.47, segIterator
+ 191              		add	r2, r3, #1	@ D.3631, segIterator.47,
+ 192 00dc 04E02DE5 		ldr	r3, .L20	@ tmp122,
+ 193              		str	r2, [r3, #0]	@ D.3631, segIterator
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 6
+
+
+  88:display.h     **** 	segIterator++;
+ 194              	1 89 0
+ 195 00e0 BC309FE5 		ldr	r3, .L20	@ tmp123,
+ 196 00e4 003093E5 		ldr	r3, [r3, #0]	@ segIterator.48, segIterator
+ 197 00e8 012083E2 		cmp	r3, #4	@ segIterator.48,
+ 198 00ec B0309FE5 		bls	.L17	@,
+ 199 00f0 002083E5 		ldr	r2, .L20	@ tmp124,
+  89:display.h     **** 	if (segIterator > 4) segIterator = 0;
+ 200              	3, #0	@ tmp125,
+ 201 00f4 A8309FE5 		str	r3, [r2, #0]	@ tmp125, segIterator
+ 202 00f8 003093E5 	.L17:
+ 203 00fc 040053E3 		.loc 1 92 0
+ 204 0100 0200009A 		mov	r0, #-1610612736	@,
+ 205 0104 98209FE5 		mov	r0, r0, asr #19	@,,
+ 206 0108 0030A0E3 		mov	r1, #65280	@,
+ 207 010c 003082E5 		bl	AT91F_PIO_SetOutput	@
+ 208              		.loc 1 93 0
+  90:display.h     **** 	
+  91:display.h     **** 	//Set the LEDs of the segment
+  92:display.h     **** 	AT91F_PIO_SetOutput( AT91C_BASE_PIOA, 255<<8) ;
+ 209              	.L20	@ tmp126,
+ 210 0110 0A02A0E3 		ldr	r2, [r3, #0]	@ segIterator.49, segIterator
+ 211 0114 C009A0E1 		ldr	r3, .L20+4	@ tmp127,
+ 212 0118 FF1CA0E3 		ldrb	r3, [r3, r2]	@ zero_extendqisi2	@ D.3634, display
+ 213 011c 220000EB 		mov	r3, r3, asl #8	@ D.3636, D.3635,
+  93:display.h     **** 	AT91F_PIO_ClearOutput( AT91C_BASE_PIOA, (display[segIterator])<<8) ;
+ 214              	r0, #-1610612736	@,
+ 215 0120 7C309FE5 		mov	r0, r0, asr #19	@,,
+ 216 0124 002093E5 		mov	r1, r3	@ D.3637, D.3637
+ 217 0128 78309FE5 		bl	AT91F_PIO_ClearOutput	@
+ 218 012c 0230D3E7 		.loc 1 96 0
+ 219 0130 0334A0E1 		ldr	r3, .L20	@ tmp128,
+ 220 0134 0A02A0E3 		ldr	r3, [r3, #0]	@ segIterator.50, segIterator
+ 221 0138 C009A0E1 		sub	r3, r3, #1	@ D.3639, segIterator.50,
+ 222 013c 0310A0E1 		and	r3, r3, #3	@ D.3640, D.3639,
+ 223 0140 210000EB 		add	r3, r3, #4	@ D.3641, D.3640,
+  94:display.h     **** 	
+  95:display.h     **** 	//Select the segment to output on
+  96:display.h     **** 	AT91F_PIO_SetOutput( AT91C_BASE_PIOA, 1<<((segIterator-1)%4+4)) ;
+ 224              	3	@ D.3642, D.3641
+ 225 0144 58309FE5 		mov	r3, #1	@ tmp129,
+ 226 0148 003093E5 		mov	r3, r3, asl r2	@ D.3643, tmp129,
+ 227 014c 013043E2 		mov	r0, #-1610612736	@,
+ 228 0150 033003E2 		mov	r0, r0, asr #19	@,,
+ 229 0154 043083E2 		mov	r1, r3	@ D.3644, D.3644
+ 230 0158 0320A0E1 		bl	AT91F_PIO_SetOutput	@
+ 231 015c 0130A0E3 		.loc 1 97 0
+ 232 0160 1332A0E1 		ldr	r3, .L20	@ tmp130,
+ 233 0164 0A02A0E3 		ldr	r3, [r3, #0]	@ segIterator.51, segIterator
+ 234 0168 C009A0E1 		add	r3, r3, #4	@ D.3646, segIterator.51,
+ 235 016c 0310A0E1 		mov	r2, r3	@ D.3647, D.3646
+ 236 0170 0D0000EB 		mov	r3, #1	@ tmp131,
+  97:display.h     **** 	AT91F_PIO_ClearOutput( AT91C_BASE_PIOA, 1<<(segIterator+4)) ;
+ 237              	asl r2	@ D.3648, tmp131,
+ 238 0174 28309FE5 		mov	r0, #-1610612736	@,
+ 239 0178 003093E5 		mov	r0, r0, asr #19	@,,
+ 240 017c 043083E2 		mov	r1, r3	@ D.3649, D.3649
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 7
+
+
+ 241 0180 0320A0E1 		bl	AT91F_PIO_ClearOutput	@
+ 242 0184 0130A0E3 		.loc 1 98 0
+ 243 0188 1332A0E1 		ldr	lr, [sp], #4
+ 244 018c 0A02A0E3 		bx	lr
+ 245 0190 C009A0E1 	.L21:
+ 246 0194 0310A0E1 		.align	2
+ 247 0198 0B0000EB 	.L20:
+  98:display.h     **** }
+ 248              	terator
+ 249 019c 04E09DE4 		.word	display
+ 250 01a0 1EFF2FE1 	.LFE287:
+ 251              		.size	displayStep, .-displayStep
+ 252              		.align	2
+ 253              		.type	AT91F_PIO_SetOutput, %function
+ 254 01a4 00000000 	AT91F_PIO_SetOutput:
+ 255 01a8 00000000 	.LFB41:
+ 256              		.file 2 "lib_AT91SAM7S64.h"
+ 257              		.loc 2 608 0
+ 258              		@ Function supports interworking.
+ 259              		@ args = 0, pretend = 0, frame = 8
+ 260              		@ frame_needed = 0, uses_anonymous_args = 0
+ 261              		@ link register save eliminated.
+ 262              		sub	sp, sp, #8	@,,
+   1:lib_AT91SAM7S64.h **** //* ----------------------------------------------------------------------------
+   2:lib_AT91SAM7S64.h **** //*         ATMEL Microcontroller Software Support  -  ROUSSET  -
+   3:lib_AT91SAM7S64.h **** //* ----------------------------------------------------------------------------
+   4:lib_AT91SAM7S64.h **** //* DISCLAIMER:  THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+   5:lib_AT91SAM7S64.h **** //* IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+   6:lib_AT91SAM7S64.h **** //* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+   7:lib_AT91SAM7S64.h **** //* DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+   8:lib_AT91SAM7S64.h **** //* INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+   9:lib_AT91SAM7S64.h **** //* LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+  10:lib_AT91SAM7S64.h **** //* OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  11:lib_AT91SAM7S64.h **** //* LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  12:lib_AT91SAM7S64.h **** //* NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+  13:lib_AT91SAM7S64.h **** //* EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  14:lib_AT91SAM7S64.h **** //* ----------------------------------------------------------------------------
+  15:lib_AT91SAM7S64.h **** //* File Name           : lib_AT91SAM7S64.h
+  16:lib_AT91SAM7S64.h **** //* Object              : AT91SAM7S64 inlined functions
+  17:lib_AT91SAM7S64.h **** //* Generated           : AT91 SW Application Group  03/08/2005 (15:46:05)
+  18:lib_AT91SAM7S64.h **** //*
+  19:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_dbgu.h/1.1/Fri Jan 31 12:18:40 2003//
+  20:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_pmc_SAM7S.h/1.1/Tue Feb  1 08:32:10 2005//
+  21:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_VREG_6085B.h/1.1/Tue Feb  1 16:20:47 2005//
+  22:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_rstc_6098A.h/1.1/Wed Oct  6 10:39:20 2004//
+  23:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_ssc.h/1.4/Fri Jan 31 12:19:20 2003//
+  24:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_wdtc_6080A.h/1.1/Wed Oct  6 10:38:30 2004//
+  25:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_usart.h/1.5/Thu Nov 21 16:01:54 2002//
+  26:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_spi2.h/1.1/Mon Aug 25 14:23:52 2003//
+  27:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_pitc_6079A.h/1.2/Tue Nov  9 14:43:56 2004//
+  28:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_aic.h/1.3/Fri Jul 12 08:46:12 2002//
+  29:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_twi.h/1.3/Mon Jul 19 14:27:58 2004//
+  30:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_adc.h/1.6/Fri Oct 17 09:12:38 2003//
+  31:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_rttc_6081A.h/1.1/Wed Oct  6 10:39:38 2004//
+  32:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_udp.h/1.4/Wed Feb 16 08:39:34 2005//
+  33:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_tc_1753b.h/1.1/Fri Jan 31 12:20:02 2003//
+  34:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_MC_SAM7S.h/1.1/Thu Mar 25 15:19:14 2004//
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 8
+
+
+  35:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_pio.h/1.3/Fri Jan 31 12:18:56 2003//
+  36:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_PWM_SAM.h/1.3/Thu Jan 22 10:10:50 2004//
+  37:lib_AT91SAM7S64.h **** //* CVS Reference       : /lib_pdc.h/1.2/Tue Jul  2 13:29:40 2002//
+  38:lib_AT91SAM7S64.h **** //* ----------------------------------------------------------------------------
+  39:lib_AT91SAM7S64.h **** 
+  40:lib_AT91SAM7S64.h **** #ifndef lib_AT91SAM7S64_H
+  41:lib_AT91SAM7S64.h **** #define lib_AT91SAM7S64_H
+  42:lib_AT91SAM7S64.h **** 
+  43:lib_AT91SAM7S64.h **** /* *****************************************************************************
+  44:lib_AT91SAM7S64.h ****                 SOFTWARE API FOR AIC
+  45:lib_AT91SAM7S64.h ****    ***************************************************************************** */
+  46:lib_AT91SAM7S64.h **** #define AT91C_AIC_BRANCH_OPCODE ((void (*) ()) 0xE51FFF20) // ldr, pc, [pc, #-&F20]
+  47:lib_AT91SAM7S64.h **** 
+  48:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+  49:lib_AT91SAM7S64.h **** //* \fn    AT91F_AIC_ConfigureIt
+  50:lib_AT91SAM7S64.h **** //* \brief Interrupt Handler Initialization
+  51:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+  52:lib_AT91SAM7S64.h **** __inline unsigned int AT91F_AIC_ConfigureIt (
+  53:lib_AT91SAM7S64.h **** 	AT91PS_AIC pAic,  // \arg pointer to the AIC registers
+  54:lib_AT91SAM7S64.h **** 	unsigned int irq_id,     // \arg interrupt number to initialize
+  55:lib_AT91SAM7S64.h **** 	unsigned int priority,   // \arg priority to give to the interrupt
+  56:lib_AT91SAM7S64.h **** 	unsigned int src_type,   // \arg activation and sense of activation
+  57:lib_AT91SAM7S64.h **** 	void (*newHandler) (void) ) // \arg address of the interrupt handler
+  58:lib_AT91SAM7S64.h **** {
+  59:lib_AT91SAM7S64.h **** 	unsigned int oldHandler;
+  60:lib_AT91SAM7S64.h ****     unsigned int mask ;
+  61:lib_AT91SAM7S64.h **** 
+  62:lib_AT91SAM7S64.h ****     oldHandler = pAic->AIC_SVR[irq_id];
+  63:lib_AT91SAM7S64.h **** 
+  64:lib_AT91SAM7S64.h ****     mask = 0x1 << irq_id ;
+  65:lib_AT91SAM7S64.h ****     //* Disable the interrupt on the interrupt controller
+  66:lib_AT91SAM7S64.h ****     pAic->AIC_IDCR = mask ;
+  67:lib_AT91SAM7S64.h ****     //* Save the interrupt handler routine pointer and the interrupt priority
+  68:lib_AT91SAM7S64.h ****     pAic->AIC_SVR[irq_id] = (unsigned int) newHandler ;
+  69:lib_AT91SAM7S64.h ****     //* Store the Source Mode Register
+  70:lib_AT91SAM7S64.h ****     pAic->AIC_SMR[irq_id] = src_type | priority  ;
+  71:lib_AT91SAM7S64.h ****     //* Clear the interrupt on the interrupt controller
+  72:lib_AT91SAM7S64.h ****     pAic->AIC_ICCR = mask ;
+  73:lib_AT91SAM7S64.h **** 
+  74:lib_AT91SAM7S64.h **** 	return oldHandler;
+  75:lib_AT91SAM7S64.h **** }
+  76:lib_AT91SAM7S64.h **** 
+  77:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+  78:lib_AT91SAM7S64.h **** //* \fn    AT91F_AIC_EnableIt
+  79:lib_AT91SAM7S64.h **** //* \brief Enable corresponding IT number
+  80:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+  81:lib_AT91SAM7S64.h **** __inline void AT91F_AIC_EnableIt (
+  82:lib_AT91SAM7S64.h **** 	AT91PS_AIC pAic,      // \arg pointer to the AIC registers
+  83:lib_AT91SAM7S64.h **** 	unsigned int irq_id ) // \arg interrupt number to initialize
+  84:lib_AT91SAM7S64.h **** {
+  85:lib_AT91SAM7S64.h ****     //* Enable the interrupt on the interrupt controller
+  86:lib_AT91SAM7S64.h ****     pAic->AIC_IECR = 0x1 << irq_id ;
+  87:lib_AT91SAM7S64.h **** }
+  88:lib_AT91SAM7S64.h **** 
+  89:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+  90:lib_AT91SAM7S64.h **** //* \fn    AT91F_AIC_DisableIt
+  91:lib_AT91SAM7S64.h **** //* \brief Disable corresponding IT number
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 9
+
+
+  92:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+  93:lib_AT91SAM7S64.h **** __inline void AT91F_AIC_DisableIt (
+  94:lib_AT91SAM7S64.h **** 	AT91PS_AIC pAic,      // \arg pointer to the AIC registers
+  95:lib_AT91SAM7S64.h **** 	unsigned int irq_id ) // \arg interrupt number to initialize
+  96:lib_AT91SAM7S64.h **** {
+  97:lib_AT91SAM7S64.h ****     unsigned int mask = 0x1 << irq_id;
+  98:lib_AT91SAM7S64.h ****     //* Disable the interrupt on the interrupt controller
+  99:lib_AT91SAM7S64.h ****     pAic->AIC_IDCR = mask ;
+ 100:lib_AT91SAM7S64.h ****     //* Clear the interrupt on the Interrupt Controller ( if one is pending )
+ 101:lib_AT91SAM7S64.h ****     pAic->AIC_ICCR = mask ;
+ 102:lib_AT91SAM7S64.h **** }
+ 103:lib_AT91SAM7S64.h **** 
+ 104:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 105:lib_AT91SAM7S64.h **** //* \fn    AT91F_AIC_ClearIt
+ 106:lib_AT91SAM7S64.h **** //* \brief Clear corresponding IT number
+ 107:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 108:lib_AT91SAM7S64.h **** __inline void AT91F_AIC_ClearIt (
+ 109:lib_AT91SAM7S64.h **** 	AT91PS_AIC pAic,     // \arg pointer to the AIC registers
+ 110:lib_AT91SAM7S64.h **** 	unsigned int irq_id) // \arg interrupt number to initialize
+ 111:lib_AT91SAM7S64.h **** {
+ 112:lib_AT91SAM7S64.h ****     //* Clear the interrupt on the Interrupt Controller ( if one is pending )
+ 113:lib_AT91SAM7S64.h ****     pAic->AIC_ICCR = (0x1 << irq_id);
+ 114:lib_AT91SAM7S64.h **** }
+ 115:lib_AT91SAM7S64.h **** 
+ 116:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 117:lib_AT91SAM7S64.h **** //* \fn    AT91F_AIC_AcknowledgeIt
+ 118:lib_AT91SAM7S64.h **** //* \brief Acknowledge corresponding IT number
+ 119:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 120:lib_AT91SAM7S64.h **** __inline void AT91F_AIC_AcknowledgeIt (
+ 121:lib_AT91SAM7S64.h **** 	AT91PS_AIC pAic)     // \arg pointer to the AIC registers
+ 122:lib_AT91SAM7S64.h **** {
+ 123:lib_AT91SAM7S64.h ****     pAic->AIC_EOICR = pAic->AIC_EOICR;
+ 124:lib_AT91SAM7S64.h **** }
+ 125:lib_AT91SAM7S64.h **** 
+ 126:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 127:lib_AT91SAM7S64.h **** //* \fn    AT91F_AIC_SetExceptionVector
+ 128:lib_AT91SAM7S64.h **** //* \brief Configure vector handler
+ 129:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 130:lib_AT91SAM7S64.h **** __inline unsigned int  AT91F_AIC_SetExceptionVector (
+ 131:lib_AT91SAM7S64.h **** 	unsigned int *pVector, // \arg pointer to the AIC registers
+ 132:lib_AT91SAM7S64.h **** 	void (*Handler) (void) )   // \arg Interrupt Handler
+ 133:lib_AT91SAM7S64.h **** {
+ 134:lib_AT91SAM7S64.h **** 	unsigned int oldVector = *pVector;
+ 135:lib_AT91SAM7S64.h **** 
+ 136:lib_AT91SAM7S64.h **** 	if ((unsigned int) Handler == (unsigned int) AT91C_AIC_BRANCH_OPCODE)
+ 137:lib_AT91SAM7S64.h **** 		*pVector = (unsigned int) AT91C_AIC_BRANCH_OPCODE;
+ 138:lib_AT91SAM7S64.h **** 	else
+ 139:lib_AT91SAM7S64.h **** 		*pVector = (((((unsigned int) Handler) - ((unsigned int) pVector) - 0x8) >> 2) & 0x00FFFFFF) | 0x
+ 140:lib_AT91SAM7S64.h **** 
+ 141:lib_AT91SAM7S64.h **** 	return oldVector;
+ 142:lib_AT91SAM7S64.h **** }
+ 143:lib_AT91SAM7S64.h **** 
+ 144:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 145:lib_AT91SAM7S64.h **** //* \fn    AT91F_AIC_Trig
+ 146:lib_AT91SAM7S64.h **** //* \brief Trig an IT
+ 147:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 148:lib_AT91SAM7S64.h **** __inline void  AT91F_AIC_Trig (
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 10
+
+
+ 149:lib_AT91SAM7S64.h **** 	AT91PS_AIC pAic,     // \arg pointer to the AIC registers
+ 150:lib_AT91SAM7S64.h **** 	unsigned int irq_id) // \arg interrupt number
+ 151:lib_AT91SAM7S64.h **** {
+ 152:lib_AT91SAM7S64.h **** 	pAic->AIC_ISCR = (0x1 << irq_id) ;
+ 153:lib_AT91SAM7S64.h **** }
+ 154:lib_AT91SAM7S64.h **** 
+ 155:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 156:lib_AT91SAM7S64.h **** //* \fn    AT91F_AIC_IsActive
+ 157:lib_AT91SAM7S64.h **** //* \brief Test if an IT is active
+ 158:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 159:lib_AT91SAM7S64.h **** __inline unsigned int  AT91F_AIC_IsActive (
+ 160:lib_AT91SAM7S64.h **** 	AT91PS_AIC pAic,     // \arg pointer to the AIC registers
+ 161:lib_AT91SAM7S64.h **** 	unsigned int irq_id) // \arg Interrupt Number
+ 162:lib_AT91SAM7S64.h **** {
+ 163:lib_AT91SAM7S64.h **** 	return (pAic->AIC_ISR & (0x1 << irq_id));
+ 164:lib_AT91SAM7S64.h **** }
+ 165:lib_AT91SAM7S64.h **** 
+ 166:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 167:lib_AT91SAM7S64.h **** //* \fn    AT91F_AIC_IsPending
+ 168:lib_AT91SAM7S64.h **** //* \brief Test if an IT is pending
+ 169:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 170:lib_AT91SAM7S64.h **** __inline unsigned int  AT91F_AIC_IsPending (
+ 171:lib_AT91SAM7S64.h **** 	AT91PS_AIC pAic,     // \arg pointer to the AIC registers
+ 172:lib_AT91SAM7S64.h **** 	unsigned int irq_id) // \arg Interrupt Number
+ 173:lib_AT91SAM7S64.h **** {
+ 174:lib_AT91SAM7S64.h **** 	return (pAic->AIC_IPR & (0x1 << irq_id));
+ 175:lib_AT91SAM7S64.h **** }
+ 176:lib_AT91SAM7S64.h **** 
+ 177:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 178:lib_AT91SAM7S64.h **** //* \fn    AT91F_AIC_Open
+ 179:lib_AT91SAM7S64.h **** //* \brief Set exception vectors and AIC registers to default values
+ 180:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 181:lib_AT91SAM7S64.h **** __inline void AT91F_AIC_Open(
+ 182:lib_AT91SAM7S64.h **** 	AT91PS_AIC pAic,        // \arg pointer to the AIC registers
+ 183:lib_AT91SAM7S64.h **** 	void (*IrqHandler) (void),  // \arg Default IRQ vector exception
+ 184:lib_AT91SAM7S64.h **** 	void (*FiqHandler) (void),  // \arg Default FIQ vector exception
+ 185:lib_AT91SAM7S64.h **** 	void (*DefaultHandler)  (void), // \arg Default Handler set in ISR
+ 186:lib_AT91SAM7S64.h **** 	void (*SpuriousHandler) (void), // \arg Default Spurious Handler
+ 187:lib_AT91SAM7S64.h **** 	unsigned int protectMode)   // \arg Debug Control Register
+ 188:lib_AT91SAM7S64.h **** {
+ 189:lib_AT91SAM7S64.h **** 	int i;
+ 190:lib_AT91SAM7S64.h **** 
+ 191:lib_AT91SAM7S64.h **** 	// Disable all interrupts and set IVR to the default handler
+ 192:lib_AT91SAM7S64.h **** 	for (i = 0; i < 32; ++i) {
+ 193:lib_AT91SAM7S64.h **** 		AT91F_AIC_DisableIt(pAic, i);
+ 194:lib_AT91SAM7S64.h **** 		AT91F_AIC_ConfigureIt(pAic, i, AT91C_AIC_PRIOR_LOWEST, AT91C_AIC_SRCTYPE_INT_LEVEL_SENSITIVE, Def
+ 195:lib_AT91SAM7S64.h **** 	}
+ 196:lib_AT91SAM7S64.h **** 
+ 197:lib_AT91SAM7S64.h **** 	// Set the IRQ exception vector
+ 198:lib_AT91SAM7S64.h **** 	AT91F_AIC_SetExceptionVector((unsigned int *) 0x18, IrqHandler);
+ 199:lib_AT91SAM7S64.h **** 	// Set the Fast Interrupt exception vector
+ 200:lib_AT91SAM7S64.h **** 	AT91F_AIC_SetExceptionVector((unsigned int *) 0x1C, FiqHandler);
+ 201:lib_AT91SAM7S64.h **** 
+ 202:lib_AT91SAM7S64.h **** 	pAic->AIC_SPU = (unsigned int) SpuriousHandler;
+ 203:lib_AT91SAM7S64.h **** 	pAic->AIC_DCR = protectMode;
+ 204:lib_AT91SAM7S64.h **** }
+ 205:lib_AT91SAM7S64.h **** /* *****************************************************************************
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 11
+
+
+ 206:lib_AT91SAM7S64.h ****                 SOFTWARE API FOR PDC
+ 207:lib_AT91SAM7S64.h ****    ***************************************************************************** */
+ 208:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 209:lib_AT91SAM7S64.h **** //* \fn    AT91F_PDC_SetNextRx
+ 210:lib_AT91SAM7S64.h **** //* \brief Set the next receive transfer descriptor
+ 211:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 212:lib_AT91SAM7S64.h **** __inline void AT91F_PDC_SetNextRx (
+ 213:lib_AT91SAM7S64.h **** 	AT91PS_PDC pPDC,     // \arg pointer to a PDC controller
+ 214:lib_AT91SAM7S64.h **** 	char *address,       // \arg address to the next bloc to be received
+ 215:lib_AT91SAM7S64.h **** 	unsigned int bytes)  // \arg number of bytes to be received
+ 216:lib_AT91SAM7S64.h **** {
+ 217:lib_AT91SAM7S64.h **** 	pPDC->PDC_RNPR = (unsigned int) address;
+ 218:lib_AT91SAM7S64.h **** 	pPDC->PDC_RNCR = bytes;
+ 219:lib_AT91SAM7S64.h **** }
+ 220:lib_AT91SAM7S64.h **** 
+ 221:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 222:lib_AT91SAM7S64.h **** //* \fn    AT91F_PDC_SetNextTx
+ 223:lib_AT91SAM7S64.h **** //* \brief Set the next transmit transfer descriptor
+ 224:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 225:lib_AT91SAM7S64.h **** __inline void AT91F_PDC_SetNextTx (
+ 226:lib_AT91SAM7S64.h **** 	AT91PS_PDC pPDC,       // \arg pointer to a PDC controller
+ 227:lib_AT91SAM7S64.h **** 	char *address,         // \arg address to the next bloc to be transmitted
+ 228:lib_AT91SAM7S64.h **** 	unsigned int bytes)    // \arg number of bytes to be transmitted
+ 229:lib_AT91SAM7S64.h **** {
+ 230:lib_AT91SAM7S64.h **** 	pPDC->PDC_TNPR = (unsigned int) address;
+ 231:lib_AT91SAM7S64.h **** 	pPDC->PDC_TNCR = bytes;
+ 232:lib_AT91SAM7S64.h **** }
+ 233:lib_AT91SAM7S64.h **** 
+ 234:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 235:lib_AT91SAM7S64.h **** //* \fn    AT91F_PDC_SetRx
+ 236:lib_AT91SAM7S64.h **** //* \brief Set the receive transfer descriptor
+ 237:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 238:lib_AT91SAM7S64.h **** __inline void AT91F_PDC_SetRx (
+ 239:lib_AT91SAM7S64.h **** 	AT91PS_PDC pPDC,       // \arg pointer to a PDC controller
+ 240:lib_AT91SAM7S64.h **** 	char *address,         // \arg address to the next bloc to be received
+ 241:lib_AT91SAM7S64.h **** 	unsigned int bytes)    // \arg number of bytes to be received
+ 242:lib_AT91SAM7S64.h **** {
+ 243:lib_AT91SAM7S64.h **** 	pPDC->PDC_RPR = (unsigned int) address;
+ 244:lib_AT91SAM7S64.h **** 	pPDC->PDC_RCR = bytes;
+ 245:lib_AT91SAM7S64.h **** }
+ 246:lib_AT91SAM7S64.h **** 
+ 247:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 248:lib_AT91SAM7S64.h **** //* \fn    AT91F_PDC_SetTx
+ 249:lib_AT91SAM7S64.h **** //* \brief Set the transmit transfer descriptor
+ 250:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 251:lib_AT91SAM7S64.h **** __inline void AT91F_PDC_SetTx (
+ 252:lib_AT91SAM7S64.h **** 	AT91PS_PDC pPDC,       // \arg pointer to a PDC controller
+ 253:lib_AT91SAM7S64.h **** 	char *address,         // \arg address to the next bloc to be transmitted
+ 254:lib_AT91SAM7S64.h **** 	unsigned int bytes)    // \arg number of bytes to be transmitted
+ 255:lib_AT91SAM7S64.h **** {
+ 256:lib_AT91SAM7S64.h **** 	pPDC->PDC_TPR = (unsigned int) address;
+ 257:lib_AT91SAM7S64.h **** 	pPDC->PDC_TCR = bytes;
+ 258:lib_AT91SAM7S64.h **** }
+ 259:lib_AT91SAM7S64.h **** 
+ 260:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 261:lib_AT91SAM7S64.h **** //* \fn    AT91F_PDC_EnableTx
+ 262:lib_AT91SAM7S64.h **** //* \brief Enable transmit
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 12
+
+
+ 263:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 264:lib_AT91SAM7S64.h **** __inline void AT91F_PDC_EnableTx (
+ 265:lib_AT91SAM7S64.h **** 	AT91PS_PDC pPDC )       // \arg pointer to a PDC controller
+ 266:lib_AT91SAM7S64.h **** {
+ 267:lib_AT91SAM7S64.h **** 	pPDC->PDC_PTCR = AT91C_PDC_TXTEN;
+ 268:lib_AT91SAM7S64.h **** }
+ 269:lib_AT91SAM7S64.h **** 
+ 270:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 271:lib_AT91SAM7S64.h **** //* \fn    AT91F_PDC_EnableRx
+ 272:lib_AT91SAM7S64.h **** //* \brief Enable receive
+ 273:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 274:lib_AT91SAM7S64.h **** __inline void AT91F_PDC_EnableRx (
+ 275:lib_AT91SAM7S64.h **** 	AT91PS_PDC pPDC )       // \arg pointer to a PDC controller
+ 276:lib_AT91SAM7S64.h **** {
+ 277:lib_AT91SAM7S64.h **** 	pPDC->PDC_PTCR = AT91C_PDC_RXTEN;
+ 278:lib_AT91SAM7S64.h **** }
+ 279:lib_AT91SAM7S64.h **** 
+ 280:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 281:lib_AT91SAM7S64.h **** //* \fn    AT91F_PDC_DisableTx
+ 282:lib_AT91SAM7S64.h **** //* \brief Disable transmit
+ 283:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 284:lib_AT91SAM7S64.h **** __inline void AT91F_PDC_DisableTx (
+ 285:lib_AT91SAM7S64.h **** 	AT91PS_PDC pPDC )       // \arg pointer to a PDC controller
+ 286:lib_AT91SAM7S64.h **** {
+ 287:lib_AT91SAM7S64.h **** 	pPDC->PDC_PTCR = AT91C_PDC_TXTDIS;
+ 288:lib_AT91SAM7S64.h **** }
+ 289:lib_AT91SAM7S64.h **** 
+ 290:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 291:lib_AT91SAM7S64.h **** //* \fn    AT91F_PDC_DisableRx
+ 292:lib_AT91SAM7S64.h **** //* \brief Disable receive
+ 293:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 294:lib_AT91SAM7S64.h **** __inline void AT91F_PDC_DisableRx (
+ 295:lib_AT91SAM7S64.h **** 	AT91PS_PDC pPDC )       // \arg pointer to a PDC controller
+ 296:lib_AT91SAM7S64.h **** {
+ 297:lib_AT91SAM7S64.h **** 	pPDC->PDC_PTCR = AT91C_PDC_RXTDIS;
+ 298:lib_AT91SAM7S64.h **** }
+ 299:lib_AT91SAM7S64.h **** 
+ 300:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 301:lib_AT91SAM7S64.h **** //* \fn    AT91F_PDC_IsTxEmpty
+ 302:lib_AT91SAM7S64.h **** //* \brief Test if the current transfer descriptor has been sent
+ 303:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 304:lib_AT91SAM7S64.h **** __inline int AT91F_PDC_IsTxEmpty ( // \return return 1 if transfer is complete
+ 305:lib_AT91SAM7S64.h **** 	AT91PS_PDC pPDC )       // \arg pointer to a PDC controller
+ 306:lib_AT91SAM7S64.h **** {
+ 307:lib_AT91SAM7S64.h **** 	return !(pPDC->PDC_TCR);
+ 308:lib_AT91SAM7S64.h **** }
+ 309:lib_AT91SAM7S64.h **** 
+ 310:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 311:lib_AT91SAM7S64.h **** //* \fn    AT91F_PDC_IsNextTxEmpty
+ 312:lib_AT91SAM7S64.h **** //* \brief Test if the next transfer descriptor has been moved to the current td
+ 313:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 314:lib_AT91SAM7S64.h **** __inline int AT91F_PDC_IsNextTxEmpty ( // \return return 1 if transfer is complete
+ 315:lib_AT91SAM7S64.h **** 	AT91PS_PDC pPDC )       // \arg pointer to a PDC controller
+ 316:lib_AT91SAM7S64.h **** {
+ 317:lib_AT91SAM7S64.h **** 	return !(pPDC->PDC_TNCR);
+ 318:lib_AT91SAM7S64.h **** }
+ 319:lib_AT91SAM7S64.h **** 
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 13
+
+
+ 320:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 321:lib_AT91SAM7S64.h **** //* \fn    AT91F_PDC_IsRxEmpty
+ 322:lib_AT91SAM7S64.h **** //* \brief Test if the current transfer descriptor has been filled
+ 323:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 324:lib_AT91SAM7S64.h **** __inline int AT91F_PDC_IsRxEmpty ( // \return return 1 if transfer is complete
+ 325:lib_AT91SAM7S64.h **** 	AT91PS_PDC pPDC )       // \arg pointer to a PDC controller
+ 326:lib_AT91SAM7S64.h **** {
+ 327:lib_AT91SAM7S64.h **** 	return !(pPDC->PDC_RCR);
+ 328:lib_AT91SAM7S64.h **** }
+ 329:lib_AT91SAM7S64.h **** 
+ 330:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 331:lib_AT91SAM7S64.h **** //* \fn    AT91F_PDC_IsNextRxEmpty
+ 332:lib_AT91SAM7S64.h **** //* \brief Test if the next transfer descriptor has been moved to the current td
+ 333:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 334:lib_AT91SAM7S64.h **** __inline int AT91F_PDC_IsNextRxEmpty ( // \return return 1 if transfer is complete
+ 335:lib_AT91SAM7S64.h **** 	AT91PS_PDC pPDC )       // \arg pointer to a PDC controller
+ 336:lib_AT91SAM7S64.h **** {
+ 337:lib_AT91SAM7S64.h **** 	return !(pPDC->PDC_RNCR);
+ 338:lib_AT91SAM7S64.h **** }
+ 339:lib_AT91SAM7S64.h **** 
+ 340:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 341:lib_AT91SAM7S64.h **** //* \fn    AT91F_PDC_Open
+ 342:lib_AT91SAM7S64.h **** //* \brief Open PDC: disable TX and RX reset transfer descriptors, re-enable RX and TX
+ 343:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 344:lib_AT91SAM7S64.h **** __inline void AT91F_PDC_Open (
+ 345:lib_AT91SAM7S64.h **** 	AT91PS_PDC pPDC)       // \arg pointer to a PDC controller
+ 346:lib_AT91SAM7S64.h **** {
+ 347:lib_AT91SAM7S64.h ****     //* Disable the RX and TX PDC transfer requests
+ 348:lib_AT91SAM7S64.h **** 	AT91F_PDC_DisableRx(pPDC);
+ 349:lib_AT91SAM7S64.h **** 	AT91F_PDC_DisableTx(pPDC);
+ 350:lib_AT91SAM7S64.h **** 
+ 351:lib_AT91SAM7S64.h **** 	//* Reset all Counter register Next buffer first
+ 352:lib_AT91SAM7S64.h **** 	AT91F_PDC_SetNextTx(pPDC, (char *) 0, 0);
+ 353:lib_AT91SAM7S64.h **** 	AT91F_PDC_SetNextRx(pPDC, (char *) 0, 0);
+ 354:lib_AT91SAM7S64.h **** 	AT91F_PDC_SetTx(pPDC, (char *) 0, 0);
+ 355:lib_AT91SAM7S64.h **** 	AT91F_PDC_SetRx(pPDC, (char *) 0, 0);
+ 356:lib_AT91SAM7S64.h **** 
+ 357:lib_AT91SAM7S64.h ****     //* Enable the RX and TX PDC transfer requests
+ 358:lib_AT91SAM7S64.h **** 	AT91F_PDC_EnableRx(pPDC);
+ 359:lib_AT91SAM7S64.h **** 	AT91F_PDC_EnableTx(pPDC);
+ 360:lib_AT91SAM7S64.h **** }
+ 361:lib_AT91SAM7S64.h **** 
+ 362:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 363:lib_AT91SAM7S64.h **** //* \fn    AT91F_PDC_Close
+ 364:lib_AT91SAM7S64.h **** //* \brief Close PDC: disable TX and RX reset transfer descriptors
+ 365:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 366:lib_AT91SAM7S64.h **** __inline void AT91F_PDC_Close (
+ 367:lib_AT91SAM7S64.h **** 	AT91PS_PDC pPDC)       // \arg pointer to a PDC controller
+ 368:lib_AT91SAM7S64.h **** {
+ 369:lib_AT91SAM7S64.h ****     //* Disable the RX and TX PDC transfer requests
+ 370:lib_AT91SAM7S64.h **** 	AT91F_PDC_DisableRx(pPDC);
+ 371:lib_AT91SAM7S64.h **** 	AT91F_PDC_DisableTx(pPDC);
+ 372:lib_AT91SAM7S64.h **** 
+ 373:lib_AT91SAM7S64.h **** 	//* Reset all Counter register Next buffer first
+ 374:lib_AT91SAM7S64.h **** 	AT91F_PDC_SetNextTx(pPDC, (char *) 0, 0);
+ 375:lib_AT91SAM7S64.h **** 	AT91F_PDC_SetNextRx(pPDC, (char *) 0, 0);
+ 376:lib_AT91SAM7S64.h **** 	AT91F_PDC_SetTx(pPDC, (char *) 0, 0);
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 14
+
+
+ 377:lib_AT91SAM7S64.h **** 	AT91F_PDC_SetRx(pPDC, (char *) 0, 0);
+ 378:lib_AT91SAM7S64.h **** 
+ 379:lib_AT91SAM7S64.h **** }
+ 380:lib_AT91SAM7S64.h **** 
+ 381:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 382:lib_AT91SAM7S64.h **** //* \fn    AT91F_PDC_SendFrame
+ 383:lib_AT91SAM7S64.h **** //* \brief Close PDC: disable TX and RX reset transfer descriptors
+ 384:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 385:lib_AT91SAM7S64.h **** __inline unsigned int AT91F_PDC_SendFrame(
+ 386:lib_AT91SAM7S64.h **** 	AT91PS_PDC pPDC,
+ 387:lib_AT91SAM7S64.h **** 	char *pBuffer,
+ 388:lib_AT91SAM7S64.h **** 	unsigned int szBuffer,
+ 389:lib_AT91SAM7S64.h **** 	char *pNextBuffer,
+ 390:lib_AT91SAM7S64.h **** 	unsigned int szNextBuffer )
+ 391:lib_AT91SAM7S64.h **** {
+ 392:lib_AT91SAM7S64.h **** 	if (AT91F_PDC_IsTxEmpty(pPDC)) {
+ 393:lib_AT91SAM7S64.h **** 		//* Buffer and next buffer can be initialized
+ 394:lib_AT91SAM7S64.h **** 		AT91F_PDC_SetTx(pPDC, pBuffer, szBuffer);
+ 395:lib_AT91SAM7S64.h **** 		AT91F_PDC_SetNextTx(pPDC, pNextBuffer, szNextBuffer);
+ 396:lib_AT91SAM7S64.h **** 		return 2;
+ 397:lib_AT91SAM7S64.h **** 	}
+ 398:lib_AT91SAM7S64.h **** 	else if (AT91F_PDC_IsNextTxEmpty(pPDC)) {
+ 399:lib_AT91SAM7S64.h **** 		//* Only one buffer can be initialized
+ 400:lib_AT91SAM7S64.h **** 		AT91F_PDC_SetNextTx(pPDC, pBuffer, szBuffer);
+ 401:lib_AT91SAM7S64.h **** 		return 1;
+ 402:lib_AT91SAM7S64.h **** 	}
+ 403:lib_AT91SAM7S64.h **** 	else {
+ 404:lib_AT91SAM7S64.h **** 		//* All buffer are in use...
+ 405:lib_AT91SAM7S64.h **** 		return 0;
+ 406:lib_AT91SAM7S64.h **** 	}
+ 407:lib_AT91SAM7S64.h **** }
+ 408:lib_AT91SAM7S64.h **** 
+ 409:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 410:lib_AT91SAM7S64.h **** //* \fn    AT91F_PDC_ReceiveFrame
+ 411:lib_AT91SAM7S64.h **** //* \brief Close PDC: disable TX and RX reset transfer descriptors
+ 412:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 413:lib_AT91SAM7S64.h **** __inline unsigned int AT91F_PDC_ReceiveFrame (
+ 414:lib_AT91SAM7S64.h **** 	AT91PS_PDC pPDC,
+ 415:lib_AT91SAM7S64.h **** 	char *pBuffer,
+ 416:lib_AT91SAM7S64.h **** 	unsigned int szBuffer,
+ 417:lib_AT91SAM7S64.h **** 	char *pNextBuffer,
+ 418:lib_AT91SAM7S64.h **** 	unsigned int szNextBuffer )
+ 419:lib_AT91SAM7S64.h **** {
+ 420:lib_AT91SAM7S64.h **** 	if (AT91F_PDC_IsRxEmpty(pPDC)) {
+ 421:lib_AT91SAM7S64.h **** 		//* Buffer and next buffer can be initialized
+ 422:lib_AT91SAM7S64.h **** 		AT91F_PDC_SetRx(pPDC, pBuffer, szBuffer);
+ 423:lib_AT91SAM7S64.h **** 		AT91F_PDC_SetNextRx(pPDC, pNextBuffer, szNextBuffer);
+ 424:lib_AT91SAM7S64.h **** 		return 2;
+ 425:lib_AT91SAM7S64.h **** 	}
+ 426:lib_AT91SAM7S64.h **** 	else if (AT91F_PDC_IsNextRxEmpty(pPDC)) {
+ 427:lib_AT91SAM7S64.h **** 		//* Only one buffer can be initialized
+ 428:lib_AT91SAM7S64.h **** 		AT91F_PDC_SetNextRx(pPDC, pBuffer, szBuffer);
+ 429:lib_AT91SAM7S64.h **** 		return 1;
+ 430:lib_AT91SAM7S64.h **** 	}
+ 431:lib_AT91SAM7S64.h **** 	else {
+ 432:lib_AT91SAM7S64.h **** 		//* All buffer are in use...
+ 433:lib_AT91SAM7S64.h **** 		return 0;
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 15
+
+
+ 434:lib_AT91SAM7S64.h **** 	}
+ 435:lib_AT91SAM7S64.h **** }
+ 436:lib_AT91SAM7S64.h **** /* *****************************************************************************
+ 437:lib_AT91SAM7S64.h ****                 SOFTWARE API FOR DBGU
+ 438:lib_AT91SAM7S64.h ****    ***************************************************************************** */
+ 439:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 440:lib_AT91SAM7S64.h **** //* \fn    AT91F_DBGU_InterruptEnable
+ 441:lib_AT91SAM7S64.h **** //* \brief Enable DBGU Interrupt
+ 442:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 443:lib_AT91SAM7S64.h **** __inline void AT91F_DBGU_InterruptEnable(
+ 444:lib_AT91SAM7S64.h ****         AT91PS_DBGU pDbgu,   // \arg  pointer to a DBGU controller
+ 445:lib_AT91SAM7S64.h ****         unsigned int flag) // \arg  dbgu interrupt to be enabled
+ 446:lib_AT91SAM7S64.h **** {
+ 447:lib_AT91SAM7S64.h ****         pDbgu->DBGU_IER = flag;
+ 448:lib_AT91SAM7S64.h **** }
+ 449:lib_AT91SAM7S64.h **** 
+ 450:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 451:lib_AT91SAM7S64.h **** //* \fn    AT91F_DBGU_InterruptDisable
+ 452:lib_AT91SAM7S64.h **** //* \brief Disable DBGU Interrupt
+ 453:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 454:lib_AT91SAM7S64.h **** __inline void AT91F_DBGU_InterruptDisable(
+ 455:lib_AT91SAM7S64.h ****         AT91PS_DBGU pDbgu,   // \arg  pointer to a DBGU controller
+ 456:lib_AT91SAM7S64.h ****         unsigned int flag) // \arg  dbgu interrupt to be disabled
+ 457:lib_AT91SAM7S64.h **** {
+ 458:lib_AT91SAM7S64.h ****         pDbgu->DBGU_IDR = flag;
+ 459:lib_AT91SAM7S64.h **** }
+ 460:lib_AT91SAM7S64.h **** 
+ 461:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 462:lib_AT91SAM7S64.h **** //* \fn    AT91F_DBGU_GetInterruptMaskStatus
+ 463:lib_AT91SAM7S64.h **** //* \brief Return DBGU Interrupt Mask Status
+ 464:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 465:lib_AT91SAM7S64.h **** __inline unsigned int AT91F_DBGU_GetInterruptMaskStatus( // \return DBGU Interrupt Mask Status
+ 466:lib_AT91SAM7S64.h ****         AT91PS_DBGU pDbgu) // \arg  pointer to a DBGU controller
+ 467:lib_AT91SAM7S64.h **** {
+ 468:lib_AT91SAM7S64.h ****         return pDbgu->DBGU_IMR;
+ 469:lib_AT91SAM7S64.h **** }
+ 470:lib_AT91SAM7S64.h **** 
+ 471:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 472:lib_AT91SAM7S64.h **** //* \fn    AT91F_DBGU_IsInterruptMasked
+ 473:lib_AT91SAM7S64.h **** //* \brief Test if DBGU Interrupt is Masked 
+ 474:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 475:lib_AT91SAM7S64.h **** __inline int AT91F_DBGU_IsInterruptMasked(
+ 476:lib_AT91SAM7S64.h ****         AT91PS_DBGU pDbgu,   // \arg  pointer to a DBGU controller
+ 477:lib_AT91SAM7S64.h ****         unsigned int flag) // \arg  flag to be tested
+ 478:lib_AT91SAM7S64.h **** {
+ 479:lib_AT91SAM7S64.h ****         return (AT91F_DBGU_GetInterruptMaskStatus(pDbgu) & flag);
+ 480:lib_AT91SAM7S64.h **** }
+ 481:lib_AT91SAM7S64.h **** 
+ 482:lib_AT91SAM7S64.h **** /* *****************************************************************************
+ 483:lib_AT91SAM7S64.h ****                 SOFTWARE API FOR PIO
+ 484:lib_AT91SAM7S64.h ****    ***************************************************************************** */
+ 485:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 486:lib_AT91SAM7S64.h **** //* \fn    AT91F_PIO_CfgPeriph
+ 487:lib_AT91SAM7S64.h **** //* \brief Enable pins to be drived by peripheral
+ 488:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 489:lib_AT91SAM7S64.h **** __inline void AT91F_PIO_CfgPeriph(
+ 490:lib_AT91SAM7S64.h **** 	AT91PS_PIO pPio,             // \arg pointer to a PIO controller
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 16
+
+
+ 491:lib_AT91SAM7S64.h **** 	unsigned int periphAEnable,  // \arg PERIPH A to enable
+ 492:lib_AT91SAM7S64.h **** 	unsigned int periphBEnable)  // \arg PERIPH B to enable
+ 493:lib_AT91SAM7S64.h **** 
+ 494:lib_AT91SAM7S64.h **** {
+ 495:lib_AT91SAM7S64.h **** 	pPio->PIO_ASR = periphAEnable;
+ 496:lib_AT91SAM7S64.h **** 	pPio->PIO_BSR = periphBEnable;
+ 497:lib_AT91SAM7S64.h **** 	pPio->PIO_PDR = (periphAEnable | periphBEnable); // Set in Periph mode
+ 498:lib_AT91SAM7S64.h **** }
+ 499:lib_AT91SAM7S64.h **** 
+ 500:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 501:lib_AT91SAM7S64.h **** //* \fn    AT91F_PIO_CfgOutput
+ 502:lib_AT91SAM7S64.h **** //* \brief Enable PIO in output mode
+ 503:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 504:lib_AT91SAM7S64.h **** __inline void AT91F_PIO_CfgOutput(
+ 505:lib_AT91SAM7S64.h **** 	AT91PS_PIO pPio,             // \arg pointer to a PIO controller
+ 506:lib_AT91SAM7S64.h **** 	unsigned int pioEnable)      // \arg PIO to be enabled
+ 507:lib_AT91SAM7S64.h **** {
+ 508:lib_AT91SAM7S64.h **** 	pPio->PIO_PER = pioEnable; // Set in PIO mode
+ 509:lib_AT91SAM7S64.h **** 	pPio->PIO_OER = pioEnable; // Configure in Output
+ 510:lib_AT91SAM7S64.h **** }
+ 511:lib_AT91SAM7S64.h **** 
+ 512:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 513:lib_AT91SAM7S64.h **** //* \fn    AT91F_PIO_CfgInput
+ 514:lib_AT91SAM7S64.h **** //* \brief Enable PIO in input mode
+ 515:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 516:lib_AT91SAM7S64.h **** __inline void AT91F_PIO_CfgInput(
+ 517:lib_AT91SAM7S64.h **** 	AT91PS_PIO pPio,             // \arg pointer to a PIO controller
+ 518:lib_AT91SAM7S64.h **** 	unsigned int inputEnable)      // \arg PIO to be enabled
+ 519:lib_AT91SAM7S64.h **** {
+ 520:lib_AT91SAM7S64.h **** 	// Disable output
+ 521:lib_AT91SAM7S64.h **** 	pPio->PIO_ODR  = inputEnable;
+ 522:lib_AT91SAM7S64.h **** 	pPio->PIO_PER  = inputEnable;
+ 523:lib_AT91SAM7S64.h **** }
+ 524:lib_AT91SAM7S64.h **** 
+ 525:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 526:lib_AT91SAM7S64.h **** //* \fn    AT91F_PIO_CfgOpendrain
+ 527:lib_AT91SAM7S64.h **** //* \brief Configure PIO in open drain
+ 528:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 529:lib_AT91SAM7S64.h **** __inline void AT91F_PIO_CfgOpendrain(
+ 530:lib_AT91SAM7S64.h **** 	AT91PS_PIO pPio,             // \arg pointer to a PIO controller
+ 531:lib_AT91SAM7S64.h **** 	unsigned int multiDrvEnable) // \arg pio to be configured in open drain
+ 532:lib_AT91SAM7S64.h **** {
+ 533:lib_AT91SAM7S64.h **** 	// Configure the multi-drive option
+ 534:lib_AT91SAM7S64.h **** 	pPio->PIO_MDDR = ~multiDrvEnable;
+ 535:lib_AT91SAM7S64.h **** 	pPio->PIO_MDER = multiDrvEnable;
+ 536:lib_AT91SAM7S64.h **** }
+ 537:lib_AT91SAM7S64.h **** 
+ 538:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 539:lib_AT91SAM7S64.h **** //* \fn    AT91F_PIO_CfgPullup
+ 540:lib_AT91SAM7S64.h **** //* \brief Enable pullup on PIO
+ 541:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 542:lib_AT91SAM7S64.h **** __inline void AT91F_PIO_CfgPullup(
+ 543:lib_AT91SAM7S64.h **** 	AT91PS_PIO pPio,             // \arg pointer to a PIO controller
+ 544:lib_AT91SAM7S64.h **** 	unsigned int pullupEnable)   // \arg enable pullup on PIO
+ 545:lib_AT91SAM7S64.h **** {
+ 546:lib_AT91SAM7S64.h **** 		// Connect or not Pullup
+ 547:lib_AT91SAM7S64.h **** 	pPio->PIO_PPUDR = ~pullupEnable;
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 17
+
+
+ 548:lib_AT91SAM7S64.h **** 	pPio->PIO_PPUER = pullupEnable;
+ 549:lib_AT91SAM7S64.h **** }
+ 550:lib_AT91SAM7S64.h **** 
+ 551:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 552:lib_AT91SAM7S64.h **** //* \fn    AT91F_PIO_CfgDirectDrive
+ 553:lib_AT91SAM7S64.h **** //* \brief Enable direct drive on PIO
+ 554:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 555:lib_AT91SAM7S64.h **** __inline void AT91F_PIO_CfgDirectDrive(
+ 556:lib_AT91SAM7S64.h **** 	AT91PS_PIO pPio,             // \arg pointer to a PIO controller
+ 557:lib_AT91SAM7S64.h **** 	unsigned int directDrive)    // \arg PIO to be configured with direct drive
+ 558:lib_AT91SAM7S64.h **** 
+ 559:lib_AT91SAM7S64.h **** {
+ 560:lib_AT91SAM7S64.h **** 	// Configure the Direct Drive
+ 561:lib_AT91SAM7S64.h **** 	pPio->PIO_OWDR  = ~directDrive;
+ 562:lib_AT91SAM7S64.h **** 	pPio->PIO_OWER  = directDrive;
+ 563:lib_AT91SAM7S64.h **** }
+ 564:lib_AT91SAM7S64.h **** 
+ 565:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 566:lib_AT91SAM7S64.h **** //* \fn    AT91F_PIO_CfgInputFilter
+ 567:lib_AT91SAM7S64.h **** //* \brief Enable input filter on input PIO
+ 568:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 569:lib_AT91SAM7S64.h **** __inline void AT91F_PIO_CfgInputFilter(
+ 570:lib_AT91SAM7S64.h **** 	AT91PS_PIO pPio,             // \arg pointer to a PIO controller
+ 571:lib_AT91SAM7S64.h **** 	unsigned int inputFilter)    // \arg PIO to be configured with input filter
+ 572:lib_AT91SAM7S64.h **** 
+ 573:lib_AT91SAM7S64.h **** {
+ 574:lib_AT91SAM7S64.h **** 	// Configure the Direct Drive
+ 575:lib_AT91SAM7S64.h **** 	pPio->PIO_IFDR  = ~inputFilter;
+ 576:lib_AT91SAM7S64.h **** 	pPio->PIO_IFER  = inputFilter;
+ 577:lib_AT91SAM7S64.h **** }
+ 578:lib_AT91SAM7S64.h **** 
+ 579:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 580:lib_AT91SAM7S64.h **** //* \fn    AT91F_PIO_GetInput
+ 581:lib_AT91SAM7S64.h **** //* \brief Return PIO input value
+ 582:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 583:lib_AT91SAM7S64.h **** __inline unsigned int AT91F_PIO_GetInput( // \return PIO input
+ 584:lib_AT91SAM7S64.h **** 	AT91PS_PIO pPio) // \arg  pointer to a PIO controller
+ 585:lib_AT91SAM7S64.h **** {
+ 586:lib_AT91SAM7S64.h **** 	return pPio->PIO_PDSR;
+ 587:lib_AT91SAM7S64.h **** }
+ 588:lib_AT91SAM7S64.h **** 
+ 589:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 590:lib_AT91SAM7S64.h **** //* \fn    AT91F_PIO_IsInputSet
+ 591:lib_AT91SAM7S64.h **** //* \brief Test if PIO is input flag is active
+ 592:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 593:lib_AT91SAM7S64.h **** __inline int AT91F_PIO_IsInputSet(
+ 594:lib_AT91SAM7S64.h **** 	AT91PS_PIO pPio,   // \arg  pointer to a PIO controller
+ 595:lib_AT91SAM7S64.h **** 	unsigned int flag) // \arg  flag to be tested
+ 596:lib_AT91SAM7S64.h **** {
+ 597:lib_AT91SAM7S64.h **** 	return (AT91F_PIO_GetInput(pPio) & flag);
+ 598:lib_AT91SAM7S64.h **** }
+ 599:lib_AT91SAM7S64.h **** 
+ 600:lib_AT91SAM7S64.h **** 
+ 601:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 602:lib_AT91SAM7S64.h **** //* \fn    AT91F_PIO_SetOutput
+ 603:lib_AT91SAM7S64.h **** //* \brief Set to 1 output PIO
+ 604:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 18
+
+
+ 605:lib_AT91SAM7S64.h **** __inline void AT91F_PIO_SetOutput(
+ 606:lib_AT91SAM7S64.h **** 	AT91PS_PIO pPio,   // \arg  pointer to a PIO controller
+ 607:lib_AT91SAM7S64.h **** 	unsigned int flag) // \arg  output to be set
+ 608:lib_AT91SAM7S64.h **** {
+ 263              	eeded for prologue	@
+ 264              		str	r0, [sp, #4]	@ pPio, pPio
+ 265              		str	r1, [sp, #0]	@ flag, flag
+ 266              		.loc 2 609 0
+ 267              		ldr	r2, [sp, #4]	@ pPio, pPio
+ 268 01ac 08D04DE2 		ldr	r3, [sp, #0]	@ flag, flag
+ 269              		str	r3, [r2, #48]	@ flag, <variable>.PIO_SODR
+ 270              		.loc 2 610 0
+ 271 01b0 04008DE5 		add	sp, sp, #8	@,,
+ 272 01b4 00108DE5 		bx	lr
+ 609:lib_AT91SAM7S64.h **** 	pPio->PIO_SODR = flag;
+ 273              	size	AT91F_PIO_SetOutput, .-AT91F_PIO_SetOutput
+ 274 01b8 04209DE5 		.align	2
+ 275 01bc 00309DE5 		.type	AT91F_PIO_ClearOutput, %function
+ 276 01c0 303082E5 	AT91F_PIO_ClearOutput:
+ 610:lib_AT91SAM7S64.h **** }
+ 277              	42:
+ 278 01c4 08D08DE2 		.loc 2 619 0
+ 279 01c8 1EFF2FE1 		@ Function supports interworking.
+ 280              		@ args = 0, pretend = 0, frame = 8
+ 281              		@ frame_needed = 0, uses_anonymous_args = 0
+ 282              		@ link register save eliminated.
+ 283              		sub	sp, sp, #8	@,,
+ 284              	.LCFI5:
+ 285              		@ lr needed for prologue	@
+ 611:lib_AT91SAM7S64.h **** 
+ 612:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 613:lib_AT91SAM7S64.h **** //* \fn    AT91F_PIO_ClearOutput
+ 614:lib_AT91SAM7S64.h **** //* \brief Set to 0 output PIO
+ 615:lib_AT91SAM7S64.h **** //*----------------------------------------------------------------------------
+ 616:lib_AT91SAM7S64.h **** __inline void AT91F_PIO_ClearOutput(
+ 617:lib_AT91SAM7S64.h **** 	AT91PS_PIO pPio,   // \arg  pointer to a PIO controller
+ 618:lib_AT91SAM7S64.h **** 	unsigned int flag) // \arg  output to be cleared
+ 619:lib_AT91SAM7S64.h **** {
+ 286              	[sp, #4]	@ pPio, pPio
+ 287              		str	r1, [sp, #0]	@ flag, flag
+ 288              		.loc 2 620 0
+ 289              		ldr	r2, [sp, #4]	@ pPio, pPio
+ 290              		ldr	r3, [sp, #0]	@ flag, flag
+ 291 01cc 08D04DE2 		str	r3, [r2, #52]	@ flag, <variable>.PIO_CODR
+ 292              		.loc 2 621 0
+ 293              		add	sp, sp, #8	@,,
+ 294 01d0 04008DE5 		bx	lr
+ 295 01d4 00108DE5 	.LFE42:
+ 620:lib_AT91SAM7S64.h **** 	pPio->PIO_CODR = flag;
+ 296              	1F_PIO_ClearOutput, .-AT91F_PIO_ClearOutput
+ 297 01d8 04209DE5 		.global	LedSpeed
+ 298 01dc 00309DE5 		.data
+ 299 01e0 343082E5 		.align	2
+ 621:lib_AT91SAM7S64.h **** }
+ 300              	pe	LedSpeed, %object
+ 301 01e4 08D08DE2 		.size	LedSpeed, 4
+ 302 01e8 1EFF2FE1 	LedSpeed:
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 19
+
+
+ 303              		.word	119800
+ 304              		.global	led_mask
+ 305              		.section	.rodata
+ 306              		.align	2
+ 307 0032 0000     		.type	led_mask, %object
+ 308              		.size	led_mask, 32
+ 309              	led_mask:
+ 310              		.word	4096
+ 311 0034 F8D30100 		.word	2048
+ 312              		.word	1024
+ 313              		.word	512
+ 314              		.word	256
+ 315              		.word	128
+ 316              		.word	64
+ 317              		.word	32
+ 318 0000 00100000 		.text
+ 319 0004 00080000 		.align	2
+ 320 0008 00040000 		.type	change_speed, %function
+ 321 000c 00020000 	change_speed:
+ 322 0010 00010000 	.LFB288:
+ 323 0014 80000000 		.file 3 "main.c"
+ 324 0018 40000000 		.loc 3 39 0
+ 325 001c 20000000 		@ Function supports interworking.
+ 326              		@ args = 0, pretend = 0, frame = 0
+ 327              		@ frame_needed = 0, uses_anonymous_args = 0
+ 328              		str	lr, [sp, #-4]!	@,
+ 329              	.LCFI6:
+ 330              		.loc 3 40 0
+ 331              		mov	r0, #-1610612736	@,
+   1:main.c        **** //*----------------------------------------------------------------------------
+   2:main.c        **** //*         ATMEL Microcontroller Software Support  -  ROUSSET  -
+   3:main.c        **** //*----------------------------------------------------------------------------
+   4:main.c        **** //* The software is delivered "AS IS" without warranty or condition of any
+   5:main.c        **** //* kind, either express, implied or statutory. This includes without
+   6:main.c        **** //* limitation any warranty or condition with respect to merchantability or
+   7:main.c        **** //* fitness for any particular purpose, or against the infringements of
+   8:main.c        **** //* intellectual property rights of others.
+   9:main.c        **** //*----------------------------------------------------------------------------
+  10:main.c        **** //* File Name: 		main.c
+  11:main.c        **** //* Object: 		main application written in C
+  12:main.c        **** //* Creation: 		JPP   16/Jun/2004
+  13:main.c        **** //* Modifications:	Steve Weddell for ENEL353/COSC361, March, 2008
+  14:main.c        **** //* Purpose:		Produces a "Knight-Rider" effect on a bank of 8-LEDs
+  15:main.c        **** //*----------------------------------------------------------------------------
+  16:main.c        **** 
+  17:main.c        **** // Include Standard files
+  18:main.c        **** #include "Board.h"
+  19:main.c        **** 
+  20:main.c        **** #include "display.h"
+  21:main.c        **** 
+  22:main.c        **** /* Global variables */
+  23:main.c        **** #define SPEED 		(MCKKHz/20)
+  24:main.c        **** unsigned int LedSpeed = SPEED *50 ;
+  25:main.c        **** const int led_mask[8]= {LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8};
+  26:main.c        **** 
+  27:main.c        **** //Function Prototypes
+  28:main.c        **** static void change_speed ( void );
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 20
+
+
+  29:main.c        **** static void wait ( void );
+  30:main.c        **** 
+  31:main.c        **** 
+  32:main.c        **** //*--------------------------------------------------------------------------------------
+  33:main.c        **** //* Function Name       : change_speed
+  34:main.c        **** //* Object              : Adjust "LedSpeed" value depending on SW1 and SW3 are pressed or not
+  35:main.c        **** //* Input Parameters    : none
+  36:main.c        **** //* Output Parameters   : Update of LedSpeed value.
+  37:main.c        **** //*--------------------------------------------------------------------------------------
+  38:main.c        **** static void change_speed ( void )
+  39:main.c        **** {//* Begin
+ 332              	1F_PIO_GetInput	@
+ 333              		mov	r3, r0	@ D.3661,
+ 334              		and	r3, r3, #32768	@ D.3662, D.3661,
+ 335              		cmp	r3, #0	@ D.3662,
+ 336 01ec 04E02DE5 		bne	.L27	@,
+ 337              		.loc 3 42 0
+  40:main.c        ****     if ( (AT91F_PIO_GetInput(AT91C_BASE_PIOA) & SW1) == 0 )
+ 338              	3, .L34	@ tmp111,
+ 339 01f0 0A02A0E3 		ldr	r2, [r3, #0]	@ LedSpeed.52, LedSpeed
+ 340 01f4 C009A0E1 		mov	r3, #2384	@ tmp112,
+ 341 01f8 250000EB 		add	r3, r3, #12	@ tmp112, tmp112,
+ 342 01fc 0030A0E1 		cmp	r2, r3	@ LedSpeed.52, tmp112
+ 343 0200 023903E2 		bls	.L27	@,
+ 344 0204 000053E3 		ldr	r3, .L34	@ tmp113,
+ 345 0208 0B00001A 		ldr	r3, [r3, #0]	@ LedSpeed.53, LedSpeed
+  41:main.c        ****     {
+  42:main.c        ****         if ( LedSpeed > SPEED ) LedSpeed -=SPEED ;
+ 346              	 r3, #2384	@ D.3665, LedSpeed.53,
+ 347 020c 7C309FE5 		sub	r3, r3, #12	@ D.3665, D.3665,
+ 348 0210 002093E5 		ldr	r2, .L34	@ tmp114,
+ 349 0214 953EA0E3 		str	r3, [r2, #0]	@ D.3665, LedSpeed
+ 350 0218 0C3083E2 	.L27:
+ 351 021c 030052E1 		.loc 3 44 0
+ 352 0220 0500009A 		mov	r0, #-1610612736	@,
+ 353 0224 64309FE5 		mov	r0, r0, asr #19	@,,
+ 354 0228 003093E5 		bl	AT91F_PIO_GetInput	@
+ 355 022c 953E43E2 		mov	r3, r0	@ D.3666,
+ 356 0230 0C3043E2 		and	r3, r3, #524288	@ D.3667, D.3666,
+ 357 0234 54209FE5 		cmp	r3, #0	@ D.3667,
+ 358 0238 003082E5 		bne	.L33	@,
+ 359              		.loc 3 46 0
+  43:main.c        ****     }
+  44:main.c        ****     if ( (AT91F_PIO_GetInput(AT91C_BASE_PIOA) & SW3) == 0 )
+ 360              	@ tmp115,
+ 361 023c 0A02A0E3 		ldr	r2, [r3, #0]	@ LedSpeed.54, LedSpeed
+ 362 0240 C009A0E1 		mvn	r3, #-50331648	@ tmp116,
+ 363 0244 120000EB 		sub	r3, r3, #2408448	@ tmp116, tmp116,
+ 364 0248 0030A0E1 		cmp	r2, r3	@ LedSpeed.54, tmp116
+ 365 024c 023703E2 		bhi	.L33	@,
+ 366 0250 000053E3 		ldr	r3, .L34	@ tmp117,
+ 367 0254 0B00001A 		ldr	r3, [r3, #0]	@ LedSpeed.55, LedSpeed
+  45:main.c        ****     {
+  46:main.c        ****         if ( LedSpeed < MCK ) LedSpeed +=SPEED ;
+ 368              	 r3, #2384	@ D.3670, LedSpeed.55,
+ 369 0258 30309FE5 		add	r3, r3, #12	@ D.3670, D.3670,
+ 370 025c 002093E5 		ldr	r2, .L34	@ tmp118,
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 21
+
+
+ 371 0260 FD34E0E3 		str	r3, [r2, #0]	@ D.3670, LedSpeed
+ 372 0264 933943E2 	.L33:
+ 373 0268 030052E1 		.loc 3 48 0
+ 374 026c 0500008A 		ldr	lr, [sp], #4
+ 375 0270 18309FE5 		bx	lr
+ 376 0274 003093E5 	.L35:
+ 377 0278 953E83E2 		.align	2
+ 378 027c 0C3083E2 	.L34:
+ 379 0280 08209FE5 		.word	LedSpeed
+ 380 0284 003082E5 	.LFE288:
+ 381              		.size	change_speed, .-change_speed
+  47:main.c        ****     }
+  48:main.c        **** }//* End
+ 382              	pe	AT91F_PIO_GetInput, %function
+ 383 0288 04E09DE4 	AT91F_PIO_GetInput:
+ 384 028c 1EFF2FE1 	.LFB39:
+ 385              		.loc 2 585 0
+ 386              		@ Function supports interworking.
+ 387              		@ args = 0, pretend = 0, frame = 4
+ 388 0290 00000000 		@ frame_needed = 0, uses_anonymous_args = 0
+ 389              		@ link register save eliminated.
+ 390              		sub	sp, sp, #4	@,,
+ 391              	.LCFI7:
+ 392              		@ lr needed for prologue	@
+ 393              		str	r0, [sp, #0]	@ pPio, pPio
+ 394              		.loc 2 586 0
+ 395              		ldr	r3, [sp, #0]	@ pPio, pPio
+ 396              		ldr	r3, [r3, #60]	@ D.2226, <variable>.PIO_PDSR
+ 397              		.loc 2 587 0
+ 398              		mov	r0, r3	@ <result>, <result>
+ 399              		add	sp, sp, #4	@,,
+ 400 0294 04D04DE2 		bx	lr
+ 401              	.LFE39:
+ 402              		.size	AT91F_PIO_GetInput, .-AT91F_PIO_GetInput
+ 403 0298 00008DE5 		.align	2
+ 404              		.type	wait, %function
+ 405 029c 00309DE5 	wait:
+ 406 02a0 3C3093E5 	.LFB289:
+ 407              		.loc 3 57 0
+ 408 02a4 0300A0E1 		@ Function supports interworking.
+ 409 02a8 04D08DE2 		@ args = 0, pretend = 0, frame = 4
+ 410 02ac 1EFF2FE1 		@ frame_needed = 0, uses_anonymous_args = 0
+ 411              		@ link register save eliminated.
+ 412              		sub	sp, sp, #4	@,,
+ 413              	.LCFI8:
+ 414              		@ lr needed for prologue	@
+ 415              		.loc 3 60 0
+ 416              		mov	r3, #0	@ tmp105,
+  49:main.c        **** 
+  50:main.c        **** //*--------------------------------------------------------------------------------------
+  51:main.c        **** //* Function Name       : wait
+  52:main.c        **** //* Object              : Software waiting loop
+  53:main.c        **** //* Input Parameters    : none. Waiting time is defined by the global variable LedSpeed.
+  54:main.c        **** //* Output Parameters   : none
+  55:main.c        **** //*--------------------------------------------------------------------------------------
+  56:main.c        **** static void wait ( void )
+  57:main.c        **** {//* Begin
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 22
+
+
+ 417              	_time
+ 418              		b	.L39	@
+ 419              	.L40:
+ 420              		ldr	r3, [sp, #0]	@ waiting_time.56, waiting_time
+ 421              		add	r3, r3, #1	@ D.3687, waiting_time.56,
+ 422 02b0 04D04DE2 		str	r3, [sp, #0]	@ D.3687, waiting_time
+ 423              	.L39:
+ 424              		ldr	r3, [sp, #0]	@ waiting_time.57, waiting_time
+  58:main.c        ****     volatile unsigned int waiting_time ;
+  59:main.c        ****     //change_speed () ;
+  60:main.c        ****     for(waiting_time = 0; waiting_time < LedSpeed; waiting_time++) ;
+ 425              	 .L43	@ tmp106,
+ 426 02b4 0030A0E3 		ldr	r2, [r2, #0]	@ LedSpeed.58, LedSpeed
+ 427 02b8 00308DE5 		cmp	r3, r2	@ waiting_time.57, LedSpeed.58
+ 428 02bc 020000EA 		bcc	.L40	@,
+ 429              		.loc 3 61 0
+ 430 02c0 00309DE5 		add	sp, sp, #4	@,,
+ 431 02c4 013083E2 		bx	lr
+ 432 02c8 00308DE5 	.L44:
+ 433              		.align	2
+ 434 02cc 00309DE5 	.L43:
+ 435 02d0 10209FE5 		.word	LedSpeed
+ 436 02d4 002092E5 	.LFE289:
+ 437 02d8 020053E1 		.size	wait, .-wait
+ 438 02dc F7FFFF3A 		.section	.rodata
+  61:main.c        **** }//* End
+ 439              	:
+ 440 02e0 04D08DE2 		.ascii	"1234567890 ABCDEFGHIJKLMNOPQRSTUVWXYZ    \000"
+ 441 02e4 1EFF2FE1 		.text
+ 442              		.align	2
+ 443              		.global	main
+ 444              		.type	main, %function
+ 445 02e8 00000000 	main:
+ 446              	.LFB290:
+ 447              		.loc 3 70 0
+ 448              		@ Function supports interworking.
+ 449              		@ args = 0, pretend = 0, frame = 24
+ 450              		@ frame_needed = 0, uses_anonymous_args = 0
+ 451 0020 31323334 		str	lr, [sp, #-4]!	@,
+ 451      35363738 
+ 451      39302041 
+ 451      42434445 
+ 451      46474849 
+ 452 004a 0000     	.LCFI9:
+ 453              		sub	sp, sp, #24	@,,
+ 454              	.LCFI10:
+ 455              		.loc 3 77 0
+ 456              		mov	r0, #-1610612736	@,
+ 457              		mov	r0, r0, asr #19	@,,
+  62:main.c        **** 
+  63:main.c        **** //*--------------------------------------------------------------------------------------
+  64:main.c        **** //* Function Name       : Main
+  65:main.c        **** //* Object              : Software entry point
+  66:main.c        **** //* Input Parameters    : none.
+  67:main.c        **** //* Output Parameters   : none.
+  68:main.c        **** //*--------------------------------------------------------------------------------------
+  69:main.c        **** int main(void)
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 23
+
+
+  70:main.c        **** {//* Begin
+ 458              		sub	r1, r1, #1	@,,
+ 459              		bl	AT91F_PIO_CfgOutput	@
+ 460              		.loc 3 80 0
+ 461              		mov	r0, #-1610612736	@,
+ 462 02ec 04E02DE5 		mov	r0, r0, asr #19	@,,
+ 463              		mov	r1, #8128	@,
+ 464 02f0 18D04DE2 		add	r1, r1, #32	@,,
+ 465              		bl	AT91F_PIO_SetOutput	@
+  71:main.c        ****     int i;
+  72:main.c        ****     // First, enable the clock of the PIO
+  73:main.c        ****        //AT91F_PMC_EnablePeriphClock ( AT91C_BASE_PMC, 1 << AT91C_ID_PIOA ) ;
+  74:main.c        **** 
+  75:main.c        ****     // then, we configure the PIO Lines corresponding to LED1 to LED8
+  76:main.c        ****     // to be outputs. No need to set these pins to be driven by the PIO because it is GPIO pins onl
+  77:main.c        ****        AT91F_PIO_CfgOutput( AT91C_BASE_PIOA, 65535 ) ;
+ 466              	83 0
+ 467 02f4 0A02A0E3 		mov	r0, #-1610612736	@,
+ 468 02f8 C009A0E1 		mov	r0, r0, asr #19	@,,
+ 469 02fc 0118A0E3 		mov	r1, #8128	@,
+ 470 0300 011041E2 		add	r1, r1, #32	@,,
+ 471 0304 610000EB 		bl	AT91F_PIO_ClearOutput	@
+  78:main.c        **** 
+  79:main.c        ****     // Illuminate all the LED's. On the ECE interface board we apply a Logic-1 (3.3V)
+  80:main.c        ****        AT91F_PIO_SetOutput( AT91C_BASE_PIOA, LED_MASK ) ;
+ 472              	3 88 0
+ 473 0308 0A02A0E3 		mov	r3, #0	@ tmp108,
+ 474 030c C009A0E1 		str	r3, [sp, #4]	@ tmp108, i
+ 475 0310 7F1DA0E3 		b	.L46	@
+ 476 0314 201081E2 	.L47:
+ 477 0318 A3FFFFEB 		ldr	r3, [sp, #4]	@ i, i
+  81:main.c        ****     
+  82:main.c        **** 	// Turn-off all the LEDs, assuming common cathod configuration, apply a Logic-0 (0V) to each LED  
+  83:main.c        ****        AT91F_PIO_ClearOutput( AT91C_BASE_PIOA, LED_MASK) ;
+ 478              	2, r3, #8	@ D.3706, i,
+ 479 031c 0A02A0E3 		mov	r3, #1	@ tmp110,
+ 480 0320 C009A0E1 		mov	r3, r3, asl r2	@ D.3707, tmp110,
+ 481 0324 7F1DA0E3 		mov	r0, #-1610612736	@,
+ 482 0328 201081E2 		mov	r0, r0, asr #19	@,,
+ 483 032c A6FFFFEB 		mov	r1, r3	@ D.3708, D.3708
+  84:main.c        **** 
+  85:main.c        **** 	
+  86:main.c        **** 	//for (i = 0; i < 4; i++) AT91F_PIO_ClearOutput( AT91C_BASE_PIOA, 1<<(i+4)) ;
+  87:main.c        **** 	//for (i = 4; i < 12; i++) AT91F_PIO_SetOutput( AT91C_BASE_PIOA, 1<<(i+4)) ;
+  88:main.c        **** 	for (i = 0; i < 8; i++) AT91F_PIO_ClearOutput( AT91C_BASE_PIOA, 1<<(i+8)) ;
+ 484              	91F_PIO_ClearOutput	@
+ 485 0330 0030A0E3 		ldr	r3, [sp, #4]	@ i, i
+ 486 0334 04308DE5 		add	r3, r3, #1	@ tmp112, i,
+ 487 0338 0A0000EA 		str	r3, [sp, #4]	@ tmp112, i
+ 488              	.L46:
+ 489 033c 04309DE5 		ldr	r3, [sp, #4]	@ i, i
+ 490 0340 082083E2 		cmp	r3, #7	@ i,
+ 491 0344 0130A0E3 		ble	.L47	@,
+ 492 0348 1332A0E1 		.loc 3 91 0
+ 493 034c 0A02A0E3 		mov	r0, #0	@,
+ 494 0350 C009A0E1 		mov	r1, #84	@,
+ 495 0354 0310A0E1 		bl	setSegment	@
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 24
+
+
+ 496 0358 9BFFFFEB 		.loc 3 92 0
+ 497 035c 04309DE5 		mov	r0, #1	@,
+ 498 0360 013083E2 		mov	r1, #73	@,
+ 499 0364 04308DE5 		bl	setSegment	@
+ 500              		.loc 3 93 0
+ 501 0368 04309DE5 		mov	r0, #2	@,
+ 502 036c 070053E3 		mov	r1, #84	@,
+ 503 0370 F1FFFFDA 		bl	setSegment	@
+  89:main.c        **** 
+  90:main.c        **** 	
+  91:main.c        **** 	setSegment(0,'T');
+ 504              	, #3	@,
+ 505 0374 0000A0E3 		mov	r1, #83	@,
+ 506 0378 5410A0E3 		bl	setSegment	@
+ 507 037c FEFFFFEB 		.loc 3 102 0
+  92:main.c        **** 	setSegment(1,'I');
+ 508              		r3, .L58	@ tmp114,
+ 509 0380 0100A0E3 		str	r3, [sp, #8]	@ tmp114, test
+ 510 0384 4910A0E3 		.loc 3 103 0
+ 511 0388 FEFFFFEB 		ldr	r0, [sp, #8]	@ test, test
+  93:main.c        **** 	setSegment(2,'T');
+ 512              	setDisplay	@
+ 513 038c 0200A0E3 		.loc 3 106 0
+ 514 0390 5410A0E3 		mov	r3, #0	@ tmp115,
+ 515 0394 FEFFFFEB 		str	r3, [sp, #12]	@ tmp115, derp
+  94:main.c        **** 	setSegment(3,'S');
+ 516              		r3, #0	@ tmp116,
+ 517 0398 0300A0E3 		str	r3, [sp, #16]	@ tmp116, offset
+ 518 039c 5310A0E3 		.loc 3 107 0
+ 519 03a0 FEFFFFEB 		mov	r3, #0	@ tmp117,
+  95:main.c        **** 	
+  96:main.c        **** 	//display[0]='a';
+  97:main.c        **** 	//display[1]='b';
+  98:main.c        **** 	//display[2]='a';
+  99:main.c        **** 	//display[3]='a';
+ 100:main.c        **** 	
+ 101:main.c        **** 	
+ 102:main.c        **** 	char* test = "1234567890 ABCDEFGHIJKLMNOPQRSTUVWXYZ    ";
+ 520              	b	r3, [sp, #22]	@ tmp118, danielAnderson
+ 521 03a4 DC309FE5 		.loc 3 108 0
+ 522 03a8 08308DE5 		mov	r3, #0	@ tmp119,
+ 103:main.c        **** 	setDisplay(test);
+ 523              	rb	r3, [sp, #23]	@ tmp120, hamish
+ 524 03ac 08009DE5 	.L49:
+ 525 03b0 FEFFFFEB 		.loc 3 117 0
+ 104:main.c        **** 
+ 105:main.c        ****     // Loop forever
+ 106:main.c        **** 	unsigned int derp = 0, offset = 0;
+ 526              		displayStep	@
+ 527 03b4 0030A0E3 		.loc 3 118 0
+ 528 03b8 0C308DE5 		ldr	r1, [sp, #12]	@ derp, derp
+ 529 03bc 0030A0E3 		ldr	r3, .L58+4	@ tmp123,
+ 530 03c0 10308DE5 		umull	r2, r3, r1, r3	@, tmp122, derp, tmp123
+ 107:main.c        **** 	char danielAnderson = 0;
+ 531              	r3, r3, lsr #5	@, tmp122,
+ 532 03c4 0030A0E3 		str	r3, [sp, #0]	@, D.3709
+ 533 03c8 1630CDE5 		ldr	r3, [sp, #0]	@ D.3709, D.3709
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 25
+
+
+ 108:main.c        **** 	unsigned char hamish = 0;
+ 534              	v	r2, r3, asl #2	@ tmp125, D.3709,
+ 535 03cc 0030A0E3 		mov	r3, r2, asl #2	@ tmp126, tmp125,
+ 536 03d0 1730CDE5 		add	r2, r2, r3	@ tmp125, tmp125, tmp126
+ 537              		mov	r3, r2, asl #4	@ tmp127, tmp125,
+ 109:main.c        ****     for (;;)
+ 110:main.c        ****     {
+ 111:main.c        **** 		
+ 112:main.c        **** 		//for (i =4; i < 12; i++) AT91F_PIO_SetOutput( AT91C_BASE_PIOA, i) ;
+ 113:main.c        **** 		///for (i =4; i < 12; i++) AT91F_PIO_SetOutput( AT91C_BASE_PIOA, i) ;
+ 114:main.c        **** 		
+ 115:main.c        **** 		//Clear all LEDs of selected segment; 
+ 116:main.c        **** 
+ 117:main.c        **** 		displayStep();
+ 538              		r3, r2, r3	@ tmp127, tmp125, tmp127
+ 539 03d4 FEFFFFEB 		rsb	r1, r3, r1	@, tmp127, derp
+ 118:main.c        **** 		if (derp%300 == 0) 
+ 540              	tr	r1, [sp, #0]	@, D.3709
+ 541 03d8 0C109DE5 		ldr	r3, [sp, #0]	@, D.3709
+ 542 03dc A8309FE5 		cmp	r3, #0	@,
+ 543 03e0 912383E0 		bne	.L50	@,
+ 544 03e4 A332A0E1 		.loc 3 120 0
+ 545 03e8 00308DE5 		ldr	r3, [sp, #16]	@ offset, offset
+ 546 03ec 00309DE5 		add	r3, r3, #1	@ tmp129, offset,
+ 547 03f0 0321A0E1 		str	r3, [sp, #16]	@ tmp129, offset
+ 548 03f4 0231A0E1 		.loc 3 121 0
+ 549 03f8 032082E0 		ldr	r3, [sp, #16]	@ offset, offset
+ 550 03fc 0232A0E1 		cmp	r3, #36	@ offset,
+ 551 0400 033062E0 		bls	.L52	@,
+ 552 0404 011063E0 		mov	r3, #0	@ tmp131,
+ 553 0408 00108DE5 		str	r3, [sp, #16]	@ tmp131, offset
+ 554 040c 00309DE5 	.L52:
+ 555 0410 000053E3 		.loc 3 122 0
+ 556 0414 0C00001A 		ldr	r3, [sp, #16]	@ offset.59, offset
+ 119:main.c        **** 		{	
+ 120:main.c        **** 			offset++;
+ 557              		@ test, test
+ 558 0418 10309DE5 		add	r3, r3, r2	@ D.3711, offset.59, test
+ 559 041c 013083E2 		mov	r0, r3	@ D.3711, D.3711
+ 560 0420 10308DE5 		bl	setDisplay	@
+ 121:main.c        **** 			if (offset > 36) offset = 0;
+ 561              	:
+ 562 0424 10309DE5 		.loc 3 126 0
+ 563 0428 240053E3 		mov	r3, #0	@ tmp133,
+ 564 042c 0100009A 		str	r3, [sp, #4]	@ tmp133, i
+ 565 0430 0030A0E3 		b	.L54	@
+ 566 0434 10308DE5 	.L55:
+ 567              		ldr	r3, [sp, #4]	@ i, i
+ 122:main.c        **** 			setDisplay(test+offset);
+ 568              	, r3, #1	@ tmp135, i,
+ 569 0438 10309DE5 		str	r3, [sp, #4]	@ tmp135, i
+ 570 043c 08209DE5 	.L54:
+ 571 0440 023083E0 		ldr	r2, [sp, #4]	@ i, i
+ 572 0444 0300A0E1 		mov	r3, #4992	@ tmp137,
+ 573 0448 FEFFFFEB 		add	r3, r3, #7	@ tmp137, tmp137,
+ 574              		cmp	r2, r3	@ i, tmp137
+ 123:main.c        **** 		}
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 26
+
+
+ 124:main.c        **** 
+ 125:main.c        **** 		
+ 126:main.c        **** 		for (i = 0; i < 5000; i++) ;
+ 575              	55	@,
+ 576 044c 0030A0E3 		.loc 3 134 0
+ 577 0450 04308DE5 		ldr	r3, [sp, #12]	@ derp, derp
+ 578 0454 020000EA 		add	r3, r3, #1	@ tmp139, derp,
+ 579              		str	r3, [sp, #12]	@ tmp139, derp
+ 580 0458 04309DE5 		.loc 3 159 0
+ 581 045c 013083E2 		b	.L49	@
+ 582 0460 04308DE5 	.L59:
+ 583              		.align	2
+ 584 0464 04209DE5 	.L58:
+ 585 0468 4E3DA0E3 		.word	.LC0
+ 586 046c 073083E2 		.word	458129845
+ 587 0470 030052E1 	.LFE290:
+ 588 0474 F7FFFFDA 		.size	main, .-main
+ 127:main.c        **** 		//for (i = 0; i < 31; i++) AT91F_PIO_ClearOutput( AT91C_BASE_PIOA, 1<<((derp-1)%4+7)) ;
+ 128:main.c        **** 		//wait();
+ 129:main.c        **** 		//for (i = 0; i < 31; i++) AT91F_PIO_SetOutput( AT91C_BASE_PIOA, 1<<(derp%4+7)) ;
+ 130:main.c        **** 		//wait();
+ 131:main.c        **** 		//wait();
+ 132:main.c        **** 		//wait();
+ 133:main.c        **** 	
+ 134:main.c        **** 		derp++;
+ 589              	pe	AT91F_PIO_CfgOutput, %function
+ 590 0478 0C309DE5 	AT91F_PIO_CfgOutput:
+ 591 047c 013083E2 	.LFB33:
+ 592 0480 0C308DE5 		.loc 2 507 0
+ 135:main.c        **** 	
+ 136:main.c        **** 	
+ 137:main.c        **** 	
+ 138:main.c        **** 	
+ 139:main.c        **** 	
+ 140:main.c        **** 	
+ 141:main.c        **** 	
+ 142:main.c        **** 	/*
+ 143:main.c        ****         // Once a Shot on each led
+ 144:main.c        **** 	for ( i=0 ; i < NB_LEB ; i++ )
+ 145:main.c        ****         {
+ 146:main.c        **** 	    AT91F_PIO_SetOutput( AT91C_BASE_PIOA, led_mask[i]) ;
+ 147:main.c        **** 	    wait();
+ 148:main.c        **** 	    AT91F_PIO_ClearOutput( AT91C_BASE_PIOA, led_mask[i] ) ;
+ 149:main.c        **** 	    wait();
+ 150:main.c        ****         }// End for
+ 151:main.c        ****         // Once a Shot on each led
+ 152:main.c        ****         for ( i=(NB_LEB-1) ; i >= 0 ; i-- )
+ 153:main.c        ****         {
+ 154:main.c        **** 	    AT91F_PIO_SetOutput( AT91C_BASE_PIOA, led_mask[i]) ;
+ 155:main.c        **** 	    wait();
+ 156:main.c        **** 	    AT91F_PIO_ClearOutput( AT91C_BASE_PIOA, led_mask[i] ) ;
+ 157:main.c        **** 	    wait();
+ 158:main.c        ****         }*/
+ 159:main.c        ****     }// End for
+ 593              	unction supports interworking.
+ 594 0484 D2FFFFEA 		@ args = 0, pretend = 0, frame = 8
+ 595              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 27
+
+
+ 596              		@ link register save eliminated.
+ 597              		sub	sp, sp, #8	@,,
+ 598 0488 20000000 	.LCFI11:
+ 599 048c B5814E1B 		@ lr needed for prologue	@
+ 600              		str	r0, [sp, #4]	@ pPio, pPio
+ 601              		str	r1, [sp, #0]	@ pioEnable, pioEnable
+ 602              		.loc 2 508 0
+ 603              		ldr	r2, [sp, #4]	@ pPio, pPio
+ 604              		ldr	r3, [sp, #0]	@ pioEnable, pioEnable
+ 605              		str	r3, [r2, #0]	@ pioEnable, <variable>.PIO_PER
+ 606              		.loc 2 509 0
+ 607              		ldr	r2, [sp, #4]	@ pPio, pPio
+ 608              		ldr	r3, [sp, #0]	@ pioEnable, pioEnable
+ 609              		str	r3, [r2, #16]	@ pioEnable, <variable>.PIO_OER
+ 610              		.loc 2 510 0
+ 611 0490 08D04DE2 		add	sp, sp, #8	@,,
+ 612              		bx	lr
+ 613              	.LFE33:
+ 614 0494 04008DE5 		.size	AT91F_PIO_CfgOutput, .-AT91F_PIO_CfgOutput
+ 615 0498 00108DE5 		.comm	display,4,1
+ 616              		.section	.debug_frame,"",%progbits
+ 617 049c 04209DE5 	.Lframe0:
+ 618 04a0 00309DE5 		.4byte	.LECIE0-.LSCIE0
+ 619 04a4 003082E5 	.LSCIE0:
+ 620              		.4byte	0xffffffff
+ 621 04a8 04209DE5 		.byte	0x1
+ 622 04ac 00309DE5 		.ascii	"\000"
+ 623 04b0 103082E5 		.uleb128 0x1
+ 624              		.sleb128 -4
+ 625 04b4 08D08DE2 		.byte	0xe
+ 626 04b8 1EFF2FE1 		.byte	0xc
+ 627              		.uleb128 0xd
+ 628              		.uleb128 0x0
+ 629              		.align	2
+ 630              	.LECIE0:
+ 631              	.LSFDE0:
+ 632 0000 0C000000 		.4byte	.LEFDE0-.LASFDE0
+ 633              	.LASFDE0:
+ 634 0004 FFFFFFFF 		.4byte	.Lframe0
+ 635 0008 01       		.4byte	.LFB285
+ 636 0009 00       		.4byte	.LFE285-.LFB285
+ 637 000a 01       		.byte	0x4
+ 638 000b 7C       		.4byte	.LCFI0-.LFB285
+ 639 000c 0E       		.byte	0xe
+ 640 000d 0C       		.uleb128 0x8
+ 641 000e 0D       		.align	2
+ 642 000f 00       	.LEFDE0:
+ 643              	.LSFDE2:
+ 644              		.4byte	.LEFDE2-.LASFDE2
+ 645              	.LASFDE2:
+ 646 0010 10000000 		.4byte	.Lframe0
+ 647              		.4byte	.LFB286
+ 648 0014 00000000 		.4byte	.LFE286-.LFB286
+ 649 0018 00000000 		.byte	0x4
+ 650 001c 80000000 		.4byte	.LCFI1-.LFB286
+ 651 0020 44       		.byte	0xe
+ 652              		.uleb128 0x4
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 28
+
+
+ 653 0021 0E       		.byte	0x4
+ 654 0022 08       		.4byte	.LCFI2-.LCFI1
+ 655 0023 00       		.byte	0xe
+ 656              		.uleb128 0xc
+ 657              		.byte	0x8e
+ 658 0024 14000000 		.uleb128 0x1
+ 659              		.align	2
+ 660 0028 00000000 	.LEFDE2:
+ 661 002c 80000000 	.LSFDE4:
+ 662 0030 5C000000 		.4byte	.LEFDE4-.LASFDE4
+ 663 0034 44       	.LASFDE4:
+ 664              		.4byte	.Lframe0
+ 665 0035 0E       		.4byte	.LFB287
+ 666 0036 04       		.4byte	.LFE287-.LFB287
+ 667 0037 44       		.byte	0x4
+ 668              		.4byte	.LCFI3-.LFB287
+ 669 0038 0E       		.byte	0xe
+ 670 0039 0C       		.uleb128 0x4
+ 671 003a 8E       		.byte	0x8e
+ 672 003b 01       		.uleb128 0x1
+ 673              		.align	2
+ 674              	.LEFDE4:
+ 675              	.LSFDE6:
+ 676 003c 14000000 		.4byte	.LEFDE6-.LASFDE6
+ 677              	.LASFDE6:
+ 678 0040 00000000 		.4byte	.Lframe0
+ 679 0044 DC000000 		.4byte	.LFB41
+ 680 0048 D0000000 		.4byte	.LFE41-.LFB41
+ 681 004c 44       		.byte	0x4
+ 682              		.4byte	.LCFI4-.LFB41
+ 683 004d 0E       		.byte	0xe
+ 684 004e 04       		.uleb128 0x8
+ 685 004f 8E       		.align	2
+ 686 0050 01       	.LEFDE6:
+ 687 0051 000000   	.LSFDE8:
+ 688              		.4byte	.LEFDE8-.LASFDE8
+ 689              	.LASFDE8:
+ 690 0054 10000000 		.4byte	.Lframe0
+ 691              		.4byte	.LFB42
+ 692 0058 00000000 		.4byte	.LFE42-.LFB42
+ 693 005c AC010000 		.byte	0x4
+ 694 0060 20000000 		.4byte	.LCFI5-.LFB42
+ 695 0064 44       		.byte	0xe
+ 696              		.uleb128 0x8
+ 697 0065 0E       		.align	2
+ 698 0066 08       	.LEFDE8:
+ 699 0067 00       	.LSFDE10:
+ 700              		.4byte	.LEFDE10-.LASFDE10
+ 701              	.LASFDE10:
+ 702 0068 10000000 		.4byte	.Lframe0
+ 703              		.4byte	.LFB288
+ 704 006c 00000000 		.4byte	.LFE288-.LFB288
+ 705 0070 CC010000 		.byte	0x4
+ 706 0074 20000000 		.4byte	.LCFI6-.LFB288
+ 707 0078 44       		.byte	0xe
+ 708              		.uleb128 0x4
+ 709 0079 0E       		.byte	0x8e
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 29
+
+
+ 710 007a 08       		.uleb128 0x1
+ 711 007b 00       		.align	2
+ 712              	.LEFDE10:
+ 713              	.LSFDE12:
+ 714 007c 14000000 		.4byte	.LEFDE12-.LASFDE12
+ 715              	.LASFDE12:
+ 716 0080 00000000 		.4byte	.Lframe0
+ 717 0084 EC010000 		.4byte	.LFB39
+ 718 0088 A8000000 		.4byte	.LFE39-.LFB39
+ 719 008c 44       		.byte	0x4
+ 720              		.4byte	.LCFI7-.LFB39
+ 721 008d 0E       		.byte	0xe
+ 722 008e 04       		.uleb128 0x4
+ 723 008f 8E       		.align	2
+ 724 0090 01       	.LEFDE12:
+ 725 0091 000000   	.LSFDE14:
+ 726              		.4byte	.LEFDE14-.LASFDE14
+ 727              	.LASFDE14:
+ 728 0094 10000000 		.4byte	.Lframe0
+ 729              		.4byte	.LFB289
+ 730 0098 00000000 		.4byte	.LFE289-.LFB289
+ 731 009c 94020000 		.byte	0x4
+ 732 00a0 1C000000 		.4byte	.LCFI8-.LFB289
+ 733 00a4 44       		.byte	0xe
+ 734              		.uleb128 0x4
+ 735 00a5 0E       		.align	2
+ 736 00a6 04       	.LEFDE14:
+ 737 00a7 00       	.LSFDE16:
+ 738              		.4byte	.LEFDE16-.LASFDE16
+ 739              	.LASFDE16:
+ 740 00a8 10000000 		.4byte	.Lframe0
+ 741              		.4byte	.LFB290
+ 742 00ac 00000000 		.4byte	.LFE290-.LFB290
+ 743 00b0 B0020000 		.byte	0x4
+ 744 00b4 3C000000 		.4byte	.LCFI9-.LFB290
+ 745 00b8 44       		.byte	0xe
+ 746              		.uleb128 0x4
+ 747 00b9 0E       		.byte	0x4
+ 748 00ba 04       		.4byte	.LCFI10-.LCFI9
+ 749 00bb 00       		.byte	0xe
+ 750              		.uleb128 0x1c
+ 751              		.byte	0x8e
+ 752 00bc 14000000 		.uleb128 0x1
+ 753              		.align	2
+ 754 00c0 00000000 	.LEFDE16:
+ 755 00c4 EC020000 	.LSFDE18:
+ 756 00c8 A4010000 		.4byte	.LEFDE18-.LASFDE18
+ 757 00cc 44       	.LASFDE18:
+ 758              		.4byte	.Lframe0
+ 759 00cd 0E       		.4byte	.LFB33
+ 760 00ce 04       		.4byte	.LFE33-.LFB33
+ 761 00cf 44       		.byte	0x4
+ 762              		.4byte	.LCFI11-.LFB33
+ 763 00d0 0E       		.byte	0xe
+ 764 00d1 1C       		.uleb128 0x8
+ 765 00d2 8E       		.align	2
+ 766 00d3 01       	.LEFDE18:
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 30
+
+
+ 767              		.text
+ 768              	.Letext0:
+ 769              		.section	.debug_loc,"",%progbits
+ 770 00d4 10000000 	.Ldebug_loc0:
+ 771              	.LLST0:
+ 772 00d8 00000000 		.4byte	.LFB285-.Ltext0
+ 773 00dc 90040000 		.4byte	.LCFI0-.Ltext0
+ 774 00e0 2C000000 		.2byte	0x1
+ 775 00e4 44       		.byte	0x5d
+ 776              		.4byte	.LCFI0-.Ltext0
+ 777 00e5 0E       		.4byte	.LFE285-.Ltext0
+ 778 00e6 08       		.2byte	0x2
+ 779 00e7 00       		.byte	0x7d
+ 780              		.sleb128 8
+ 781              		.4byte	0x0
+ 782              		.4byte	0x0
+ 783              	.LLST1:
+ 784              		.4byte	.LFB286-.Ltext0
+ 785              		.4byte	.LCFI1-.Ltext0
+ 786 0000 00000000 		.2byte	0x1
+ 787 0004 04000000 		.byte	0x5d
+ 788 0008 0100     		.4byte	.LCFI1-.Ltext0
+ 789 000a 5D       		.4byte	.LCFI2-.Ltext0
+ 790 000b 04000000 		.2byte	0x2
+ 791 000f 80000000 		.byte	0x7d
+ 792 0013 0200     		.sleb128 4
+ 793 0015 7D       		.4byte	.LCFI2-.Ltext0
+ 794 0016 08       		.4byte	.LFE286-.Ltext0
+ 795 0017 00000000 		.2byte	0x2
+ 796 001b 00000000 		.byte	0x7d
+ 797              		.sleb128 12
+ 798 001f 80000000 		.4byte	0x0
+ 799 0023 84000000 		.4byte	0x0
+ 800 0027 0100     	.LLST2:
+ 801 0029 5D       		.4byte	.LFB287-.Ltext0
+ 802 002a 84000000 		.4byte	.LCFI3-.Ltext0
+ 803 002e 88000000 		.2byte	0x1
+ 804 0032 0200     		.byte	0x5d
+ 805 0034 7D       		.4byte	.LCFI3-.Ltext0
+ 806 0035 04       		.4byte	.LFE287-.Ltext0
+ 807 0036 88000000 		.2byte	0x2
+ 808 003a DC000000 		.byte	0x7d
+ 809 003e 0200     		.sleb128 4
+ 810 0040 7D       		.4byte	0x0
+ 811 0041 0C       		.4byte	0x0
+ 812 0042 00000000 	.LLST3:
+ 813 0046 00000000 		.4byte	.LFB41-.Ltext0
+ 814              		.4byte	.LCFI4-.Ltext0
+ 815 004a DC000000 		.2byte	0x1
+ 816 004e E0000000 		.byte	0x5d
+ 817 0052 0100     		.4byte	.LCFI4-.Ltext0
+ 818 0054 5D       		.4byte	.LFE41-.Ltext0
+ 819 0055 E0000000 		.2byte	0x2
+ 820 0059 AC010000 		.byte	0x7d
+ 821 005d 0200     		.sleb128 8
+ 822 005f 7D       		.4byte	0x0
+ 823 0060 04       		.4byte	0x0
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 31
+
+
+ 824 0061 00000000 	.LLST4:
+ 825 0065 00000000 		.4byte	.LFB42-.Ltext0
+ 826              		.4byte	.LCFI5-.Ltext0
+ 827 0069 AC010000 		.2byte	0x1
+ 828 006d B0010000 		.byte	0x5d
+ 829 0071 0100     		.4byte	.LCFI5-.Ltext0
+ 830 0073 5D       		.4byte	.LFE42-.Ltext0
+ 831 0074 B0010000 		.2byte	0x2
+ 832 0078 CC010000 		.byte	0x7d
+ 833 007c 0200     		.sleb128 8
+ 834 007e 7D       		.4byte	0x0
+ 835 007f 08       		.4byte	0x0
+ 836 0080 00000000 	.LLST5:
+ 837 0084 00000000 		.4byte	.LFB288-.Ltext0
+ 838              		.4byte	.LCFI6-.Ltext0
+ 839 0088 CC010000 		.2byte	0x1
+ 840 008c D0010000 		.byte	0x5d
+ 841 0090 0100     		.4byte	.LCFI6-.Ltext0
+ 842 0092 5D       		.4byte	.LFE288-.Ltext0
+ 843 0093 D0010000 		.2byte	0x2
+ 844 0097 EC010000 		.byte	0x7d
+ 845 009b 0200     		.sleb128 4
+ 846 009d 7D       		.4byte	0x0
+ 847 009e 08       		.4byte	0x0
+ 848 009f 00000000 	.LLST6:
+ 849 00a3 00000000 		.4byte	.LFB39-.Ltext0
+ 850              		.4byte	.LCFI7-.Ltext0
+ 851 00a7 EC010000 		.2byte	0x1
+ 852 00ab F0010000 		.byte	0x5d
+ 853 00af 0100     		.4byte	.LCFI7-.Ltext0
+ 854 00b1 5D       		.4byte	.LFE39-.Ltext0
+ 855 00b2 F0010000 		.2byte	0x2
+ 856 00b6 94020000 		.byte	0x7d
+ 857 00ba 0200     		.sleb128 4
+ 858 00bc 7D       		.4byte	0x0
+ 859 00bd 04       		.4byte	0x0
+ 860 00be 00000000 	.LLST7:
+ 861 00c2 00000000 		.4byte	.LFB289-.Ltext0
+ 862              		.4byte	.LCFI8-.Ltext0
+ 863 00c6 94020000 		.2byte	0x1
+ 864 00ca 98020000 		.byte	0x5d
+ 865 00ce 0100     		.4byte	.LCFI8-.Ltext0
+ 866 00d0 5D       		.4byte	.LFE289-.Ltext0
+ 867 00d1 98020000 		.2byte	0x2
+ 868 00d5 B0020000 		.byte	0x7d
+ 869 00d9 0200     		.sleb128 4
+ 870 00db 7D       		.4byte	0x0
+ 871 00dc 04       		.4byte	0x0
+ 872 00dd 00000000 	.LLST8:
+ 873 00e1 00000000 		.4byte	.LFB290-.Ltext0
+ 874              		.4byte	.LCFI9-.Ltext0
+ 875 00e5 B0020000 		.2byte	0x1
+ 876 00e9 B4020000 		.byte	0x5d
+ 877 00ed 0100     		.4byte	.LCFI9-.Ltext0
+ 878 00ef 5D       		.4byte	.LCFI10-.Ltext0
+ 879 00f0 B4020000 		.2byte	0x2
+ 880 00f4 EC020000 		.byte	0x7d
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 32
+
+
+ 881 00f8 0200     		.sleb128 4
+ 882 00fa 7D       		.4byte	.LCFI10-.Ltext0
+ 883 00fb 04       		.4byte	.LFE290-.Ltext0
+ 884 00fc 00000000 		.2byte	0x2
+ 885 0100 00000000 		.byte	0x7d
+ 886              		.sleb128 28
+ 887 0104 EC020000 		.4byte	0x0
+ 888 0108 F0020000 		.4byte	0x0
+ 889 010c 0100     	.LLST9:
+ 890 010e 5D       		.4byte	.LFB33-.Ltext0
+ 891 010f F0020000 		.4byte	.LCFI11-.Ltext0
+ 892 0113 F4020000 		.2byte	0x1
+ 893 0117 0200     		.byte	0x5d
+ 894 0119 7D       		.4byte	.LCFI11-.Ltext0
+ 895 011a 04       		.4byte	.LFE33-.Ltext0
+ 896 011b F4020000 		.2byte	0x2
+ 897 011f 90040000 		.byte	0x7d
+ 898 0123 0200     		.sleb128 8
+ 899 0125 7D       		.4byte	0x0
+ 900 0126 1C       		.4byte	0x0
+ 901 0127 00000000 		.file 4 "AT91SAM7S64.h"
+ 902 012b 00000000 		.section	.debug_info
+ 903              		.4byte	0x6d8
+ 904 012f 90040000 		.2byte	0x2
+ 905 0133 94040000 		.4byte	.Ldebug_abbrev0
+ 906 0137 0100     		.byte	0x4
+ 907 0139 5D       		.uleb128 0x1
+ 908 013a 94040000 		.ascii	"GNU C 4.2.1\000"
+ 909 013e BC040000 		.byte	0x1
+ 910 0142 0200     		.ascii	"main.c\000"
+ 911 0144 7D       		.ascii	"X:\\enel353\000"
+ 912 0145 08       		.4byte	.Ltext0
+ 913 0146 00000000 		.4byte	.Letext0
+ 914 014a 00000000 		.4byte	.Ldebug_line0
+ 915              		.uleb128 0x2
+ 916              		.4byte	0x3c
+ 917 0000 D8060000 		.uleb128 0x3
+ 918 0004 0200     		.byte	0x4
+ 919 0006 00000000 		.byte	0x7
+ 920 000a 04       		.ascii	"unsigned int\000"
+ 921 000b 01       		.uleb128 0x4
+ 922 000c 474E5520 		.byte	0x4
+ 922      4320342E 
+ 922      322E3100 
+ 923 0018 01       		.byte	0x7
+ 924 0019 6D61696E 		.uleb128 0x5
+ 924      2E6300
+ 925 0020 583A5C65 		.4byte	0x3c
+ 925      6E656C33 
+ 925      353300
+ 926 002b 00000000 		.4byte	0x5f
+ 927 002f BC040000 		.uleb128 0x6
+ 928 0033 00000000 		.4byte	0x4c
+ 929 0037 02       		.byte	0x0
+ 930 0038 3C000000 		.byte	0x0
+ 931 003c 03       		.uleb128 0x5
+ 932 003d 04       		.4byte	0x3c
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 33
+
+
+ 933 003e 07       		.4byte	0x6f
+ 934 003f 756E7369 		.uleb128 0x6
+ 934      676E6564 
+ 934      20696E74 
+ 934      00
+ 935 004c 04       		.4byte	0x4c
+ 936 004d 04       		.byte	0x8
+ 937 004e 07       		.byte	0x0
+ 938 004f 05       		.uleb128 0x7
+ 939 0050 3C000000 		.ascii	"_AT91S_PIO\000"
+ 940 0054 5F000000 		.byte	0xac
+ 941 0058 06       		.byte	0x4
+ 942 0059 4C000000 		.2byte	0x138
+ 943 005d 00       		.4byte	0x340
+ 944 005e 00       		.uleb128 0x8
+ 945 005f 05       		.ascii	"PIO_PER\000"
+ 946 0060 3C000000 		.byte	0x4
+ 947 0064 6F000000 		.2byte	0x139
+ 948 0068 06       		.4byte	0x37
+ 949 0069 4C000000 		.byte	0x2
+ 950 006d 08       		.byte	0x23
+ 951 006e 00       		.uleb128 0x0
+ 952 006f 07       		.uleb128 0x8
+ 953 0070 5F415439 		.ascii	"PIO_PDR\000"
+ 953      31535F50 
+ 953      494F00
+ 954 007b AC       		.byte	0x4
+ 955 007c 04       		.2byte	0x13a
+ 956 007d 3801     		.4byte	0x37
+ 957 007f 40030000 		.byte	0x2
+ 958 0083 08       		.byte	0x23
+ 959 0084 50494F5F 		.uleb128 0x4
+ 959      50455200 
+ 960 008c 04       		.uleb128 0x8
+ 961 008d 3901     		.ascii	"PIO_PSR\000"
+ 962 008f 37000000 		.byte	0x4
+ 963 0093 02       		.2byte	0x13b
+ 964 0094 23       		.4byte	0x37
+ 965 0095 00       		.byte	0x2
+ 966 0096 08       		.byte	0x23
+ 967 0097 50494F5F 		.uleb128 0x8
+ 967      50445200 
+ 968 009f 04       		.uleb128 0x8
+ 969 00a0 3A01     		.ascii	"Reserved0\000"
+ 970 00a2 37000000 		.byte	0x4
+ 971 00a6 02       		.2byte	0x13c
+ 972 00a7 23       		.4byte	0x340
+ 973 00a8 04       		.byte	0x2
+ 974 00a9 08       		.byte	0x23
+ 975 00aa 50494F5F 		.uleb128 0xc
+ 975      50535200 
+ 976 00b2 04       		.uleb128 0x8
+ 977 00b3 3B01     		.ascii	"PIO_OER\000"
+ 978 00b5 37000000 		.byte	0x4
+ 979 00b9 02       		.2byte	0x13d
+ 980 00ba 23       		.4byte	0x37
+ 981 00bb 08       		.byte	0x2
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 34
+
+
+ 982 00bc 08       		.byte	0x23
+ 983 00bd 52657365 		.uleb128 0x10
+ 983      72766564 
+ 983      3000
+ 984 00c7 04       		.uleb128 0x8
+ 985 00c8 3C01     		.ascii	"PIO_ODR\000"
+ 986 00ca 40030000 		.byte	0x4
+ 987 00ce 02       		.2byte	0x13e
+ 988 00cf 23       		.4byte	0x37
+ 989 00d0 0C       		.byte	0x2
+ 990 00d1 08       		.byte	0x23
+ 991 00d2 50494F5F 		.uleb128 0x14
+ 991      4F455200 
+ 992 00da 04       		.uleb128 0x8
+ 993 00db 3D01     		.ascii	"PIO_OSR\000"
+ 994 00dd 37000000 		.byte	0x4
+ 995 00e1 02       		.2byte	0x13f
+ 996 00e2 23       		.4byte	0x37
+ 997 00e3 10       		.byte	0x2
+ 998 00e4 08       		.byte	0x23
+ 999 00e5 50494F5F 		.uleb128 0x18
+ 999      4F445200 
+ 1000 00ed 04       		.uleb128 0x8
+ 1001 00ee 3E01     		.ascii	"Reserved1\000"
+ 1002 00f0 37000000 		.byte	0x4
+ 1003 00f4 02       		.2byte	0x140
+ 1004 00f5 23       		.4byte	0x345
+ 1005 00f6 14       		.byte	0x2
+ 1006 00f7 08       		.byte	0x23
+ 1007 00f8 50494F5F 		.uleb128 0x1c
+ 1007      4F535200 
+ 1008 0100 04       		.uleb128 0x8
+ 1009 0101 3F01     		.ascii	"PIO_IFER\000"
+ 1010 0103 37000000 		.byte	0x4
+ 1011 0107 02       		.2byte	0x141
+ 1012 0108 23       		.4byte	0x37
+ 1013 0109 18       		.byte	0x2
+ 1014 010a 08       		.byte	0x23
+ 1015 010b 52657365 		.uleb128 0x20
+ 1015      72766564 
+ 1015      3100
+ 1016 0115 04       		.uleb128 0x8
+ 1017 0116 4001     		.ascii	"PIO_IFDR\000"
+ 1018 0118 45030000 		.byte	0x4
+ 1019 011c 02       		.2byte	0x142
+ 1020 011d 23       		.4byte	0x37
+ 1021 011e 1C       		.byte	0x2
+ 1022 011f 08       		.byte	0x23
+ 1023 0120 50494F5F 		.uleb128 0x24
+ 1023      49464552 
+ 1023      00
+ 1024 0129 04       		.uleb128 0x8
+ 1025 012a 4101     		.ascii	"PIO_IFSR\000"
+ 1026 012c 37000000 		.byte	0x4
+ 1027 0130 02       		.2byte	0x143
+ 1028 0131 23       		.4byte	0x37
+ 1029 0132 20       		.byte	0x2
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 35
+
+
+ 1030 0133 08       		.byte	0x23
+ 1031 0134 50494F5F 		.uleb128 0x28
+ 1031      49464452 
+ 1031      00
+ 1032 013d 04       		.uleb128 0x8
+ 1033 013e 4201     		.ascii	"Reserved2\000"
+ 1034 0140 37000000 		.byte	0x4
+ 1035 0144 02       		.2byte	0x144
+ 1036 0145 23       		.4byte	0x34a
+ 1037 0146 24       		.byte	0x2
+ 1038 0147 08       		.byte	0x23
+ 1039 0148 50494F5F 		.uleb128 0x2c
+ 1039      49465352 
+ 1039      00
+ 1040 0151 04       		.uleb128 0x8
+ 1041 0152 4301     		.ascii	"PIO_SODR\000"
+ 1042 0154 37000000 		.byte	0x4
+ 1043 0158 02       		.2byte	0x145
+ 1044 0159 23       		.4byte	0x37
+ 1045 015a 28       		.byte	0x2
+ 1046 015b 08       		.byte	0x23
+ 1047 015c 52657365 		.uleb128 0x30
+ 1047      72766564 
+ 1047      3200
+ 1048 0166 04       		.uleb128 0x8
+ 1049 0167 4401     		.ascii	"PIO_CODR\000"
+ 1050 0169 4A030000 		.byte	0x4
+ 1051 016d 02       		.2byte	0x146
+ 1052 016e 23       		.4byte	0x37
+ 1053 016f 2C       		.byte	0x2
+ 1054 0170 08       		.byte	0x23
+ 1055 0171 50494F5F 		.uleb128 0x34
+ 1055      534F4452 
+ 1055      00
+ 1056 017a 04       		.uleb128 0x8
+ 1057 017b 4501     		.ascii	"PIO_ODSR\000"
+ 1058 017d 37000000 		.byte	0x4
+ 1059 0181 02       		.2byte	0x147
+ 1060 0182 23       		.4byte	0x37
+ 1061 0183 30       		.byte	0x2
+ 1062 0184 08       		.byte	0x23
+ 1063 0185 50494F5F 		.uleb128 0x38
+ 1063      434F4452 
+ 1063      00
+ 1064 018e 04       		.uleb128 0x8
+ 1065 018f 4601     		.ascii	"PIO_PDSR\000"
+ 1066 0191 37000000 		.byte	0x4
+ 1067 0195 02       		.2byte	0x148
+ 1068 0196 23       		.4byte	0x37
+ 1069 0197 34       		.byte	0x2
+ 1070 0198 08       		.byte	0x23
+ 1071 0199 50494F5F 		.uleb128 0x3c
+ 1071      4F445352 
+ 1071      00
+ 1072 01a2 04       		.uleb128 0x8
+ 1073 01a3 4701     		.ascii	"PIO_IER\000"
+ 1074 01a5 37000000 		.byte	0x4
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 36
+
+
+ 1075 01a9 02       		.2byte	0x149
+ 1076 01aa 23       		.4byte	0x37
+ 1077 01ab 38       		.byte	0x2
+ 1078 01ac 08       		.byte	0x23
+ 1079 01ad 50494F5F 		.uleb128 0x40
+ 1079      50445352 
+ 1079      00
+ 1080 01b6 04       		.uleb128 0x8
+ 1081 01b7 4801     		.ascii	"PIO_IDR\000"
+ 1082 01b9 37000000 		.byte	0x4
+ 1083 01bd 02       		.2byte	0x14a
+ 1084 01be 23       		.4byte	0x37
+ 1085 01bf 3C       		.byte	0x2
+ 1086 01c0 08       		.byte	0x23
+ 1087 01c1 50494F5F 		.uleb128 0x44
+ 1087      49455200 
+ 1088 01c9 04       		.uleb128 0x8
+ 1089 01ca 4901     		.ascii	"PIO_IMR\000"
+ 1090 01cc 37000000 		.byte	0x4
+ 1091 01d0 02       		.2byte	0x14b
+ 1092 01d1 23       		.4byte	0x37
+ 1093 01d2 40       		.byte	0x2
+ 1094 01d3 08       		.byte	0x23
+ 1095 01d4 50494F5F 		.uleb128 0x48
+ 1095      49445200 
+ 1096 01dc 04       		.uleb128 0x8
+ 1097 01dd 4A01     		.ascii	"PIO_ISR\000"
+ 1098 01df 37000000 		.byte	0x4
+ 1099 01e3 02       		.2byte	0x14c
+ 1100 01e4 23       		.4byte	0x37
+ 1101 01e5 44       		.byte	0x2
+ 1102 01e6 08       		.byte	0x23
+ 1103 01e7 50494F5F 		.uleb128 0x4c
+ 1103      494D5200 
+ 1104 01ef 04       		.uleb128 0x8
+ 1105 01f0 4B01     		.ascii	"PIO_MDER\000"
+ 1106 01f2 37000000 		.byte	0x4
+ 1107 01f6 02       		.2byte	0x14d
+ 1108 01f7 23       		.4byte	0x37
+ 1109 01f8 48       		.byte	0x2
+ 1110 01f9 08       		.byte	0x23
+ 1111 01fa 50494F5F 		.uleb128 0x50
+ 1111      49535200 
+ 1112 0202 04       		.uleb128 0x8
+ 1113 0203 4C01     		.ascii	"PIO_MDDR\000"
+ 1114 0205 37000000 		.byte	0x4
+ 1115 0209 02       		.2byte	0x14e
+ 1116 020a 23       		.4byte	0x37
+ 1117 020b 4C       		.byte	0x2
+ 1118 020c 08       		.byte	0x23
+ 1119 020d 50494F5F 		.uleb128 0x54
+ 1119      4D444552 
+ 1119      00
+ 1120 0216 04       		.uleb128 0x8
+ 1121 0217 4D01     		.ascii	"PIO_MDSR\000"
+ 1122 0219 37000000 		.byte	0x4
+ 1123 021d 02       		.2byte	0x14f
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 37
+
+
+ 1124 021e 23       		.4byte	0x37
+ 1125 021f 50       		.byte	0x2
+ 1126 0220 08       		.byte	0x23
+ 1127 0221 50494F5F 		.uleb128 0x58
+ 1127      4D444452 
+ 1127      00
+ 1128 022a 04       		.uleb128 0x8
+ 1129 022b 4E01     		.ascii	"Reserved3\000"
+ 1130 022d 37000000 		.byte	0x4
+ 1131 0231 02       		.2byte	0x150
+ 1132 0232 23       		.4byte	0x34f
+ 1133 0233 54       		.byte	0x2
+ 1134 0234 08       		.byte	0x23
+ 1135 0235 50494F5F 		.uleb128 0x5c
+ 1135      4D445352 
+ 1135      00
+ 1136 023e 04       		.uleb128 0x8
+ 1137 023f 4F01     		.ascii	"PIO_PPUDR\000"
+ 1138 0241 37000000 		.byte	0x4
+ 1139 0245 02       		.2byte	0x151
+ 1140 0246 23       		.4byte	0x37
+ 1141 0247 58       		.byte	0x2
+ 1142 0248 08       		.byte	0x23
+ 1143 0249 52657365 		.uleb128 0x60
+ 1143      72766564 
+ 1143      3300
+ 1144 0253 04       		.uleb128 0x8
+ 1145 0254 5001     		.ascii	"PIO_PPUER\000"
+ 1146 0256 4F030000 		.byte	0x4
+ 1147 025a 02       		.2byte	0x152
+ 1148 025b 23       		.4byte	0x37
+ 1149 025c 5C       		.byte	0x2
+ 1150 025d 08       		.byte	0x23
+ 1151 025e 50494F5F 		.uleb128 0x64
+ 1151      50505544 
+ 1151      5200
+ 1152 0268 04       		.uleb128 0x8
+ 1153 0269 5101     		.ascii	"PIO_PPUSR\000"
+ 1154 026b 37000000 		.byte	0x4
+ 1155 026f 02       		.2byte	0x153
+ 1156 0270 23       		.4byte	0x37
+ 1157 0271 60       		.byte	0x2
+ 1158 0272 08       		.byte	0x23
+ 1159 0273 50494F5F 		.uleb128 0x68
+ 1159      50505545 
+ 1159      5200
+ 1160 027d 04       		.uleb128 0x8
+ 1161 027e 5201     		.ascii	"Reserved4\000"
+ 1162 0280 37000000 		.byte	0x4
+ 1163 0284 02       		.2byte	0x154
+ 1164 0285 23       		.4byte	0x354
+ 1165 0286 64       		.byte	0x2
+ 1166 0287 08       		.byte	0x23
+ 1167 0288 50494F5F 		.uleb128 0x6c
+ 1167      50505553 
+ 1167      5200
+ 1168 0292 04       		.uleb128 0x8
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 38
+
+
+ 1169 0293 5301     		.ascii	"PIO_ASR\000"
+ 1170 0295 37000000 		.byte	0x4
+ 1171 0299 02       		.2byte	0x155
+ 1172 029a 23       		.4byte	0x37
+ 1173 029b 68       		.byte	0x2
+ 1174 029c 08       		.byte	0x23
+ 1175 029d 52657365 		.uleb128 0x70
+ 1175      72766564 
+ 1175      3400
+ 1176 02a7 04       		.uleb128 0x8
+ 1177 02a8 5401     		.ascii	"PIO_BSR\000"
+ 1178 02aa 54030000 		.byte	0x4
+ 1179 02ae 02       		.2byte	0x156
+ 1180 02af 23       		.4byte	0x37
+ 1181 02b0 6C       		.byte	0x2
+ 1182 02b1 08       		.byte	0x23
+ 1183 02b2 50494F5F 		.uleb128 0x74
+ 1183      41535200 
+ 1184 02ba 04       		.uleb128 0x8
+ 1185 02bb 5501     		.ascii	"PIO_ABSR\000"
+ 1186 02bd 37000000 		.byte	0x4
+ 1187 02c1 02       		.2byte	0x157
+ 1188 02c2 23       		.4byte	0x37
+ 1189 02c3 70       		.byte	0x2
+ 1190 02c4 08       		.byte	0x23
+ 1191 02c5 50494F5F 		.uleb128 0x78
+ 1191      42535200 
+ 1192 02cd 04       		.uleb128 0x8
+ 1193 02ce 5601     		.ascii	"Reserved5\000"
+ 1194 02d0 37000000 		.byte	0x4
+ 1195 02d4 02       		.2byte	0x158
+ 1196 02d5 23       		.4byte	0x359
+ 1197 02d6 74       		.byte	0x2
+ 1198 02d7 08       		.byte	0x23
+ 1199 02d8 50494F5F 		.uleb128 0x7c
+ 1199      41425352 
+ 1199      00
+ 1200 02e1 04       		.uleb128 0x8
+ 1201 02e2 5701     		.ascii	"PIO_OWER\000"
+ 1202 02e4 37000000 		.byte	0x4
+ 1203 02e8 02       		.2byte	0x159
+ 1204 02e9 23       		.4byte	0x37
+ 1205 02ea 78       		.byte	0x3
+ 1206 02eb 08       		.byte	0x23
+ 1207 02ec 52657365 		.uleb128 0xa0
+ 1207      72766564 
+ 1207      3500
+ 1208 02f6 04       		.uleb128 0x8
+ 1209 02f7 5801     		.ascii	"PIO_OWDR\000"
+ 1210 02f9 59030000 		.byte	0x4
+ 1211 02fd 02       		.2byte	0x15a
+ 1212 02fe 23       		.4byte	0x37
+ 1213 02ff 7C       		.byte	0x3
+ 1214 0300 08       		.byte	0x23
+ 1215 0301 50494F5F 		.uleb128 0xa4
+ 1215      4F574552 
+ 1215      00
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 39
+
+
+ 1216 030a 04       		.uleb128 0x8
+ 1217 030b 5901     		.ascii	"PIO_OWSR\000"
+ 1218 030d 37000000 		.byte	0x4
+ 1219 0311 03       		.2byte	0x15b
+ 1220 0312 23       		.4byte	0x37
+ 1221 0313 A001     		.byte	0x3
+ 1222 0315 08       		.byte	0x23
+ 1223 0316 50494F5F 		.uleb128 0xa8
+ 1223      4F574452 
+ 1223      00
+ 1224 031f 04       		.byte	0x0
+ 1225 0320 5A01     		.uleb128 0x2
+ 1226 0322 37000000 		.4byte	0x4f
+ 1227 0326 03       		.uleb128 0x2
+ 1228 0327 23       		.4byte	0x4f
+ 1229 0328 A401     		.uleb128 0x2
+ 1230 032a 08       		.4byte	0x4f
+ 1231 032b 50494F5F 		.uleb128 0x2
+ 1231      4F575352 
+ 1231      00
+ 1232 0334 04       		.4byte	0x4f
+ 1233 0335 5B01     		.uleb128 0x2
+ 1234 0337 37000000 		.4byte	0x4f
+ 1235 033b 03       		.uleb128 0x2
+ 1236 033c 23       		.4byte	0x5f
+ 1237 033d A801     		.uleb128 0x9
+ 1238 033f 00       		.ascii	"AT91PS_PIO\000"
+ 1239 0340 02       		.byte	0x4
+ 1240 0341 4F000000 		.2byte	0x15c
+ 1241 0345 02       		.4byte	0x371
+ 1242 0346 4F000000 		.uleb128 0xa
+ 1243 034a 02       		.byte	0x4
+ 1244 034b 4F000000 		.4byte	0x6f
+ 1245 034f 02       		.uleb128 0xb
+ 1246 0350 4F000000 		.byte	0x1
+ 1247 0354 02       		.ascii	"setSegment\000"
+ 1248 0355 4F000000 		.byte	0x1
+ 1249 0359 02       		.byte	0x4b
+ 1250 035a 5F000000 		.byte	0x1
+ 1251 035e 09       		.4byte	.LFB285
+ 1252 035f 41543931 		.4byte	.LFE285
+ 1252      50535F50 
+ 1252      494F00
+ 1253 036a 04       		.4byte	.LLST0
+ 1254 036b 5C01     		.4byte	0x3be
+ 1255 036d 71030000 		.uleb128 0xc
+ 1256 0371 0A       		.ascii	"segment\000"
+ 1257 0372 04       		.byte	0x1
+ 1258 0373 6F000000 		.byte	0x4a
+ 1259 0377 0B       		.4byte	0x3be
+ 1260 0378 01       		.byte	0x2
+ 1261 0379 73657453 		.byte	0x91
+ 1261      65676D65 
+ 1261      6E7400
+ 1262 0384 01       		.sleb128 -4
+ 1263 0385 4B       		.uleb128 0xc
+ 1264 0386 01       		.ascii	"character\000"
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 40
+
+
+ 1265 0387 00000000 		.byte	0x1
+ 1266 038b 80000000 		.byte	0x4a
+ 1267 038f 00000000 		.4byte	0x3c5
+ 1268 0393 BE030000 		.byte	0x2
+ 1269 0397 0C       		.byte	0x91
+ 1270 0398 7365676D 		.sleb128 -8
+ 1270      656E7400 
+ 1271 03a0 01       		.byte	0x0
+ 1272 03a1 4A       		.uleb128 0x3
+ 1273 03a2 BE030000 		.byte	0x4
+ 1274 03a6 02       		.byte	0x5
+ 1275 03a7 91       		.ascii	"int\000"
+ 1276 03a8 7C       		.uleb128 0x3
+ 1277 03a9 0C       		.byte	0x1
+ 1278 03aa 63686172 		.byte	0x8
+ 1278      61637465 
+ 1278      7200
+ 1279 03b4 01       		.ascii	"char\000"
+ 1280 03b5 4A       		.uleb128 0xb
+ 1281 03b6 C5030000 		.byte	0x1
+ 1282 03ba 02       		.ascii	"setDisplay\000"
+ 1283 03bb 91       		.byte	0x1
+ 1284 03bc 78       		.byte	0x51
+ 1285 03bd 00       		.byte	0x1
+ 1286 03be 03       		.4byte	.LFB286
+ 1287 03bf 04       		.4byte	.LFE286
+ 1288 03c0 05       		.4byte	.LLST1
+ 1289 03c1 696E7400 		.4byte	0x40b
+ 1290 03c5 03       		.uleb128 0xc
+ 1291 03c6 01       		.ascii	"string\000"
+ 1292 03c7 08       		.byte	0x1
+ 1293 03c8 63686172 		.byte	0x50
+ 1293      00
+ 1294 03cd 0B       		.4byte	0x40b
+ 1295 03ce 01       		.byte	0x2
+ 1296 03cf 73657444 		.byte	0x91
+ 1296      6973706C 
+ 1296      617900
+ 1297 03da 01       		.sleb128 -12
+ 1298 03db 51       		.uleb128 0xd
+ 1299 03dc 01       		.ascii	"i\000"
+ 1300 03dd 80000000 		.byte	0x1
+ 1301 03e1 DC000000 		.byte	0x52
+ 1302 03e5 1F000000 		.4byte	0x3be
+ 1303 03e9 0B040000 		.byte	0x2
+ 1304 03ed 0C       		.byte	0x91
+ 1305 03ee 73747269 		.sleb128 -8
+ 1305      6E6700
+ 1306 03f5 01       		.byte	0x0
+ 1307 03f6 50       		.uleb128 0xa
+ 1308 03f7 0B040000 		.byte	0x4
+ 1309 03fb 02       		.4byte	0x3c5
+ 1310 03fc 91       		.uleb128 0xe
+ 1311 03fd 74       		.byte	0x1
+ 1312 03fe 0D       		.ascii	"displayStep\000"
+ 1313 03ff 6900     		.byte	0x1
+ 1314 0401 01       		.byte	0x57
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 41
+
+
+ 1315 0402 52       		.4byte	.LFB287
+ 1316 0403 BE030000 		.4byte	.LFE287
+ 1317 0407 02       		.4byte	.LLST2
+ 1318 0408 91       		.uleb128 0xf
+ 1319 0409 78       		.ascii	"AT91F_PIO_SetOutput\000"
+ 1320 040a 00       		.byte	0x2
+ 1321 040b 0A       		.2byte	0x260
+ 1322 040c 04       		.byte	0x1
+ 1323 040d C5030000 		.4byte	.LFB41
+ 1324 0411 0E       		.4byte	.LFE41
+ 1325 0412 01       		.4byte	.LLST3
+ 1326 0413 64697370 		.4byte	0x477
+ 1326      6C617953 
+ 1326      74657000 
+ 1327 041f 01       		.uleb128 0x10
+ 1328 0420 57       		.ascii	"pPio\000"
+ 1329 0421 DC000000 		.byte	0x2
+ 1330 0425 AC010000 		.2byte	0x25e
+ 1331 0429 4A000000 		.4byte	0x35e
+ 1332 042d 0F       		.byte	0x2
+ 1333 042e 41543931 		.byte	0x91
+ 1333      465F5049 
+ 1333      4F5F5365 
+ 1333      744F7574 
+ 1333      70757400 
+ 1334 0442 02       		.sleb128 -4
+ 1335 0443 6002     		.uleb128 0x10
+ 1336 0445 01       		.ascii	"flag\000"
+ 1337 0446 AC010000 		.byte	0x2
+ 1338 044a CC010000 		.2byte	0x25f
+ 1339 044e 69000000 		.4byte	0x3c
+ 1340 0452 77040000 		.byte	0x2
+ 1341 0456 10       		.byte	0x91
+ 1342 0457 7050696F 		.sleb128 -8
+ 1342      00
+ 1343 045c 02       		.byte	0x0
+ 1344 045d 5E02     		.uleb128 0xf
+ 1345 045f 5E030000 		.ascii	"AT91F_PIO_ClearOutput\000"
+ 1346 0463 02       		.byte	0x2
+ 1347 0464 91       		.2byte	0x26b
+ 1348 0465 7C       		.byte	0x1
+ 1349 0466 10       		.4byte	.LFB42
+ 1350 0467 666C6167 		.4byte	.LFE42
+ 1350      00
+ 1351 046c 02       		.4byte	.LLST4
+ 1352 046d 5F02     		.4byte	0x4c3
+ 1353 046f 3C000000 		.uleb128 0x10
+ 1354 0473 02       		.ascii	"pPio\000"
+ 1355 0474 91       		.byte	0x2
+ 1356 0475 78       		.2byte	0x269
+ 1357 0476 00       		.4byte	0x35e
+ 1358 0477 0F       		.byte	0x2
+ 1359 0478 41543931 		.byte	0x91
+ 1359      465F5049 
+ 1359      4F5F436C 
+ 1359      6561724F 
+ 1359      75747075 
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 42
+
+
+ 1360 048e 02       		.sleb128 -4
+ 1361 048f 6B02     		.uleb128 0x10
+ 1362 0491 01       		.ascii	"flag\000"
+ 1363 0492 CC010000 		.byte	0x2
+ 1364 0496 EC010000 		.2byte	0x26a
+ 1365 049a 88000000 		.4byte	0x3c
+ 1366 049e C3040000 		.byte	0x2
+ 1367 04a2 10       		.byte	0x91
+ 1368 04a3 7050696F 		.sleb128 -8
+ 1368      00
+ 1369 04a8 02       		.byte	0x0
+ 1370 04a9 6902     		.uleb128 0x11
+ 1371 04ab 5E030000 		.ascii	"change_speed\000"
+ 1372 04af 02       		.byte	0x3
+ 1373 04b0 91       		.byte	0x27
+ 1374 04b1 7C       		.byte	0x1
+ 1375 04b2 10       		.4byte	.LFB288
+ 1376 04b3 666C6167 		.4byte	.LFE288
+ 1376      00
+ 1377 04b8 02       		.4byte	.LLST5
+ 1378 04b9 6A02     		.uleb128 0x12
+ 1379 04bb 3C000000 		.ascii	"AT91F_PIO_GetInput\000"
+ 1380 04bf 02       		.byte	0x2
+ 1381 04c0 91       		.2byte	0x249
+ 1382 04c1 78       		.byte	0x1
+ 1383 04c2 00       		.4byte	0x3c
+ 1384 04c3 11       		.4byte	.LFB39
+ 1385 04c4 6368616E 		.4byte	.LFE39
+ 1385      67655F73 
+ 1385      70656564 
+ 1385      00
+ 1386 04d1 03       		.4byte	.LLST6
+ 1387 04d2 27       		.4byte	0x51d
+ 1388 04d3 01       		.uleb128 0x10
+ 1389 04d4 EC010000 		.ascii	"pPio\000"
+ 1390 04d8 94020000 		.byte	0x2
+ 1391 04dc A7000000 		.2byte	0x248
+ 1392 04e0 12       		.4byte	0x35e
+ 1393 04e1 41543931 		.byte	0x2
+ 1393      465F5049 
+ 1393      4F5F4765 
+ 1393      74496E70 
+ 1393      757400
+ 1394 04f4 02       		.byte	0x91
+ 1395 04f5 4902     		.sleb128 -4
+ 1396 04f7 01       		.byte	0x0
+ 1397 04f8 3C000000 		.uleb128 0x13
+ 1398 04fc 94020000 		.ascii	"wait\000"
+ 1399 0500 B0020000 		.byte	0x3
+ 1400 0504 C6000000 		.byte	0x39
+ 1401 0508 1D050000 		.byte	0x1
+ 1402 050c 10       		.4byte	.LFB289
+ 1403 050d 7050696F 		.4byte	.LFE289
+ 1403      00
+ 1404 0512 02       		.4byte	.LLST7
+ 1405 0513 4802     		.4byte	0x54e
+ 1406 0515 5E030000 		.uleb128 0xd
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 43
+
+
+ 1407 0519 02       		.ascii	"waiting_time\000"
+ 1408 051a 91       		.byte	0x3
+ 1409 051b 7C       		.byte	0x3a
+ 1410 051c 00       		.4byte	0x37
+ 1411 051d 13       		.byte	0x2
+ 1412 051e 77616974 		.byte	0x91
+ 1412      00
+ 1413 0523 03       		.sleb128 -4
+ 1414 0524 39       		.byte	0x0
+ 1415 0525 01       		.uleb128 0x14
+ 1416 0526 B0020000 		.byte	0x1
+ 1417 052a EC020000 		.ascii	"main\000"
+ 1418 052e E5000000 		.byte	0x3
+ 1419 0532 4E050000 		.byte	0x46
+ 1420 0536 0D       		.byte	0x1
+ 1421 0537 77616974 		.4byte	0x3be
+ 1421      696E675F 
+ 1421      74696D65 
+ 1421      00
+ 1422 0544 03       		.4byte	.LFB290
+ 1423 0545 3A       		.4byte	.LFE290
+ 1424 0546 37000000 		.4byte	.LLST8
+ 1425 054a 02       		.4byte	0x5d2
+ 1426 054b 91       		.uleb128 0xd
+ 1427 054c 7C       		.ascii	"i\000"
+ 1428 054d 00       		.byte	0x3
+ 1429 054e 14       		.byte	0x47
+ 1430 054f 01       		.4byte	0x3be
+ 1431 0550 6D61696E 		.byte	0x2
+ 1431      00
+ 1432 0555 03       		.byte	0x91
+ 1433 0556 46       		.sleb128 -24
+ 1434 0557 01       		.uleb128 0xd
+ 1435 0558 BE030000 		.ascii	"test\000"
+ 1436 055c EC020000 		.byte	0x3
+ 1437 0560 90040000 		.byte	0x66
+ 1438 0564 04010000 		.4byte	0x40b
+ 1439 0568 D2050000 		.byte	0x2
+ 1440 056c 0D       		.byte	0x91
+ 1441 056d 6900     		.sleb128 -20
+ 1442 056f 03       		.uleb128 0xd
+ 1443 0570 47       		.ascii	"derp\000"
+ 1444 0571 BE030000 		.byte	0x3
+ 1445 0575 02       		.byte	0x6a
+ 1446 0576 91       		.4byte	0x3c
+ 1447 0577 68       		.byte	0x2
+ 1448 0578 0D       		.byte	0x91
+ 1449 0579 74657374 		.sleb128 -16
+ 1449      00
+ 1450 057e 03       		.uleb128 0xd
+ 1451 057f 66       		.ascii	"offset\000"
+ 1452 0580 0B040000 		.byte	0x3
+ 1453 0584 02       		.byte	0x6a
+ 1454 0585 91       		.4byte	0x3c
+ 1455 0586 6C       		.byte	0x2
+ 1456 0587 0D       		.byte	0x91
+ 1457 0588 64657270 		.sleb128 -12
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 44
+
+
+ 1457      00
+ 1458 058d 03       		.uleb128 0xd
+ 1459 058e 6A       		.ascii	"danielAnderson\000"
+ 1460 058f 3C000000 		.byte	0x3
+ 1461 0593 02       		.byte	0x6b
+ 1462 0594 91       		.4byte	0x3c5
+ 1463 0595 70       		.byte	0x2
+ 1464 0596 0D       		.byte	0x91
+ 1465 0597 6F666673 		.sleb128 -6
+ 1465      657400
+ 1466 059e 03       		.uleb128 0xd
+ 1467 059f 6A       		.ascii	"hamish\000"
+ 1468 05a0 3C000000 		.byte	0x3
+ 1469 05a4 02       		.byte	0x6c
+ 1470 05a5 91       		.4byte	0x5d2
+ 1471 05a6 74       		.byte	0x2
+ 1472 05a7 0D       		.byte	0x91
+ 1473 05a8 64616E69 		.sleb128 -5
+ 1473      656C416E 
+ 1473      64657273 
+ 1473      6F6E00
+ 1474 05b7 03       		.byte	0x0
+ 1475 05b8 6B       		.uleb128 0x3
+ 1476 05b9 C5030000 		.byte	0x1
+ 1477 05bd 02       		.byte	0x8
+ 1478 05be 91       		.ascii	"unsigned char\000"
+ 1479 05bf 7A       		.uleb128 0xf
+ 1480 05c0 0D       		.ascii	"AT91F_PIO_CfgOutput\000"
+ 1481 05c1 68616D69 		.byte	0x2
+ 1481      736800
+ 1482 05c8 03       		.2byte	0x1fb
+ 1483 05c9 6C       		.byte	0x1
+ 1484 05ca D2050000 		.4byte	.LFB33
+ 1485 05ce 02       		.4byte	.LFE33
+ 1486 05cf 91       		.4byte	.LLST9
+ 1487 05d0 7B       		.4byte	0x632
+ 1488 05d1 00       		.uleb128 0x10
+ 1489 05d2 03       		.ascii	"pPio\000"
+ 1490 05d3 01       		.byte	0x2
+ 1491 05d4 08       		.2byte	0x1f9
+ 1492 05d5 756E7369 		.4byte	0x35e
+ 1492      676E6564 
+ 1492      20636861 
+ 1492      7200
+ 1493 05e3 0F       		.byte	0x2
+ 1494 05e4 41543931 		.byte	0x91
+ 1494      465F5049 
+ 1494      4F5F4366 
+ 1494      674F7574 
+ 1494      70757400 
+ 1495 05f8 02       		.sleb128 -4
+ 1496 05f9 FB01     		.uleb128 0x10
+ 1497 05fb 01       		.ascii	"pioEnable\000"
+ 1498 05fc 90040000 		.byte	0x2
+ 1499 0600 BC040000 		.2byte	0x1fa
+ 1500 0604 2F010000 		.4byte	0x3c
+ 1501 0608 32060000 		.byte	0x2
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 45
+
+
+ 1502 060c 10       		.byte	0x91
+ 1503 060d 7050696F 		.sleb128 -8
+ 1503      00
+ 1504 0612 02       		.byte	0x0
+ 1505 0613 F901     		.uleb128 0x5
+ 1506 0615 5E030000 		.4byte	0x5d2
+ 1507 0619 02       		.4byte	0x642
+ 1508 061a 91       		.uleb128 0x6
+ 1509 061b 7C       		.4byte	0x4c
+ 1510 061c 10       		.byte	0x3
+ 1511 061d 70696F45 		.byte	0x0
+ 1511      6E61626C 
+ 1511      6500
+ 1512 0627 02       		.uleb128 0x15
+ 1513 0628 FA01     		.ascii	"display\000"
+ 1514 062a 3C000000 		.byte	0x1
+ 1515 062e 02       		.byte	0x1
+ 1516 062f 91       		.4byte	0x632
+ 1517 0630 78       		.byte	0x1
+ 1518 0631 00       		.byte	0x5
+ 1519 0632 05       		.byte	0x3
+ 1520 0633 D2050000 		.4byte	display
+ 1521 0637 42060000 		.uleb128 0x15
+ 1522 063b 06       		.ascii	"segIterator\000"
+ 1523 063c 4C000000 		.byte	0x1
+ 1524 0640 03       		.byte	0x3
+ 1525 0641 00       		.4byte	0x3c
+ 1526 0642 15       		.byte	0x1
+ 1527 0643 64697370 		.byte	0x5
+ 1527      6C617900 
+ 1528 064b 01       		.byte	0x3
+ 1529 064c 01       		.4byte	segIterator
+ 1530 064d 32060000 		.uleb128 0x5
+ 1531 0651 01       		.4byte	0x3c5
+ 1532 0652 05       		.4byte	0x682
+ 1533 0653 03       		.uleb128 0x6
+ 1534 0654 00000000 		.4byte	0x4c
+ 1535 0658 15       		.byte	0x31
+ 1536 0659 73656749 		.byte	0x0
+ 1536      74657261 
+ 1536      746F7200 
+ 1537 0665 01       		.uleb128 0x15
+ 1538 0666 03       		.ascii	"charMap\000"
+ 1539 0667 3C000000 		.byte	0x1
+ 1540 066b 01       		.byte	0x18
+ 1541 066c 05       		.4byte	0x672
+ 1542 066d 03       		.byte	0x1
+ 1543 066e 00000000 		.byte	0x5
+ 1544 0672 05       		.byte	0x3
+ 1545 0673 C5030000 		.4byte	charMap
+ 1546 0677 82060000 		.uleb128 0x15
+ 1547 067b 06       		.ascii	"LedSpeed\000"
+ 1548 067c 4C000000 		.byte	0x3
+ 1549 0680 31       		.byte	0x18
+ 1550 0681 00       		.4byte	0x3c
+ 1551 0682 15       		.byte	0x1
+ 1552 0683 63686172 		.byte	0x5
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 46
+
+
+ 1552      4D617000 
+ 1553 068b 01       		.byte	0x3
+ 1554 068c 18       		.4byte	LedSpeed
+ 1555 068d 72060000 		.uleb128 0x5
+ 1556 0691 01       		.4byte	0x3be
+ 1557 0692 05       		.4byte	0x6bf
+ 1558 0693 03       		.uleb128 0x6
+ 1559 0694 00000000 		.4byte	0x4c
+ 1560 0698 15       		.byte	0x7
+ 1561 0699 4C656453 		.byte	0x0
+ 1561      70656564 
+ 1561      00
+ 1562 06a2 03       		.uleb128 0x15
+ 1563 06a3 18       		.ascii	"led_mask\000"
+ 1564 06a4 3C000000 		.byte	0x3
+ 1565 06a8 01       		.byte	0x19
+ 1566 06a9 05       		.4byte	0x6d6
+ 1567 06aa 03       		.byte	0x1
+ 1568 06ab 00000000 		.byte	0x5
+ 1569 06af 05       		.byte	0x3
+ 1570 06b0 BE030000 		.4byte	led_mask
+ 1571 06b4 BF060000 		.uleb128 0x16
+ 1572 06b8 06       		.4byte	0x6af
+ 1573 06b9 4C000000 		.byte	0x0
+ 1574 06bd 07       		.section	.debug_abbrev
+ 1575 06be 00       		.uleb128 0x1
+ 1576 06bf 15       		.uleb128 0x11
+ 1577 06c0 6C65645F 		.byte	0x1
+ 1577      6D61736B 
+ 1577      00
+ 1578 06c9 03       		.uleb128 0x25
+ 1579 06ca 19       		.uleb128 0x8
+ 1580 06cb D6060000 		.uleb128 0x13
+ 1581 06cf 01       		.uleb128 0xb
+ 1582 06d0 05       		.uleb128 0x3
+ 1583 06d1 03       		.uleb128 0x8
+ 1584 06d2 00000000 		.uleb128 0x1b
+ 1585 06d6 16       		.uleb128 0x8
+ 1586 06d7 AF060000 		.uleb128 0x11
+ 1587 06db 00       		.uleb128 0x1
+ 1588              		.uleb128 0x12
+ 1589 0000 01       		.uleb128 0x1
+ 1590 0001 11       		.uleb128 0x10
+ 1591 0002 01       		.uleb128 0x6
+ 1592 0003 25       		.byte	0x0
+ 1593 0004 08       		.byte	0x0
+ 1594 0005 13       		.uleb128 0x2
+ 1595 0006 0B       		.uleb128 0x35
+ 1596 0007 03       		.byte	0x0
+ 1597 0008 08       		.uleb128 0x49
+ 1598 0009 1B       		.uleb128 0x13
+ 1599 000a 08       		.byte	0x0
+ 1600 000b 11       		.byte	0x0
+ 1601 000c 01       		.uleb128 0x3
+ 1602 000d 12       		.uleb128 0x24
+ 1603 000e 01       		.byte	0x0
+ 1604 000f 10       		.uleb128 0xb
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 47
+
+
+ 1605 0010 06       		.uleb128 0xb
+ 1606 0011 00       		.uleb128 0x3e
+ 1607 0012 00       		.uleb128 0xb
+ 1608 0013 02       		.uleb128 0x3
+ 1609 0014 35       		.uleb128 0x8
+ 1610 0015 00       		.byte	0x0
+ 1611 0016 49       		.byte	0x0
+ 1612 0017 13       		.uleb128 0x4
+ 1613 0018 00       		.uleb128 0x24
+ 1614 0019 00       		.byte	0x0
+ 1615 001a 03       		.uleb128 0xb
+ 1616 001b 24       		.uleb128 0xb
+ 1617 001c 00       		.uleb128 0x3e
+ 1618 001d 0B       		.uleb128 0xb
+ 1619 001e 0B       		.byte	0x0
+ 1620 001f 3E       		.byte	0x0
+ 1621 0020 0B       		.uleb128 0x5
+ 1622 0021 03       		.uleb128 0x1
+ 1623 0022 08       		.byte	0x1
+ 1624 0023 00       		.uleb128 0x49
+ 1625 0024 00       		.uleb128 0x13
+ 1626 0025 04       		.uleb128 0x1
+ 1627 0026 24       		.uleb128 0x13
+ 1628 0027 00       		.byte	0x0
+ 1629 0028 0B       		.byte	0x0
+ 1630 0029 0B       		.uleb128 0x6
+ 1631 002a 3E       		.uleb128 0x21
+ 1632 002b 0B       		.byte	0x0
+ 1633 002c 00       		.uleb128 0x49
+ 1634 002d 00       		.uleb128 0x13
+ 1635 002e 05       		.uleb128 0x2f
+ 1636 002f 01       		.uleb128 0xb
+ 1637 0030 01       		.byte	0x0
+ 1638 0031 49       		.byte	0x0
+ 1639 0032 13       		.uleb128 0x7
+ 1640 0033 01       		.uleb128 0x13
+ 1641 0034 13       		.byte	0x1
+ 1642 0035 00       		.uleb128 0x3
+ 1643 0036 00       		.uleb128 0x8
+ 1644 0037 06       		.uleb128 0xb
+ 1645 0038 21       		.uleb128 0xb
+ 1646 0039 00       		.uleb128 0x3a
+ 1647 003a 49       		.uleb128 0xb
+ 1648 003b 13       		.uleb128 0x3b
+ 1649 003c 2F       		.uleb128 0x5
+ 1650 003d 0B       		.uleb128 0x1
+ 1651 003e 00       		.uleb128 0x13
+ 1652 003f 00       		.byte	0x0
+ 1653 0040 07       		.byte	0x0
+ 1654 0041 13       		.uleb128 0x8
+ 1655 0042 01       		.uleb128 0xd
+ 1656 0043 03       		.byte	0x0
+ 1657 0044 08       		.uleb128 0x3
+ 1658 0045 0B       		.uleb128 0x8
+ 1659 0046 0B       		.uleb128 0x3a
+ 1660 0047 3A       		.uleb128 0xb
+ 1661 0048 0B       		.uleb128 0x3b
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 48
+
+
+ 1662 0049 3B       		.uleb128 0x5
+ 1663 004a 05       		.uleb128 0x49
+ 1664 004b 01       		.uleb128 0x13
+ 1665 004c 13       		.uleb128 0x38
+ 1666 004d 00       		.uleb128 0xa
+ 1667 004e 00       		.byte	0x0
+ 1668 004f 08       		.byte	0x0
+ 1669 0050 0D       		.uleb128 0x9
+ 1670 0051 00       		.uleb128 0x16
+ 1671 0052 03       		.byte	0x0
+ 1672 0053 08       		.uleb128 0x3
+ 1673 0054 3A       		.uleb128 0x8
+ 1674 0055 0B       		.uleb128 0x3a
+ 1675 0056 3B       		.uleb128 0xb
+ 1676 0057 05       		.uleb128 0x3b
+ 1677 0058 49       		.uleb128 0x5
+ 1678 0059 13       		.uleb128 0x49
+ 1679 005a 38       		.uleb128 0x13
+ 1680 005b 0A       		.byte	0x0
+ 1681 005c 00       		.byte	0x0
+ 1682 005d 00       		.uleb128 0xa
+ 1683 005e 09       		.uleb128 0xf
+ 1684 005f 16       		.byte	0x0
+ 1685 0060 00       		.uleb128 0xb
+ 1686 0061 03       		.uleb128 0xb
+ 1687 0062 08       		.uleb128 0x49
+ 1688 0063 3A       		.uleb128 0x13
+ 1689 0064 0B       		.byte	0x0
+ 1690 0065 3B       		.byte	0x0
+ 1691 0066 05       		.uleb128 0xb
+ 1692 0067 49       		.uleb128 0x2e
+ 1693 0068 13       		.byte	0x1
+ 1694 0069 00       		.uleb128 0x3f
+ 1695 006a 00       		.uleb128 0xc
+ 1696 006b 0A       		.uleb128 0x3
+ 1697 006c 0F       		.uleb128 0x8
+ 1698 006d 00       		.uleb128 0x3a
+ 1699 006e 0B       		.uleb128 0xb
+ 1700 006f 0B       		.uleb128 0x3b
+ 1701 0070 49       		.uleb128 0xb
+ 1702 0071 13       		.uleb128 0x27
+ 1703 0072 00       		.uleb128 0xc
+ 1704 0073 00       		.uleb128 0x11
+ 1705 0074 0B       		.uleb128 0x1
+ 1706 0075 2E       		.uleb128 0x12
+ 1707 0076 01       		.uleb128 0x1
+ 1708 0077 3F       		.uleb128 0x40
+ 1709 0078 0C       		.uleb128 0x6
+ 1710 0079 03       		.uleb128 0x1
+ 1711 007a 08       		.uleb128 0x13
+ 1712 007b 3A       		.byte	0x0
+ 1713 007c 0B       		.byte	0x0
+ 1714 007d 3B       		.uleb128 0xc
+ 1715 007e 0B       		.uleb128 0x5
+ 1716 007f 27       		.byte	0x0
+ 1717 0080 0C       		.uleb128 0x3
+ 1718 0081 11       		.uleb128 0x8
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 49
+
+
+ 1719 0082 01       		.uleb128 0x3a
+ 1720 0083 12       		.uleb128 0xb
+ 1721 0084 01       		.uleb128 0x3b
+ 1722 0085 40       		.uleb128 0xb
+ 1723 0086 06       		.uleb128 0x49
+ 1724 0087 01       		.uleb128 0x13
+ 1725 0088 13       		.uleb128 0x2
+ 1726 0089 00       		.uleb128 0xa
+ 1727 008a 00       		.byte	0x0
+ 1728 008b 0C       		.byte	0x0
+ 1729 008c 05       		.uleb128 0xd
+ 1730 008d 00       		.uleb128 0x34
+ 1731 008e 03       		.byte	0x0
+ 1732 008f 08       		.uleb128 0x3
+ 1733 0090 3A       		.uleb128 0x8
+ 1734 0091 0B       		.uleb128 0x3a
+ 1735 0092 3B       		.uleb128 0xb
+ 1736 0093 0B       		.uleb128 0x3b
+ 1737 0094 49       		.uleb128 0xb
+ 1738 0095 13       		.uleb128 0x49
+ 1739 0096 02       		.uleb128 0x13
+ 1740 0097 0A       		.uleb128 0x2
+ 1741 0098 00       		.uleb128 0xa
+ 1742 0099 00       		.byte	0x0
+ 1743 009a 0D       		.byte	0x0
+ 1744 009b 34       		.uleb128 0xe
+ 1745 009c 00       		.uleb128 0x2e
+ 1746 009d 03       		.byte	0x0
+ 1747 009e 08       		.uleb128 0x3f
+ 1748 009f 3A       		.uleb128 0xc
+ 1749 00a0 0B       		.uleb128 0x3
+ 1750 00a1 3B       		.uleb128 0x8
+ 1751 00a2 0B       		.uleb128 0x3a
+ 1752 00a3 49       		.uleb128 0xb
+ 1753 00a4 13       		.uleb128 0x3b
+ 1754 00a5 02       		.uleb128 0xb
+ 1755 00a6 0A       		.uleb128 0x11
+ 1756 00a7 00       		.uleb128 0x1
+ 1757 00a8 00       		.uleb128 0x12
+ 1758 00a9 0E       		.uleb128 0x1
+ 1759 00aa 2E       		.uleb128 0x40
+ 1760 00ab 00       		.uleb128 0x6
+ 1761 00ac 3F       		.byte	0x0
+ 1762 00ad 0C       		.byte	0x0
+ 1763 00ae 03       		.uleb128 0xf
+ 1764 00af 08       		.uleb128 0x2e
+ 1765 00b0 3A       		.byte	0x1
+ 1766 00b1 0B       		.uleb128 0x3
+ 1767 00b2 3B       		.uleb128 0x8
+ 1768 00b3 0B       		.uleb128 0x3a
+ 1769 00b4 11       		.uleb128 0xb
+ 1770 00b5 01       		.uleb128 0x3b
+ 1771 00b6 12       		.uleb128 0x5
+ 1772 00b7 01       		.uleb128 0x27
+ 1773 00b8 40       		.uleb128 0xc
+ 1774 00b9 06       		.uleb128 0x11
+ 1775 00ba 00       		.uleb128 0x1
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 50
+
+
+ 1776 00bb 00       		.uleb128 0x12
+ 1777 00bc 0F       		.uleb128 0x1
+ 1778 00bd 2E       		.uleb128 0x40
+ 1779 00be 01       		.uleb128 0x6
+ 1780 00bf 03       		.uleb128 0x1
+ 1781 00c0 08       		.uleb128 0x13
+ 1782 00c1 3A       		.byte	0x0
+ 1783 00c2 0B       		.byte	0x0
+ 1784 00c3 3B       		.uleb128 0x10
+ 1785 00c4 05       		.uleb128 0x5
+ 1786 00c5 27       		.byte	0x0
+ 1787 00c6 0C       		.uleb128 0x3
+ 1788 00c7 11       		.uleb128 0x8
+ 1789 00c8 01       		.uleb128 0x3a
+ 1790 00c9 12       		.uleb128 0xb
+ 1791 00ca 01       		.uleb128 0x3b
+ 1792 00cb 40       		.uleb128 0x5
+ 1793 00cc 06       		.uleb128 0x49
+ 1794 00cd 01       		.uleb128 0x13
+ 1795 00ce 13       		.uleb128 0x2
+ 1796 00cf 00       		.uleb128 0xa
+ 1797 00d0 00       		.byte	0x0
+ 1798 00d1 10       		.byte	0x0
+ 1799 00d2 05       		.uleb128 0x11
+ 1800 00d3 00       		.uleb128 0x2e
+ 1801 00d4 03       		.byte	0x0
+ 1802 00d5 08       		.uleb128 0x3
+ 1803 00d6 3A       		.uleb128 0x8
+ 1804 00d7 0B       		.uleb128 0x3a
+ 1805 00d8 3B       		.uleb128 0xb
+ 1806 00d9 05       		.uleb128 0x3b
+ 1807 00da 49       		.uleb128 0xb
+ 1808 00db 13       		.uleb128 0x27
+ 1809 00dc 02       		.uleb128 0xc
+ 1810 00dd 0A       		.uleb128 0x11
+ 1811 00de 00       		.uleb128 0x1
+ 1812 00df 00       		.uleb128 0x12
+ 1813 00e0 11       		.uleb128 0x1
+ 1814 00e1 2E       		.uleb128 0x40
+ 1815 00e2 00       		.uleb128 0x6
+ 1816 00e3 03       		.byte	0x0
+ 1817 00e4 08       		.byte	0x0
+ 1818 00e5 3A       		.uleb128 0x12
+ 1819 00e6 0B       		.uleb128 0x2e
+ 1820 00e7 3B       		.byte	0x1
+ 1821 00e8 0B       		.uleb128 0x3
+ 1822 00e9 27       		.uleb128 0x8
+ 1823 00ea 0C       		.uleb128 0x3a
+ 1824 00eb 11       		.uleb128 0xb
+ 1825 00ec 01       		.uleb128 0x3b
+ 1826 00ed 12       		.uleb128 0x5
+ 1827 00ee 01       		.uleb128 0x27
+ 1828 00ef 40       		.uleb128 0xc
+ 1829 00f0 06       		.uleb128 0x49
+ 1830 00f1 00       		.uleb128 0x13
+ 1831 00f2 00       		.uleb128 0x11
+ 1832 00f3 12       		.uleb128 0x1
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 51
+
+
+ 1833 00f4 2E       		.uleb128 0x12
+ 1834 00f5 01       		.uleb128 0x1
+ 1835 00f6 03       		.uleb128 0x40
+ 1836 00f7 08       		.uleb128 0x6
+ 1837 00f8 3A       		.uleb128 0x1
+ 1838 00f9 0B       		.uleb128 0x13
+ 1839 00fa 3B       		.byte	0x0
+ 1840 00fb 05       		.byte	0x0
+ 1841 00fc 27       		.uleb128 0x13
+ 1842 00fd 0C       		.uleb128 0x2e
+ 1843 00fe 49       		.byte	0x1
+ 1844 00ff 13       		.uleb128 0x3
+ 1845 0100 11       		.uleb128 0x8
+ 1846 0101 01       		.uleb128 0x3a
+ 1847 0102 12       		.uleb128 0xb
+ 1848 0103 01       		.uleb128 0x3b
+ 1849 0104 40       		.uleb128 0xb
+ 1850 0105 06       		.uleb128 0x27
+ 1851 0106 01       		.uleb128 0xc
+ 1852 0107 13       		.uleb128 0x11
+ 1853 0108 00       		.uleb128 0x1
+ 1854 0109 00       		.uleb128 0x12
+ 1855 010a 13       		.uleb128 0x1
+ 1856 010b 2E       		.uleb128 0x40
+ 1857 010c 01       		.uleb128 0x6
+ 1858 010d 03       		.uleb128 0x1
+ 1859 010e 08       		.uleb128 0x13
+ 1860 010f 3A       		.byte	0x0
+ 1861 0110 0B       		.byte	0x0
+ 1862 0111 3B       		.uleb128 0x14
+ 1863 0112 0B       		.uleb128 0x2e
+ 1864 0113 27       		.byte	0x1
+ 1865 0114 0C       		.uleb128 0x3f
+ 1866 0115 11       		.uleb128 0xc
+ 1867 0116 01       		.uleb128 0x3
+ 1868 0117 12       		.uleb128 0x8
+ 1869 0118 01       		.uleb128 0x3a
+ 1870 0119 40       		.uleb128 0xb
+ 1871 011a 06       		.uleb128 0x3b
+ 1872 011b 01       		.uleb128 0xb
+ 1873 011c 13       		.uleb128 0x27
+ 1874 011d 00       		.uleb128 0xc
+ 1875 011e 00       		.uleb128 0x49
+ 1876 011f 14       		.uleb128 0x13
+ 1877 0120 2E       		.uleb128 0x11
+ 1878 0121 01       		.uleb128 0x1
+ 1879 0122 3F       		.uleb128 0x12
+ 1880 0123 0C       		.uleb128 0x1
+ 1881 0124 03       		.uleb128 0x40
+ 1882 0125 08       		.uleb128 0x6
+ 1883 0126 3A       		.uleb128 0x1
+ 1884 0127 0B       		.uleb128 0x13
+ 1885 0128 3B       		.byte	0x0
+ 1886 0129 0B       		.byte	0x0
+ 1887 012a 27       		.uleb128 0x15
+ 1888 012b 0C       		.uleb128 0x34
+ 1889 012c 49       		.byte	0x0
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 52
+
+
+ 1890 012d 13       		.uleb128 0x3
+ 1891 012e 11       		.uleb128 0x8
+ 1892 012f 01       		.uleb128 0x3a
+ 1893 0130 12       		.uleb128 0xb
+ 1894 0131 01       		.uleb128 0x3b
+ 1895 0132 40       		.uleb128 0xb
+ 1896 0133 06       		.uleb128 0x49
+ 1897 0134 01       		.uleb128 0x13
+ 1898 0135 13       		.uleb128 0x3f
+ 1899 0136 00       		.uleb128 0xc
+ 1900 0137 00       		.uleb128 0x2
+ 1901 0138 15       		.uleb128 0xa
+ 1902 0139 34       		.byte	0x0
+ 1903 013a 00       		.byte	0x0
+ 1904 013b 03       		.uleb128 0x16
+ 1905 013c 08       		.uleb128 0x26
+ 1906 013d 3A       		.byte	0x0
+ 1907 013e 0B       		.uleb128 0x49
+ 1908 013f 3B       		.uleb128 0x13
+ 1909 0140 0B       		.byte	0x0
+ 1910 0141 49       		.byte	0x0
+ 1911 0142 13       		.byte	0x0
+ 1912 0143 3F       		.section	.debug_pubnames,"",%progbits
+ 1913 0144 0C       		.4byte	0x87
+ 1914 0145 02       		.2byte	0x2
+ 1915 0146 0A       		.4byte	.Ldebug_info0
+ 1916 0147 00       		.4byte	0x6dc
+ 1917 0148 00       		.4byte	0x377
+ 1918 0149 16       		.ascii	"setSegment\000"
+ 1919 014a 26       		.4byte	0x3cd
+ 1920 014b 00       		.ascii	"setDisplay\000"
+ 1921 014c 49       		.4byte	0x411
+ 1922 014d 13       		.ascii	"displayStep\000"
+ 1923 014e 00       		.4byte	0x54e
+ 1924 014f 00       		.ascii	"main\000"
+ 1925 0150 00       		.4byte	0x642
+ 1926              		.ascii	"display\000"
+ 1927 0000 87000000 		.4byte	0x658
+ 1928 0004 0200     		.ascii	"segIterator\000"
+ 1929 0006 00000000 		.4byte	0x682
+ 1930 000a DC060000 		.ascii	"charMap\000"
+ 1931 000e 77030000 		.4byte	0x698
+ 1932 0012 73657453 		.ascii	"LedSpeed\000"
+ 1932      65676D65 
+ 1932      6E7400
+ 1933 001d CD030000 		.4byte	0x6bf
+ 1934 0021 73657444 		.ascii	"led_mask\000"
+ 1934      6973706C 
+ 1934      617900
+ 1935 002c 11040000 		.4byte	0x0
+ 1936 0030 64697370 		.section	.debug_aranges,"",%progbits
+ 1936      6C617953 
+ 1936      74657000 
+ 1937 003c 4E050000 		.4byte	0x1c
+ 1938 0040 6D61696E 		.2byte	0x2
+ 1938      00
+ 1939 0045 42060000 		.4byte	.Ldebug_info0
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 53
+
+
+ 1940 0049 64697370 		.byte	0x4
+ 1940      6C617900 
+ 1941 0051 58060000 		.byte	0x0
+ 1942 0055 73656749 		.2byte	0x0
+ 1942      74657261 
+ 1942      746F7200 
+ 1943 0061 82060000 		.2byte	0x0
+ 1944 0065 63686172 		.4byte	.Ltext0
+ 1944      4D617000 
+ 1945 006d 98060000 		.4byte	.Letext0-.Ltext0
+ 1946 0071 4C656453 		.4byte	0x0
+ 1946      70656564 
+ 1946      00
+ 1947 007a BF060000 		.4byte	0x0
+ 1948 007e 6C65645F 		.ident	"GCC: (GNU) 4.2.1"
+ 1948      6D61736B 
+ 1948      00
+ 1949 0087 00000000 	...
+ARM GAS  C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s 			page 54
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:36     .bss:00000000 segIterator
+                             .bss:00000000 $d
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:42     .data:00000000 charMap
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:91     .text:00000000 setSegment
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:99     .text:00000000 $a
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:139    .text:00000078 $d
+                            *COM*:00000004 display
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:146    .text:00000080 setDisplay
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:152    .text:00000080 $a
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:186    .text:000000dc displayStep
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:260    .text:000001ac AT91F_PIO_SetOutput
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:284    .text:000001cc AT91F_PIO_ClearOutput
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:254    .text:000001a4 $d
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:268    .text:000001ac $a
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:310    .data:00000034 LedSpeed
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:311    .data:00000034 $d
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:317    .rodata:00000000 led_mask
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:318    .rodata:00000000 $d
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:329    .text:000001ec change_speed
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:393    .text:00000294 AT91F_PIO_GetInput
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:388    .text:00000290 $d
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:400    .text:00000294 $a
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:415    .text:000002b0 wait
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:445    .text:000002e8 $d
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:456    .text:000002ec main
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:462    .text:000002ec $a
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:604    .text:00000490 AT91F_PIO_CfgOutput
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:598    .text:00000488 $d
+C:\DOCUME~1\Tim\LOCALS~1\Temp/cczPgsSc.s:611    .text:00000490 $a
+
+NO UNDEFINED SYMBOLS

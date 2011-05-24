@@ -1,0 +1,223 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+display             0x4               main.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x00100000         0x00040000         xr
+DATA             0x00200000         0x00010000         rw
+STACK            0x00210000         0x00000000         rw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+LOAD main.o
+LOAD Cstartup_SAM7.o
+START GROUP
+LOAD c:/yagarto-arm/17112007/bin/../lib/gcc/arm-elf/4.2.1\libgcc.a
+LOAD c:/yagarto-arm/17112007/bin/../lib/gcc/arm-elf/4.2.1/../../../../arm-elf/lib\libc.a
+END GROUP
+                0x00000000                . = 0x0
+
+.text           0x00200000      0x750
+ *Cstartup.o(.text)
+ *(.text)
+ .text          0x00200000      0x13c C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+                0x002000bc                IRQ_Handler_Entry
+                0x0020010c                AT91F_Default_FIQ_handler
+                0x00200000                _startup
+                0x00200110                AT91F_Default_IRQ_handler
+                0x00200114                AT91F_Spurious_handler
+                0x002000b8                exit
+ .text          0x0020013c      0x4bc main.o
+                0x002001bc                setDisplay
+                0x00200428                main
+                0x00200218                displayStep
+                0x0020013c                setSegment
+ .text          0x002005f8      0x158 Cstartup_SAM7.o
+                0x002005f8                AT91F_LowLevelInit
+ *(.glue_7t)
+ .glue_7t       0x00200750        0x0 C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+ .glue_7t       0x00200750        0x0 main.o
+ .glue_7t       0x00200750        0x0 Cstartup_SAM7.o
+ *(.glue_7)
+ .glue_7        0x00200750        0x0 C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+ .glue_7        0x00200750        0x0 main.o
+ .glue_7        0x00200750        0x0 Cstartup_SAM7.o
+                0x00200750                . = ALIGN (0x4)
+
+.rodata         0x00200750       0x4c
+ *(.rodata)
+ .rodata        0x00200750       0x4c main.o
+                0x00200750                led_mask
+                0x0020079c                . = ALIGN (0x4)
+                0x0020079c                _etext = .
+                0x0020079c                PROVIDE (etext, .)
+
+.data           0x0020079c       0x38 load address 0x0020079c
+                0x0020079c                _data = .
+ *(.data)
+ .data          0x0020079c        0x0 C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+ .data          0x0020079c       0x38 main.o
+                0x0020079c                charMap
+                0x002007d0                LedSpeed
+ .data          0x002007d4        0x0 Cstartup_SAM7.o
+                0x002007d4                . = ALIGN (0x4)
+                0x002007d4                _edata = .
+                0x002007d4                PROVIDE (edata, .)
+
+.bss            0x002007d4        0x8
+                0x002007d4                __bss_start = .
+                0x002007d4                __bss_start__ = .
+ *(.bss)
+ .bss           0x002007d4        0x0 C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+ .bss           0x002007d4        0x4 main.o
+                0x002007d4                segIterator
+ .bss           0x002007d8        0x0 Cstartup_SAM7.o
+ *(COMMON)
+ COMMON         0x002007d8        0x4 main.o
+                0x002007d8                display
+                0x002007dc                . = ALIGN (0x4)
+                0x002007dc                __bss_end__ = .
+                0x002007dc                __bss_end__ = .
+                0x002007dc                _end = .
+                0x002007dc                PROVIDE (end, .)
+                0x002007dc                . = ALIGN (0x4)
+
+.int_data       0x00210000        0x0
+ *(.internal_ram_top)
+ .internal_ram_top
+                0x00210000        0x0 C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x24
+ *(.comment)
+ .comment       0x00000000       0x12 main.o
+ .comment       0x00000012       0x12 Cstartup_SAM7.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0x40
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 main.o
+ .debug_aranges
+                0x00000020       0x20 Cstartup_SAM7.o
+
+.debug_pubnames
+                0x00000000       0xb4
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x8b main.o
+ .debug_pubnames
+                0x0000008b       0x29 Cstartup_SAM7.o
+
+.debug_info     0x00000000      0xc3f
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x6dc main.o
+ .debug_info    0x000006dc      0x563 Cstartup_SAM7.o
+
+.debug_abbrev   0x00000000      0x228
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x151 main.o
+ .debug_abbrev  0x00000151       0xd7 Cstartup_SAM7.o
+
+.debug_line     0x00000000      0x138
+ *(.debug_line)
+ .debug_line    0x00000000       0xd3 main.o
+ .debug_line    0x000000d3       0x65 Cstartup_SAM7.o
+
+.debug_frame    0x00000000      0x10c
+ *(.debug_frame)
+ .debug_frame   0x00000000       0xe8 main.o
+ .debug_frame   0x000000e8       0x24 Cstartup_SAM7.o
+
+.debug_str      0x00000000       0x14
+ *(.debug_str)
+ .debug_str     0x00000000       0x14 Cstartup_SAM7.o
+
+.debug_loc      0x00000000      0x16d
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x14e main.o
+ .debug_loc     0x0000014e       0x1f Cstartup_SAM7.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+OUTPUT(main.elf elf32-littlearm)
+
+.reset          0x00000000        0x0
+ .reset         0x00000000        0x0 C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+
+Cross Reference Table
+
+Symbol                                            File
+AT91F_Default_FIQ_handler                         C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+                                                  Cstartup_SAM7.o
+AT91F_Default_IRQ_handler                         C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+                                                  Cstartup_SAM7.o
+AT91F_LowLevelInit                                Cstartup_SAM7.o
+                                                  C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+AT91F_Spurious_handler                            C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+                                                  Cstartup_SAM7.o
+IRQ_Handler_Entry                                 C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+LedSpeed                                          main.o
+Top_Stack                                         C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+__bss_end__                                       C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+__bss_start__                                     C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+_data                                             C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+_edata                                            C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+_etext                                            C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+_startup                                          C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+charMap                                           main.o
+display                                           main.o
+displayStep                                       main.o
+exit                                              C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+led_mask                                          main.o
+main                                              main.o
+                                                  C:\DOCUME~1\Tim\LOCALS~1\Temp/ccg9F1Q7.o
+segIterator                                       main.o
+setDisplay                                        main.o
+setSegment                                        main.o
